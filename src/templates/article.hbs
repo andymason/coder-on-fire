@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<div class="container">
+    <!-- pages -->
+    <div class="post">
+        <h2>{{title}}</h2>
+        <p>Posted on: {{posted}}
+            {{#markdown}}
+            {{> body }}
+            {{/markdown}}
+        </p>
+    </div>
+</div>
+
+<script src="{{assets}}/{{ pkg.name }}.min.js"></script>
+</body>
+</html>
