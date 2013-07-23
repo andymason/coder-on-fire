@@ -1,6 +1,11 @@
-/*global module */
+/*global module,process */
 module.exports = function(grunt) {
     'use strict';
+    var isDev = (grunt.option('dev')) || process.env.GRUNT_ISDEV === '1';
+    if (isDev) {
+        grunt.log.subhead('Running Grunt in DEV mode');
+    }
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         clean: {
@@ -9,7 +14,7 @@ module.exports = function(grunt) {
 
         jshint: {
             options: { jshintrc: '.jshintrc'},
-            all: ['Gruntfile.js', 'src/assets/**/*.js']
+            all: ['Gruntfile.js', 'src/assets/*.js']
         },
 
         uglify: {
@@ -55,12 +60,40 @@ module.exports = function(grunt) {
             }
         },
 
+        connect: {
+            server: {
+                options: {
+                    port: 9001,
+                    base: 'build',
+                    keepalive: true
+                }
+            }
+        },
+
+        requirejs: {
+            common: {
+                options: {
+                    almond: true,
+                    baseUrl : 'src/assets/js',
+                    name: 'libs/almond',
+                    include: ['main'],
+                    insertRequire: ['main'],
+                    out: 'build/assets/js/<%= pkg.name %>.min.js',
+                    paths: {
+                        hljs: 'libs/highlight.pack'
+                    },
+                    optimize: (isDev) ? 'none' : 'uglify2',
+                    preserveLicenseComments: (isDev) ? true : false
+                }
+            }
+        },
+
         assemble: {
             articles: {
                 options: {
                     pkg: '<%= pkg %>',
+                    engine: 'handlebars',
                     data: 'src/base_data.json',
-                    ext: '',
                     layout: 'src/templates/article.hbs',
                     assets: 'build/assets'
                 },
@@ -68,7 +101,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'src',
                     dest: 'build/',
-                    src: ['articles/*.md.hbs']
+                    src: ['articles/*.md']
                 }]
             }
         }
@@ -81,11 +114,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('assemble');
 
     // Tasks
     grunt.registerTask(
         'default',
-        ['jshint', 'clean', 'uglify', 'cssmin', 'copy', 'assemble:articles']
+        ['jshint', 'clean', 'requirejs', 'cssmin', 'copy', 'assemble:articles']
     );
 };

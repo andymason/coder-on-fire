@@ -16,5 +16,9 @@
     "maxlen": 80,
     "devel": true,
     "eqnull": true,
-    "globalstrict": true
+    "globalstrict": true,
+    "globals": {
+        "define": true,
+        "require": true
+    }
 }
