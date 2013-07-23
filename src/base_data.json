@@ -1,4 +1,7 @@
 {
+    "site" : {
+        "title": "Coder on Fire"
+    },
     "author" : {
         "name": "Andrew"
     }

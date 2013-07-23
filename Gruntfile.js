@@ -88,20 +88,42 @@ module.exports = function(grunt) {
             }
         },
 
+        watch: {
+            src: {
+                files: 'src/**/*.*',
+                tasks: ['default'],
+                options: {
+                    interrupt: true,
+                    spawn: false,
+                    debounceDelay: 400
+                }
+            }
+        },
+
         assemble: {
+            options: {
+                pkg: '<%= pkg %>',
+                engine: 'handlebars',
+                data: 'src/base_data.json',
+                assets: 'build/assets'
+            },
             articles: {
                 options: {
-                    pkg: '<%= pkg %>',
-                    engine: 'handlebars',
-                    data: 'src/base_data.json',
-                    layout: 'src/templates/article.hbs',
-                    assets: 'build/assets'
+                    layout: 'src/templates/article.hbs'
                 },
                 files: [{
                     expand: true,
                     cwd: 'src',
                     dest: 'build/',
                     src: ['articles/*.md']
+                }]
+            },
+            homepage: {
+                files: [{
+                    expand: true,
+                    cwd: 'src',
+                    dest: 'build/',
+                    src: ['index.hbs']
                 }]
             }
         }
@@ -116,11 +138,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('assemble');
 
     // Tasks
     grunt.registerTask(
         'default',
-        ['jshint', 'clean', 'requirejs', 'cssmin', 'copy', 'assemble:articles']
+        ['jshint', 'clean', 'requirejs', 'cssmin', 'copy', 'assemble']
     );
 };

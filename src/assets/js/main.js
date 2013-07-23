@@ -8,5 +8,4 @@
 define('main', ['hljs', 'test'], function(hljs) {
     'use strict';
     hljs.initHighlighting();
-    console.log('in here');
 });
