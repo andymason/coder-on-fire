@@ -54,13 +54,13 @@ module.exports = function(grunt) {
                         expand: true,
                         cwd: 'src/',
                         src: ['experiments/**'],
-                        dest: 'build/experiments'
+                        dest: 'build'
                     },
                     {
                         expand: true,
                         cwd: 'src/',
                         src: ['articles/images/**'],
-                        dest: 'build/articles/images'
+                        dest: 'build/'
                     }
                 ]
             }
