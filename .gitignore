@@ -1,4 +1,6 @@
 *.iml
+*.SyncID
+*SyncIgnore
 build/
 .idea/
 node_modules/
