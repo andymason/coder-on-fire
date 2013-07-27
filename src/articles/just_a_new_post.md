@@ -6,6 +6,6 @@ title: This is so fucking cool
 
 But what about images. Should I sync to a folder?
 
-![gir_ref](images/gir.gif)
 
 Yes, this is pretty cool.
+![gir_ref](images/gir.gif)
