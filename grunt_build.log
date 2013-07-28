@@ -1,0 +1,375 @@
+[4mRunning "jshint:all" (jshint) task[24m
+[32m>> [39m1 file lint free.
+
+[4mRunning "clean:clean" (clean) task[24m
+Cleaning build...[32mOK[39m
+
+[4mRunning "requirejs:common" (requirejs) task[24m
+[32m>> [39mTracing dependencies for: libs/almond
+[32m>> [39mUglify2 file: /home/andrew/coder_on_fire/build/assets/js/coder_on_fire.min.js
+[32m>> [39m/home/andrew/coder_on_fire/build/assets/js/coder_on_fire.min.js[32m
+>> [39m----------------[32m
+>> [39m/home/andrew/coder_on_fire/src/assets/js/libs/almond.js[32m
+>> [39m/home/andrew/coder_on_fire/src/assets/js/libs/highlight.pack.js[32m
+>> [39m/home/andrew/coder_on_fire/src/assets/js/test.js[32m
+>> [39m/home/andrew/coder_on_fire/src/assets/js/main.js
+
+[4mRunning "cssmin:combine" (cssmin) task[24m
+File build/assets/css/coder_on_fire.min.css created.
+Original: [32m1714[39m bytes.
+Minified: [32m1367[39m bytes.
+Gzipped:  [32m346[39m bytes.
+
+[4mRunning "copy:main" (copy) task[24m
+Created [36m24[39m directories, copied [36m59[39m files
+
+[4mRunning "assemble:articles" (assemble) task[24m
+Assembling[36m default layout[39m
+Assembling[36m partials[39m
+Assembling[36m data[39m
+[90m
+Assembling pages...[39m
+Assembling [36mbuild/articles/another.html[39m [32mOK[39m
+Assembling [36mbuild/articles/tp-w8968-uk-isp-firmware.html[39m [32mOK[39m
+Assembling [36mbuild/articles/bob.html[39m [32mOK[39m
+[32m>> [39mAssembled [36m3[39m pages.
+
+[4mRunning "assemble:homepage" (assemble) task[24m
+Assembling[36m default layout[39m
+Assembling[36m partials[39m
+Assembling[36m data[39m
+[90m
+Assembling pages...[39m
+Assembling [36mbuild/index.html[39m [32mOK[39m
+[32m>> [39mAssembled [36m1[39m pages.
+
+[32mDone, without errors.[39m
+[4mRunning "jshint:all" (jshint) task[24m
+[32m>> [39m1 file lint free.
+
+[4mRunning "clean:clean" (clean) task[24m
+Cleaning build...[32mOK[39m
+
+[4mRunning "requirejs:common" (requirejs) task[24m
+[32m>> [39mTracing dependencies for: libs/almond
+[32m>> [39mUglify2 file: /home/andrew/coder_on_fire/build/assets/js/coder_on_fire.min.js
+[32m>> [39m/home/andrew/coder_on_fire/build/assets/js/coder_on_fire.min.js[32m
+>> [39m----------------[32m
+>> [39m/home/andrew/coder_on_fire/src/assets/js/libs/almond.js[32m
+>> [39m/home/andrew/coder_on_fire/src/assets/js/libs/highlight.pack.js[32m
+>> [39m/home/andrew/coder_on_fire/src/assets/js/test.js[32m
+>> [39m/home/andrew/coder_on_fire/src/assets/js/main.js
+
+[4mRunning "cssmin:combine" (cssmin) task[24m
+File build/assets/css/coder_on_fire.min.css created.
+Original: [32m1714[39m bytes.
+Minified: [32m1367[39m bytes.
+Gzipped:  [32m346[39m bytes.
+
+[4mRunning "copy:main" (copy) task[24m
+Created [36m24[39m directories, copied [36m59[39m files
+
+[4mRunning "assemble:articles" (assemble) task[24m
+Assembling[36m default layout[39m
+Assembling[36m partials[39m
+Assembling[36m data[39m
+[90m
+Assembling pages...[39m
+Assembling [36mbuild/articles/another.html[39m [32mOK[39m
+Assembling [36mbuild/articles/tp-w8968-uk-isp-firmware.html[39m [32mOK[39m
+Assembling [36mbuild/articles/bob.html[39m [32mOK[39m
+[32m>> [39mAssembled [36m3[39m pages.
+
+[4mRunning "assemble:homepage" (assemble) task[24m
+Assembling[36m default layout[39m
+Assembling[36m partials[39m
+Assembling[36m data[39m
+[90m
+Assembling pages...[39m
+Assembling [36mbuild/index.html[39m [32mOK[39m
+[32m>> [39mAssembled [36m1[39m pages.
+
+[32mDone, without errors.[39m
+[4mRunning "jshint:all" (jshint) task[24m
+[4mRunning "jshint:all" (jshint) task[24m
+[32m>> [39m1 file lint free.
+[32m>> [39m1 file lint free.
+
+[4mRunning "clean:clean" (clean) task[24m
+
+[4mRunning "clean:clean" (clean) task[24m
+Cleaning build...Cleaning build...[31mERROR[39m
+[33mWarning: Unable to delete "build" file (ENOENT, no such file or directory 'build/assets'). Use --force to continue.[39m
+
+[31mAborted due to warnings.[39m
+[32mOK[39m
+
+[4mRunning "requirejs:common" (requirejs) task[24m
+
+Tracing dependencies for: libs/almond
+Uglify2 file: /home/andrew/coder_on_fire/build/assets/js/coder_on_fire.min.js
+
+/home/andrew/coder_on_fire/build/assets/js/coder_on_fire.min.js
+----------------
+/home/andrew/coder_on_fire/src/assets/js/libs/almond.js
+/home/andrew/coder_on_fire/src/assets/js/libs/highlight.pack.js
+/home/andrew/coder_on_fire/src/assets/js/test.js
+/home/andrew/coder_on_fire/src/assets/js/main.js
+
+
+[4mRunning "cssmin:combine" (cssmin) task[24m
+File build/assets/css/coder_on_fire.min.css created.
+Original: [32m1714[39m bytes.
+Minified: [32m1367[39m bytes.
+Gzipped:  [32m346[39m bytes.
+
+[4mRunning "copy:main" (copy) task[24m
+Created [36m24[39m directories, copied [36m59[39m files
+
+[4mRunning "assemble:articles" (assemble) task[24m
+Assembling[36m default layout[39m
+Assembling[36m partials[39m
+Assembling[36m data[39m
+[90m
+Assembling pages...[39m
+Assembling [36mbuild/articles/another.html[39m [32mOK[39m
+Assembling [36mbuild/articles/tp-w8968-uk-isp-firmware.html[39m [32mOK[39m
+Assembling [36mbuild/articles/test.html[39m [32mOK[39m
+[32m>> [39mAssembled [36m3[39m pages.
+
+[4mRunning "assemble:homepage" (assemble) task[24m
+Assembling[36m default layout[39m
+Assembling[36m partials[39m
+Assembling[36m data[39m
+[90m
+Assembling pages...[39m
+Assembling [36mbuild/index.html[39m [32mOK[39m
+[32m>> [39mAssembled [36m1[39m pages.
+
+[32mDone, without errors.[39m
+[4mRunning "jshint:all" (jshint) task[24m
+[4mRunning "jshint:all" (jshint) task[24m
+[4mRunning "jshint:all" (jshint) task[24m
+[4mRunning "jshint:all" (jshint) task[24m
+[4mRunning "jshint:all" (jshint) task[24m
+[4mRunning "jshint:all" (jshint) task[24m
+[4mRunning "jshint:all" (jshint) task[24m
+[32m>> [39m1 file lint free.
+
+[4mRunning "clean:clean" (clean) task[24m
+Cleaning build...[32m>> [39m1 file lint free.
+
+[4mRunning "clean:clean" (clean) task[24m
+Cleaning build...[32m>> [39m1 file lint free.
+
+[4mRunning "clean:clean" (clean) task[24m
+[31mERROR[39m
+[33mWarning: Unable to delete "build" file (ENOENT, no such file or directory 'build/experiments/news_glitch/js'). Use --force to continue.[39m
+Cleaning build...
+[31mAborted due to warnings.[39m
+[31mERROR[39m
+[33mWarning: Unable to delete "build" file (ENOENT, no such file or directory 'build/experiments/textview'). Use --force to continue.[39m
+
+[31mAborted due to warnings.[39m
+[32mOK[39m
+
+[4mRunning "requirejs:common" (requirejs) task[24m
+[32m>> [39m1 file lint free.
+[32m>> [39m1 file lint free.
+
+[4mRunning "clean:clean" (clean) task[24m
+
+[4mRunning "clean:clean" (clean) task[24m
+
+[4mRunning "requirejs:common" (requirejs) task[24m
+
+[4mRunning "requirejs:common" (requirejs) task[24m
+[32m>> [39m1 file lint free.
+[32m>> [39m1 file lint free.
+
+[4mRunning "clean:clean" (clean) task[24m
+
+[4mRunning "clean:clean" (clean) task[24m
+
+[4mRunning "requirejs:common" (requirejs) task[24m
+
+[4mRunning "requirejs:common" (requirejs) task[24m
+
+Tracing dependencies for: libs/almond
+
+Tracing dependencies for: libs/almond
+
+Tracing dependencies for: libs/almond
+[32m>> [39mTracing dependencies for: libs/almond
+[32m>> [39mTracing dependencies for: libs/almond
+Uglify2 file: /home/andrew/coder_on_fire/build/assets/js/coder_on_fire.min.js
+[Error: Error: EEXIST, file already exists '/home/andrew/coder_on_fire/build/assets/js/'
+    at Object.fs.mkdirSync (fs.js:642:18)
+]
+[Error: Error: ENOENT, no such file or directory '/home/andrew/coder_on_fire/build/assets/js/coder_on_fire.min.js-temp'
+    at Object.fs.renameSync (fs.js:543:18)
+]
+[32m>> [39mUglify2 file: /home/andrew/coder_on_fire/build/assets/js/coder_on_fire.min.js
+[32m>> [39mUglify2 file: /home/andrew/coder_on_fire/build/assets/js/coder_on_fire.min.js
+
+/home/andrew/coder_on_fire/build/assets/js/coder_on_fire.min.js
+----------------
+/home/andrew/coder_on_fire/src/assets/js/libs/almond.js
+/home/andrew/coder_on_fire/src/assets/js/libs/highlight.pack.js
+/home/andrew/coder_on_fire/src/assets/js/test.js
+/home/andrew/coder_on_fire/src/assets/js/main.js
+
+
+[4mRunning "cssmin:combine" (cssmin) task[24m
+File build/assets/css/coder_on_fire.min.css created.
+Original: [32m1714[39m bytes.
+Minified: [32m1367[39m bytes.
+Gzipped:  [32m>> [39m/home/andrew/coder_on_fire/build/assets/js/coder_on_fire.min.js[32m
+>> [39m----------------[32m
+>> [39m/home/andrew/coder_on_fire/src/assets/js/libs/almond.js[32m
+>> [39m/home/andrew/coder_on_fire/src/assets/js/libs/highlight.pack.js[32m
+>> [39m/home/andrew/coder_on_fire/src/assets/js/test.js[32m
+>> [39m/home/andrew/coder_on_fire/src/assets/js/main.js
+
+[4mRunning "cssmin:combine" (cssmin) task[24m
+[32m>> [39m/home/andrew/coder_on_fire/build/assets/js/coder_on_fire.min.js[32m
+>> [39m----------------[32m
+>> [39m/home/andrew/coder_on_fire/src/assets/js/libs/almond.js[32m
+>> [39m/home/andrew/coder_on_fire/src/assets/js/libs/highlight.pack.js[32m
+>> [39m/home/andrew/coder_on_fire/src/assets/js/test.js[32m
+>> [39m/home/andrew/coder_on_fire/src/assets/js/main.js
+
+[4mRunning "cssmin:combine" (cssmin) task[24m
+File build/assets/css/coder_on_fire.min.css created.
+Original: [32m1714[39m bytes.
+Minified: [32m1367[39m bytes.
+Gzipped:  File build/assets/css/coder_on_fire.min.css created.
+Original: [32m1714[39m bytes.
+Minified: [32m1367[39m bytes.
+Gzipped:  [32m346[39m bytes.
+
+[4mRunning "copy:main" (copy) task[24m
+[32m346[39m bytes.
+
+[4mRunning "copy:main" (copy) task[24m
+[32m346[39m bytes.
+
+[4mRunning "copy:main" (copy) task[24m
+Created [36m24[39m directories, copied [36m59[39m files
+
+[4mRunning "assemble:articles" (assemble) task[24m
+Created [36m24[39m directories, copied [36m59[39m files
+
+[4mRunning "assemble:articles" (assemble) task[24m
+Created [36m24[39m directories, copied [36m59[39m files
+
+[4mRunning "assemble:articles" (assemble) task[24m
+Assembling[36m default layout[39m
+Assembling[36m partials[39m
+Assembling[36m data[39m
+[90m
+Assembling pages...[39m
+Assembling [36mbuild/articles/another.html[39m [32mOK[39m
+Assembling[36m default layout[39m
+Assembling [36mbuild/articles/tp-w8968-uk-isp-firmware.html[39m [32mOK[39m
+Assembling[36m partials[39m
+Assembling[36m data[39m
+Assembling [36mbuild/articles/bob.html[39m [32mOK[39m
+[90m
+Assembling pages...[39m
+Assembling [36mbuild/articles/test.html[39m [32mOK[39m
+[32m>> [39mAssembled [36m4[39m pages.
+Assembling[36m default layout[39m
+Assembling[36m partials[39m
+Assembling[36m data[39m
+[90m
+Assembling pages...[39m
+Assembling [36mbuild/articles/another.html[39m [32mOK[39m
+Assembling [36mbuild/articles/tp-w8968-uk-isp-firmware.html[39m [32mOK[39m
+Assembling [36mbuild/articles/bob.html[39m [32mOK[39m
+Assembling [36mbuild/articles/test.html[39m [32mOK[39m
+[32m>> [39mAssembled [36m4[39m pages.
+Assembling [36mbuild/articles/another.html[39m [32mOK[39m
+Assembling [36mbuild/articles/tp-w8968-uk-isp-firmware.html[39m [32mOK[39m
+Assembling [36mbuild/articles/bob.html[39m [32mOK[39m
+Assembling [36mbuild/articles/test.html[39m [32mOK[39m
+[32m>> [39mAssembled [36m4[39m pages.
+
+[4mRunning "assemble:homepage" (assemble) task[24m
+Assembling[36m default layout[39m
+Assembling[36m partials[39m
+Assembling[36m data[39m
+[90m
+Assembling pages...[39m
+Assembling [36mbuild/index.html[39m [32mOK[39m
+[32m>> [39mAssembled [36m1[39m pages.
+
+[32mDone, without errors.[39m
+
+[4mRunning "assemble:homepage" (assemble) task[24m
+Assembling[36m default layout[39m
+Assembling[36m partials[39m
+Assembling[36m data[39m
+[90m
+Assembling pages...[39m
+Assembling [36mbuild/index.html[39m [32mOK[39m
+[32m>> [39mAssembled [36m1[39m pages.
+
+[32mDone, without errors.[39m
+
+[4mRunning "assemble:homepage" (assemble) task[24m
+Assembling[36m default layout[39m
+Assembling[36m partials[39m
+Assembling[36m data[39m
+[90m
+Assembling pages...[39m
+Assembling [36mbuild/index.html[39m [32mOK[39m
+[32m>> [39mAssembled [36m1[39m pages.
+
+[32mDone, without errors.[39m
+[4mRunning "jshint:all" (jshint) task[24m
+[32m>> [39m1 file lint free.
+
+[4mRunning "clean:clean" (clean) task[24m
+Cleaning build...[32mOK[39m
+
+[4mRunning "requirejs:common" (requirejs) task[24m
+[32m>> [39mTracing dependencies for: libs/almond
+[32m>> [39mUglify2 file: /home/andrew/coder_on_fire/build/assets/js/coder_on_fire.min.js
+[32m>> [39m/home/andrew/coder_on_fire/build/assets/js/coder_on_fire.min.js[32m
+>> [39m----------------[32m
+>> [39m/home/andrew/coder_on_fire/src/assets/js/libs/almond.js[32m
+>> [39m/home/andrew/coder_on_fire/src/assets/js/libs/highlight.pack.js[32m
+>> [39m/home/andrew/coder_on_fire/src/assets/js/test.js[32m
+>> [39m/home/andrew/coder_on_fire/src/assets/js/main.js
+
+[4mRunning "cssmin:combine" (cssmin) task[24m
+File build/assets/css/coder_on_fire.min.css created.
+Original: [32m1714[39m bytes.
+Minified: [32m1367[39m bytes.
+Gzipped:  [32m346[39m bytes.
+
+[4mRunning "copy:main" (copy) task[24m
+Created [36m24[39m directories, copied [36m59[39m files
+
+[4mRunning "assemble:articles" (assemble) task[24m
+Assembling[36m default layout[39m
+Assembling[36m partials[39m
+Assembling[36m data[39m
+[90m
+Assembling pages...[39m
+Assembling [36mbuild/articles/another.html[39m [32mOK[39m
+Assembling [36mbuild/articles/tp-w8968-uk-isp-firmware.html[39m [32mOK[39m
+Assembling [36mbuild/articles/test.html[39m [32mOK[39m
+[32m>> [39mAssembled [36m3[39m pages.
+
+[4mRunning "assemble:homepage" (assemble) task[24m
+Assembling[36m default layout[39m
+Assembling[36m partials[39m
+Assembling[36m data[39m
+[90m
+Assembling pages...[39m
+Assembling [36mbuild/index.html[39m [32mOK[39m
+[32m>> [39mAssembled [36m1[39m pages.
+
+[32mDone, without errors.[39m
