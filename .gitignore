@@ -1,7 +1,14 @@
+# WebStorm
 *.iml
+
+# Bittorrent Sync
 *.SyncID
 *SyncIgnore
 src/articles/.SyncArchive
+
+
+# Misc.
+grunt_build.log
 build/
 .idea/
 node_modules/
