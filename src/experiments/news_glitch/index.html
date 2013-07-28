@@ -1,0 +1,434 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link type="text/css" rel="stylesheet" href="css/create.css" />
+        <title>News Glitch. An experiment exploring image degradation.</title>
+        <script type="text/javascript" src="js/seedrandom.js"></script>
+        <script type="text/javascript" src="js/strands.js"></script>
+        
+        <style>
+            body {
+                background: #111;
+            }
+
+            .wrapper {
+                font-family: arial, sans-serif;
+                font-size: 80%;
+                max-width: 1010px;
+                margin: 0 auto;
+                color: #EEE;
+            }
+
+            #images {
+                overflow: hidden;
+            }
+            #output,
+            #creator {
+                width: 500px;
+                height: 500px;
+                float: left;
+            }
+
+            .options,
+            .option {
+                list-style: none;
+                margin-left: 0;
+                padding-left: 0;
+                overflow: hidden;
+                display: block;
+            }
+
+            .options {
+                border: 1px solid rgb(46, 46, 46);
+                border-radius: 4px;
+                padding: 5px;
+                width: 600px;
+                clear: both;
+                margin: 10px auto;
+                background: rgb(22, 22, 22);
+            }
+
+            .option {
+                margin: 2px;
+                width: 140px;
+                text-align: right;
+                float: left;
+            }
+
+            .slider {
+                float: left;
+            }
+
+            .range {
+                vertical-align: middle;
+                width: 90px;
+            }
+
+            #glitchAmount {
+                margin-right: 30px;
+            }
+
+            .controls {
+                border-top: 1px solid rgb(32, 32, 32);
+                overflow: hidden;
+                margin-top: 10px;
+                position: relative;
+            }
+
+            .sliders {
+                width: 620px;
+                margin: 10px auto;
+            }
+
+            .dropTarget {
+                position: relative;
+                float: left;
+                overflow: hidden;
+            }
+
+            .dropHelper {
+                position: absolute;
+                border: 15px dashed #666;
+                color: #FFF;
+                text-align: center;
+                top: 0;
+                width: 470px;
+                height: 470px;
+                background: #222;
+                font-size: 45px;
+                line-height: 460px;
+                display: none;
+            }
+
+            .sampleWrapper {
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+
+            .sampleWrapper p {
+                margin: 3px 0;
+            }
+
+            .sampleImage {
+                border: 1px solid #333;
+                cursor: pointer;
+            }
+
+            .sampleImage:hover {
+                border: 1px solid #999;
+            }
+
+            .live {
+                display: none;
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <div class="wrapper">
+            <div id="images">
+                <div class="dropTarget">
+                    <canvas width="500" height="500" id="creator"></canvas>
+                    <div class="dropHelper">Drop image here</div>
+                    <video class="live" width="500" height="500" autoplay></video>
+                </div>
+                <div id="output"><img id="glitchedImage" /></div>
+            </div>
+          
+            <p>
+                <button class="activateWebcam">Use webcam</button>
+                or
+                <input type="file" id="fileInput" />
+            </p>
+
+            <div class="controls">
+                <p class="sliders">
+                    <label for="glitchAmount">Glitch amount</label>
+                    <input type="range" class="range" min="0" max="1" step="0.01" name="glitchAmount" id="glitchAmount" />
+
+                    <label for="glitchStartPos">JPEG start position <small>(top - bottom)</small></label>
+                    <input type="range" class="range" min="0" max="1" step="0.01" name="glitchStartPos" id="glitchStartPos" />
+
+                    <button class="randomSeed">Randomise glitch</button>
+                </p>
+                
+                <ul class="options">
+                    <li class="option">
+                        <label for="filterJpeg">JPEG Artifacts</label>
+                        <input type="checkbox" id="filterJpeg" checked />
+                    </li>
+                    <li class="option">
+                        <label for="filterScanlines">Scanlines</label>
+                        <input type="checkbox" id="filterScanlines" />
+                    </li>
+                    <li class="option">
+                        <label for="filterRgbShift">Colour seperation</label>
+                        <input type="checkbox" id="filterRgbShift" />
+                    </li>
+                    <li class="option">
+                        <label for="filterBend">Bend</label>
+                        <input type="checkbox" id="filterBend" />
+                    </li>
+                    <li class="option">
+                        <label for="filterStutter">Stutter</label>
+                        <input type="checkbox" id="filterStutter" />
+                    </li>
+                    <li class="option">
+                        <label for="filterTint">Tint</label>
+                        <input type="checkbox" id="filterTint" />
+                    </li>
+                    <li class="option">
+                        <label for="filterInvert">Invert</label>
+                        <input type="checkbox" id="filterInvert" />
+                    </li>
+                    <li class="option">
+                        <label for="filterThreshold">Threshold</label>
+                        <input type="checkbox" id="filterThreshold" />
+                    </li>
+                    <li class="option">
+                        <label for="filterBorder">Border</label>
+                        <input type="checkbox" id="filterBorder" />
+                    </li>
+                    <li class="option">
+                        <label for="filterStrands">Strands</label>
+                        <input type="checkbox" id="filterStrands" />
+                    </li>
+                    <li class="option">
+                        <label for="filterTVOverlay">TV Overlay</label>
+                        <input type="checkbox" id="filterTVOverlay" />
+                    </li>
+                    <li class="option">
+                        <label for="filterDesaturate">Desaturate</label>
+                        <input type="checkbox" id="filterDesaturate" />
+                    </li>
+					<li class="option">
+                        <label for="filterWhiteNoise">White noise</label>
+                        <input type="checkbox" id="filterWhiteNoise" />
+                    </li>
+                </ul>
+                
+                <div class="sampleWrapper">
+                    <p>Sample image</p>
+                    <img class="sampleImage" src="images/gottfried.jpg" width="110" alt="Sample" />
+                </div>
+            </div>
+
+            <script src="js/html5slider.js"></script>
+
+            <script>
+                // Aliases
+                function $(selector) { return  document.querySelector(selector); };
+                function _(selector) { return  document.querySelectorAll(selector); };
+
+                var randomSeed = Math.seedrandom();
+                var canvas = $('#creator');
+                var ctx = canvas.getContext('2d');
+                var img = document.createElement('img');
+                var width = canvas.width;
+                var height = canvas.height;
+                var glitchBtn = $('#glitchBtn'); 
+                var timeoutId = null;
+                var glitchedBase64Img = null;
+                var holdingImg = new Image();
+                var outputImg = $('#glitchedImage');
+
+                var glitchAmountSlider = $('#glitchAmount');
+                var glitchPosSlider = $('#glitchStartPos');
+				
+
+                
+                function setupCanvas() {
+                    ctx.fillStyle = 'rgb(0, 0, 0)';
+                    ctx.font = "bold 16px sans-serif";
+
+                    ctx.fillStyle = 'rgb(50, 50, 50)';
+                    ctx.fillRect(0, 0, width, height);
+
+                    ctx.fillStyle = 'rgb(255, 255, 255)';
+                    ctx.fillText('Drag an image onto here', 20, Math.floor(height / 2));
+                    ctx.fillText('(You can drop multiple times to swap images)', 20, Math.floor(height / 2) + 20);
+                }
+                
+                setupCanvas();
+                
+                function glitchCanvasImage() {
+                    // Reset pseudorandom.
+                    Math.seedrandom(randomSeed);
+                    var glitchAmount = parseFloat(glitchAmountSlider.value, 10);
+                    var glitchStartPos = parseFloat(glitchPosSlider.value, 10);                    
+
+                    if ($('#filterJpeg').checked && glitchAmount > 0 && glitchStartPos < 1) {
+                        var tmpUrl = canvas.toDataURL('image/jpeg');
+                        var fileHeader = 200;
+                        var EOI_LENGTH = 10;
+
+                        var startPos = fileHeader + Math.round(tmpUrl.length * glitchStartPos);
+                        var errorByteCount = Math.floor(60 * glitchAmount);
+                        var sectionsLength = (tmpUrl.length - (startPos + EOI_LENGTH)) / errorByteCount;
+                        sectionsLength = Math.floor(sectionsLength - 10 * Math.random());
+
+                        for (var i = 0; i < errorByteCount; i++) {
+                            var pos = startPos + (sectionsLength * i);
+                            tmpUrl = tmpUrl.substr(0, pos - 1) + '0' + tmpUrl.substr(pos);
+                        }
+
+                        glitchedBase64Img = tmpUrl;
+                    } else {
+                        glitchedBase64Img = canvas.toDataURL();
+                    }
+
+                    // Hack to work around setting the same DataURL not triggering onload.
+                    holdingImg.setAttribute('src', '');
+                    holdingImg.onload = function() {
+                        outputImg.src = postFilters(this, glitchAmount);
+                        this.onload = null;
+                    }
+                    holdingImg.setAttribute('src', glitchedBase64Img);
+                }
+
+                function postFilters(image, glitchAmount) {
+                    var megaGlitchDataURL = postProcessImage({
+                        'image': image,
+                        'glitchAmount': glitchAmount,
+                        'filters' : {
+                            'scanlines': $('#filterScanlines').checked,
+                            'rgbshift': $('#filterRgbShift').checked,
+                            'bend': $('#filterBend').checked,
+                            'stutter': $('#filterStutter').checked,
+                            'tint': $('#filterTint').checked,
+                            'invert': $('#filterInvert').checked,
+                            'threshold': $('#filterThreshold').checked,
+                            'border': $('#filterBorder').checked,
+                            'strands': $('#filterStrands').checked,
+                            'tvOverlay': $('#filterTVOverlay').checked,
+                            'desaturate': $('#filterDesaturate').checked,
+							'whiteNoise': $('#filterWhiteNoise').checked,
+                            'cutouts': true
+                        }
+                    });
+
+                    return megaGlitchDataURL;
+                }
+
+
+                
+                // Interaction event bindings.
+                glitchAmountSlider.addEventListener('change', glitchCanvasImage, false);
+                glitchPosSlider.addEventListener('change', glitchCanvasImage, false);
+                
+                // Bind click to all checkbox filter options.
+                var optionInputs = _('.option');
+                for (var i = 0; i < optionInputs.length; i++) {
+                    optionInputs[i].addEventListener('change', glitchCanvasImage, false);
+                }
+
+                // Sample image loader
+                $('.sampleImage').addEventListener('click', function() {
+                    ctx.drawImage(this, 0, 0, width, height);
+                    glitchCanvasImage();
+                }, false);
+
+                // Randomise seed.
+                $('.randomSeed').addEventListener('click', function() {
+                    randomSeed = Math.seedrandom();
+                    glitchCanvasImage();
+                }, false);
+
+                window.addEventListener('dragover', function(event) {
+                    $('.dropHelper').style.display = 'block';
+                    event.preventDefault();
+                    event.stopPropagation();
+                }, false);
+
+                window.addEventListener('drop', function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    $('.dropHelper').style.display = 'none';
+
+                    var files = event.dataTransfer.files;
+                    if (files.length > 0) {
+                        var file = files[0];
+                        if (typeof FileReader !== 'undefined' &&
+                            file.type.indexOf('image') !== -1
+                        ) {
+                            var reader = new FileReader();
+                            reader.onload = function(event) {
+                                img.src = event.target.result;
+                            }
+                            reader.readAsDataURL(file);
+                        }
+                    }
+                }, false)
+
+                img.addEventListener('load', function(event) {
+                    var imgWidth = this.width;
+                    var imgHeight = this.height;
+                    
+                    ctx.drawImage(this, 0, 0, width, height);
+                    glitchCanvasImage();
+                }, false);
+
+                glitchCanvasImage();
+
+                // File upload.
+                function handleFileUpload(event) {
+                    var file = event.target.files[0];
+                    
+                    // Only load images.
+                    if (!file.type.match('image.*')) {
+                        console.log(file);
+                        return;
+                    }
+
+                    var reader = new FileReader();
+                    
+                    reader.onload = function(event) {
+                         img.src = event.target.result;
+                    }
+
+                    // Read in the image file as a data URL.
+                    reader.readAsDataURL(file);
+                }
+
+                $('#fileInput').addEventListener('change', handleFileUpload, false);
+
+
+
+                // Webcam.
+                video = $('.live');
+                video.addEventListener('click', function() {
+                    ctx.drawImage(this, 0, 0, width, height);
+                    glitchCanvasImage();
+                }, false);
+
+                $('.activateWebcam').addEventListener('click', function() {
+                    
+                    setUpCam();
+                }, false);
+
+                function setUpCam() {
+                    if (navigator.getUserMedia) {
+                      navigator.getUserMedia({audio: true, video: true}, function(stream) {
+                        video.src = window.URL.createObjectURL(stream);
+                      });
+                      canvas.style.display = 'none';
+                    video.style.display = 'block';
+                    
+                    } else {
+                      video.src = 'somevideo.webm'; // fallback.
+                    }
+
+                }
+
+                window.URL = window.URL || window.webkitURL;
+                navigator.getUserMedia  = navigator.getUserMedia || navigator.webkitGetUserMedia ||
+                                          navigator.mozGetUserMedia || navigator.msGetUserMedia;
+            </script>
+       </div>
+    </body>
+</html>
+

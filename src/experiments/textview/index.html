@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en-gb">
+    <head>
+        <link type="text/css" rel="stylesheet" href="textview.css" media="all" />
+        <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /
+    </head>
+    <body id="top">
+    
+        <div id="controls">
+            <button id="themeSwitcher">Dark theme</button>
+            <button id="decreaseFont">Decrease font-size</button>
+            <button id="increaseFont">Increase font-size</button>
+            <button id="serifFont">Serif</button>
+            <button id="sansSerifFont">Sans-serif</button>
+            <button id="monospaceFont">Monospace</button>
+        </div>
+        
+        <div id="mainInput">
+            <input type="text" name="url" id="url" />
+            <input type="submit" name="button" id="button" />
+        </div>
+        
+        <article id="mainArticle">
+        
+        
+        <div><div id="bodyContent">
+			<h3 id="siteSub">From jQuery JavaScript Library</h3>
+			
+												
+			<table id="toc" class="toc" summary="Contents"><tbody><tr><td><p></p><h2>Contents</h2><p></p>
+
+</td></tr></tbody></table>
+<a name="About_The_Code"></a><h2> About The Code </h2>
+<p>The code itself is written rather cleanly in an attempt to self-document. If you've spotted some areas of code that could be improved, please feel free to discuss it on <a href="http://viewtext.org/article?url=http%3a%2f%2fviewtext.org%2farticle%3furl%3dhttps%253a%252f%252fdocs.jquery.com%252fDiscussion" title="Discussion">the Development mailing list</a>. All input is gladly appreciated! 
+</p><p>All of the code is available in two formats: 
+</p>
+<ul><li> Compressed (which allows you to have a significantly smaller file size) and
+</li><li> Uncompressed (good for debugging and to understand what is behind the magic).
+</li></ul>
+<p>If you're interested in downloading <a href="http://viewtext.org/article?url=http%3a%2f%2fviewtext.org%2farticle%3furl%3dhttp%253a%252f%252fplugins.jquery.com%252f" class="external text" title="http://plugins.jquery.com/">Plugins</a> developed by jQuery contributors, please visit the <a href="http://viewtext.org/article?url=http%3a%2f%2fviewtext.org%2farticle%3furl%3dhttp%253a%252f%252fplugins.jquery.com%252f" class="external text" title="http://plugins.jquery.com/">Plugins</a> page.
+</p><p>jQuery is provided under the following <a href="http://viewtext.org/article?url=http%3a%2f%2fviewtext.org%2farticle%3furl%3dhttps%253a%252f%252fdocs.jquery.com%252fLicensing" title="Licensing">MIT and GPL licenses</a>.
+</p>
+<a name="CDN_Hosted_jQuery"></a><h2> CDN Hosted jQuery </h2>
+<p>A number of large enterprises provide hosted copies of jQuery on existing <a href="http://viewtext.org/article?url=http%3a%2f%2fviewtext.org%2farticle%3furl%3dhttp%253a%252f%252fen.wikipedia.org%252fwiki%252fContent_delivery_network" class="external text" title="http://en.wikipedia.org/wiki/Content_delivery_network">CDN</a> networks that are available for public use. Below are links to the CDN-hosted copies of jQuery that you may hotlink to.
+</p>
+<ul><li> Google Ajax API CDN
+
+</li><li> Microsoft CDN
+
+</li></ul>
+<a name="Download_jQuery"></a><h2> Download jQuery </h2>
+<p>This is the recommended version of jQuery to use for your application. The code in here should be stable and usable in all modern browsers.
+</p><p>The minified versions, while having a larger file size than the packed versions (note: packed version is not available in current release), are generally the best versions to use on production deployments. The packed versions require non-trivial client-side processing time to uncompress (unpack) the code whereas the minified versions do not. The packed versions of jQuery will take less time to download than the minified or uncompressed versions; however, each time the library is loaded (initially or from the browser cache) it will need to be uncompressed which will cause a non-trivial delay in the execution of any jQuery code each time it is loaded.
+</p>
+<a name="Current_Release"></a><h3> Current Release </h3>
+
+<a name="Past_Releases"></a><h3> Past Releases </h3>
+
+<a name="jQuery_Git_-_An_Instant_WIP_Build_For_Testing"></a><h2> jQuery Git - An Instant WIP Build For Testing </h2>
+<p>This work-in-progress build (known as jQuery Git) is generated once a minute from the <a href="http://viewtext.org/article?url=http%3a%2f%2fviewtext.org%2farticle%3furl%3dhttp%253a%252f%252fgithub.com%252fjquery%252fjquery" class="external text" title="http://github.com/jquery/jquery">jQuery Git repository</a>. It is provided as a convenience for anyone that wants to help test changes in the next version of jQuery.
+</p><p>When reporting issues with WIP builds of jQuery, please make sure you include the date the snapshot was generated (it is listed at the top of the file).
+</p><p>Linking to WIP builds directly from the CDN is not advised, as the file is constantly refreshed and will change from minute to minute as new commits are made to the repository.
+</p><p><b>WARNING:</b> Do <b>NOT</b> use jQuery Git in a production system or live application! It is not tested. It is not stable. It will probably blow up on you unexpectedly. You have been warned! If in doubt, stop and use the <a href="http://viewtext.org/article?url=http%3a%2f%2fviewtext.org%2farticle%3furl%3dhttp%253a%252f%252fdocs.jquery.com%252fDownloading_jQuery%2523Current_Release" class="external text" title="http://docs.jquery.com/Downloading_jQuery#Current_Release">current release</a>.
+</p>
+<ul><li> <a href="http://viewtext.org/article?url=http%3a%2f%2fviewtext.org%2farticle%3furl%3dhttp%253a%252f%252fcode.jquery.com%252fjquery-git.js" class="external text" title="http://code.jquery.com/jquery-git.js">jquery-git.js</a> - Uncompressed, work-in-progress build
+</li></ul>
+<a name="Build_From_Git"></a><h2> Build From Git </h2>
+<p><b>Note:</b> The following is quite advanced. If you wish to just use a more-recent version of jQuery, please try the WIP build.
+</p><p>All source code is kept under Git revision control, which you can <a href="http://viewtext.org/article?url=http%3a%2f%2fviewtext.org%2farticle%3furl%3dhttp%253a%252f%252fgithub.com%252fjquery%252fjquery" class="external text" title="http://github.com/jquery/jquery">browse online</a>. There's a download link available for any file or directory, if you only want to download a portion of the jQuery code.
+</p><p>If you have access to Git, you can connect to the repository here:
+</p>
+<pre>git clone git://github.com/jquery/jquery.git
+</pre>
+<p>You can also check out a specific version of jQuery from GitHub at:
+</p>
+<pre>git clone git://github.com/jquery/jquery.git
+git checkout &lt;version&gt;
+e.g. git checkout 1.2.6
+</pre>
+<p>If you want to build your own copy of jQuery from the Git repository, you will need to build it.
+</p><p><b>Note:</b> The jQuery UI code is in its own Git repository:
+</p>
+<pre>git clone git://github.com/jquery/jquery-ui.git
+</pre>
+<a name="Build_Requirements"></a><h3> Build Requirements </h3>
+<p>jQuery currently requires the following components to be installed:
+</p>
+<ul><li> A build system (either <code>make</code> or <code>ant</code> works):
+<ul><li> make: Available on most Unix-based system (Unix, BSD, OSX, Cygwin)
+</li><li> ant: Available on any platform with JDK and ANT installed
+</li></ul>
+</li><li> java: A copy of Java, version 1.6.0 or later (required to build the minified version of jQuery).
+</li></ul>
+<p><b> Build Process </b>
+</p><p>You will now need to use the build system that you chose previously - either <code>make</code> or <code>ant</code>.
+</p>
+<a name="If_you.27re_using_make:"></a><h4> If you're using make: </h4>
+<ul><li> <b>To create jQuery:</b> <code>make</code>
+<ul><li> This will create jquery.js and jquery.min.js in the dist directory
+</li></ul>
+</li></ul>
+<a name="If_you.27re_using_ant:"></a><h4> If you're using ant: </h4>
+<ul><li> <b>To create jQuery:</b> <code>ant</code>
+<ul><li> This will create jquery.js and jquery.min.js in the dist directory
+</li></ul>
+</li></ul>
+
+
+
+						
+			
+		</div></div>
+        
+        
+        
+        </article>
+        
+        <footer>
+            <a herf=#top">Back to top</a>
+        </footer>
+        
+        <!-- javascript -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js" /></script>
+        <script type="text/javascript" src="textview.js"></script>
+    </body>
+</html>

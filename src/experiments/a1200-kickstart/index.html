@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            body {
+                background-color: rgb(66, 16, 66);
+            }
+            
+            #kickrom {
+                background-image: url(background.gif);
+                width: 800px;
+                height: 582px;
+                position: relative;
+                margin: auto;
+            }
+            
+            @-webkit-keyframes insert {
+                0% { top: 315px; }
+                5% { top: 320px; }
+                50% {
+                    top: 212px;
+                    -webkit-transform: rotateX(90deg);
+                }
+                100% {
+                    top: 212px;
+                    -webkit-transform: rotateX(90deg);
+                }
+            }
+            
+            #floppy {
+                width: 134px;
+                height: 120px;
+                position: absolute;
+                right: 80px;
+                
+                
+                background-image: url(floppy.png);
+                background-position: top left;
+                
+                -webkit-animation-duration: 4s;
+                -webkit-animation-name: insert;
+                -webkit-animation-iteration-count: infinite;
+                -webkit-animation-direction: normal;  
+                -webkit-transform-style: preserve-3d;
+                
+            }
+            
+            
+        </style>
+    </head>
+    <body>
+    
+    <div id="kickrom">
+    
+        <div id="floppy">
+        </div>
+    
+    </div>
+    
+    
+    <!-- JavaScript -->
+    <script type="text/javascript">
+    
+    </script>
+    </body>
+</html>
