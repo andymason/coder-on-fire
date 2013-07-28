@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <style type="text/css">
+    body {
+        width: 800;
+        margin: auto;
+        text-align: center;
+        font-family: monospace;
+    }
+    </style>
+</head>
+    <body>
+        <canvas id="box" width="800" height="600"></canvas>
+        
+        <p>Playing with WebGL using the <a href="http://senchalabs.github.com/philogl/">PhiloGL framework</a>.</p>
+        <p>NOTE! Requires Chrome.</p>
+        
+        <!-- JavaScript -->
+<script id="shader-fs" type="x-shader/x-fragment"> 
+  #ifdef GL_ES
+  precision highp float;
+  #endif
+ 
+  void main(void) {
+    gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+  }
+</script> 
+ 
+<script id="shader-vs" type="x-shader/x-vertex"> 
+  attribute vec3 aVertexPosition;
+ 
+  uniform mat4 uMVMatrix;
+  uniform mat4 uPMatrix;
+ 
+  void main(void) {
+    gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+  }
+</script> 
+        
+        <script type="text/javascript" src="PhiloGL.js"></script>
+        <script type="text/javascript">
+
+        // Horrible hacked experimenting code
+        
+        function webGLStart() {
+          var pos, $id = function(d) { return document.getElementById(d); };
+          
+          //Create ball
+          var ball = new PhiloGL.O3D.Sphere({
+            radius: 0.5,
+            colors: [1, 0, 0, 1]
+          });
+          
+          //Create ball
+          var box = new PhiloGL.O3D.Cube({
+            colors: [0, 1, 0, 1]
+          });
+            
+          //Create application
+          PhiloGL('box', {
+            camera: {
+              position: {
+                x: 0, y: 0, z: -20
+              }
+            },
+            onError: function() {
+              alert("There was an error creating the app.");
+            },
+            onLoad: function(app) {
+              //Unpack app properties
+              var gl = app.gl,
+                  program = app.program,
+                  scene = app.scene,
+                  canvas = app.canvas,
+                  camera = app.camera,
+                  xSpeed = 0.1,
+                  ySpeed = 0.05,
+                  zSpeed = 0.1,
+                  cameraSpeed = 0.001,
+                  radius = 23,
+                  count = 0;
+              
+              //Basic gl setup
+              gl.clearColor(0.0, 0.0, 0.0, 1.0);
+              gl.clearDepth(1.0);
+              gl.enable(gl.DEPTH_TEST);
+              gl.depthFunc(gl.LEQUAL);
+              gl.viewport(0, 0, +canvas.width, +canvas.height);
+              
+              
+              // Draw the ball in line mode
+              ball.drawType = gl.LINES;
+              box.drawType = gl.LINES;
+              
+              box.scale.x = box.scale.z = box.scale.y = 6;
+              box.update();
+              
+              //Add object to the scene
+              scene.add(ball);
+              scene.add(box);
+              
+              //Animate
+              setInterval(draw, 1000/60);
+
+              //Draw the scene
+              function draw() {
+              
+                gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+                
+                // Move ball
+                if (ball.position.x > 6 || ball.position.x < -6) {
+                    xSpeed *= -1;
+                }
+                
+                if (ball.position.y > 6 || ball.position.y < -6) {
+                    ySpeed *= -1;
+                }
+                
+                if (ball.position.z > 6 || ball.position.z < -6) {
+                    zSpeed *= -1;
+                }
+                
+                ball.rotation.x += xSpeed / 2;
+                ball.rotation.y += ySpeed / 2;
+                
+                ball.position.x += xSpeed;
+                ball.position.y += ySpeed;
+                ball.position.z += zSpeed;
+                
+                ball.update();
+                
+                //camera.target = ball.position;
+    
+                camera.position.z = radius * Math.cos(Math.PI * count);
+                camera.position.x = radius * Math.sin(Math.PI * count);
+                
+                count += cameraSpeed;
+                
+                camera.update();
+                
+                //render moon
+                scene.render();
+              }
+              
+              draw();
+              
+              
+            }
+          });
+          
+          
+        }
+
+
+        
+        webGLStart();
+        
+        </script>
+        
+        
+
+    </body>
+</html>

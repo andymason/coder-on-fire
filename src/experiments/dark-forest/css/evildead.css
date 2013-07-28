@@ -1,0 +1,39 @@
+/**
+ * Dark Forest WebGL Experiment
+ */
+ 
+ body {
+    background-color: #000;
+    font-family: arial, sans-serif;
+    color: #eee;
+}
+
+code {
+    font-size: 120%;
+    border: 1px solid #222;
+    padding: 2px;
+    background-color: #111;
+}
+
+a {
+    color: #c00;
+}
+
+#wrapper {
+    width: 720px;
+    margin: 0 auto;
+}
+
+#oldCRT {
+    position: relative;
+}
+
+#overlay {
+    width: 704px;
+    height: 480px;
+    background: transparent url(../images/overlay_mask.png) left top no-repeat;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: 0;
+}

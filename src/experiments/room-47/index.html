@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <!--
+    
+    "What does a scanner see? he asked himself. I mean, really
+     see? Into the head? Down into the heart? Does a passive
+     scanner see into me - into us - clearly or darkly?"
+    - Philip K. Dick
+
+    Infinite connections link computers and humans across the
+    gulf of the electronic landscape. Data streams from
+    every output, without thought, without need for consumption.
+
+    The signal weakens as the noise grows.
+
+    @amason
+    andrew@coderonfire.com
+
+    -->
+    <title>ROOM 47</title>
+    <style type="text/css">
+      body {
+        background-color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      audio {
+        position: absolute;
+        top: -1000px;
+        left: -1000px;
+      }
+
+      a:link,
+      a:visited,
+      a:hover,
+      a:active {
+        border: none;
+      }
+
+      #bedroom {
+        width: 800px;
+        margin: 90px auto 0 auto;
+        position: relative;
+        overflow: hidden;
+        height: 480px;
+      }
+
+      #time {
+        color: #222;
+        font-family: monospace;
+        font-size: 11px;
+        text-align: right;
+        width: 800px;
+        margin: 0 auto;
+        padding: 10px;
+        clear: both;
+      }
+
+      .monitor {
+        position: relative;
+        width: 160px;
+        height: 120px;
+        display: block;
+        float: left;
+        background: transparent url(static.jpg) left top no-repeat;
+      }
+
+      .monitor img {
+        position: absolute;
+        left: 0;
+      }
+
+      .static {
+        display: block;
+        width: 160px;
+        height: 120px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: transparent url(tv.png) top left no-repeat;
+        z-index: 100;
+      }
+
+      #contact {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 5px;
+      }
+    </style> 
+  </head>
+  <body>
+    <div id="bedroom"></div>
+    <div id="time"></div>
+
+    <!-- Music: Ghosts by Nine Inch Nails. Generously licensed under the Creative Commons -->
+    <audio preload="auto" autobuffer loop autoplay> 
+      <source src="static.mp3" />
+      <source src="static.ac3" />
+      <source src="static.ogg" />
+    </audio>
+
+    <script src="eob.js"></script>
+  </body>
+</html>
