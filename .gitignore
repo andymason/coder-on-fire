@@ -1,6 +1,7 @@
 *.iml
 *.SyncID
 *SyncIgnore
+src/articles/.SyncArchive
 build/
 .idea/
 node_modules/
