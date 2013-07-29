@@ -2,16 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ base_data.site.title }}</title>
+    <title>{{title}} - {{ base_data.site.title }}.</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Bitter:400,700|Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
     <link type="text/css" rel="stylesheet" href="{{assets}}/css/{{ pkg.name }}.min.css" />
+
 </head>
-<body>
+<body class="cof">
 <div class="container">
-    <h1>Coder on Fire</h1>
-    <p>
-        <a href="articles/">Articles</a>
-    </p>
+    <header class="cof-header">
+        <div class="cof-header-title">
+            <a href="/" class="cof-header-title-heading">Coder on Fire</a>
+            <span class="cof-header-title-sub_heading">{{ base_data.author.full_name }}&rsquo;s little corner of the internet</span>
+        </div>
+
+        <nav class="cof-header-nav">
+            <ul class="cof-header-nav-list">
+                <li>
+                    <a href="/articles/">Articles</a> Posts that I&rsquo;ve written.
+                </li>
+                <li>
+                    <a href="/experiments/">Experiments</a> Various coding and art experiments I&rsquo;ve made.
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="cof-main">
+        <h1 class="cof-post-heading">home</h1>
+    </div>
+
 </div>
+
 <script src="{{assets}}/js/{{ pkg.name }}.min.js"></script>
 </body>
 </html>

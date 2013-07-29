@@ -41,8 +41,11 @@ module.exports = function(grunt) {
 
                 },
                 files: {
-                    'build/assets/css/<%= pkg.name %>.min.css':
-                        ['src/assets/css/**/*.css']
+                    'build/assets/css/<%= pkg.name %>.min.css': [
+                        'src/assets/css/highlight-github.css',
+                        'src/assets/css/normalize.css',
+                        'src/assets/css/site.css'
+                    ]
                 }
             }
         },

@@ -3,6 +3,7 @@
         "title": "Coder on Fire"
     },
     "author" : {
-        "name": "Andrew"
+        "full_name": "Andrew Mason",
+        "email": "andrew@coderonfire.com"
     }
 }
