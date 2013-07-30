@@ -63,6 +63,7 @@ module.exports = function(grunt) {
                         expand: true,
                         cwd: 'src/',
                         src: [
+                            'articles/images/**',
                             'articles/misc/**'
                         ],
                         dest: 'build/'
@@ -139,23 +140,11 @@ module.exports = function(grunt) {
             }
         },
 
-        imagemin: {
-            jpg: {
+        shell: {
+            resizeImages: {
+                command: 'sh resizeImgs.sh',
                 options: {
-                    progressive: true
-                },
-                files: {
-                    src: ['src/articles/images/*.jpg'],
-                    dest: 'build/articles/images/'
-                }
-            },
-            png: {
-                options: {
-                    optimizationLevel: 5
-                },
-                files: {
-                    src: ['src/articles/images/*.png'],
-                    dest: 'build/articles/images/'
+                    stdout: true
                 }
             }
         }
@@ -170,12 +159,14 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('assemble');
 
     // Tasks
     grunt.registerTask(
-        'default',
-        ['jshint', 'clean', 'requirejs', 'cssmin', 'copy', 'assemble']
+        'default', [
+            'jshint', 'clean', 'requirejs', 'cssmin', 'copy', 'shell',
+            'assemble'
+        ]
     );
 };

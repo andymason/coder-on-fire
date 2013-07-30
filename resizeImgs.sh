@@ -1,10 +1,12 @@
 #!/bin/bash
-cd src/articles/images/
+cd build/articles/images/
 
-for file in *.{png,jpg,gif};
+for file in *.{png,jpg};
     do
         if [ -f $file ]
         then
-            echo "${file/./x2.}"
+            echo "Resizing $file"
+            convert $file -resize 1400 -quality 80 -strip "${file/./-x2.}"
+            convert $file -resize 700 -quality 80 -strip $file
         fi;
 done
