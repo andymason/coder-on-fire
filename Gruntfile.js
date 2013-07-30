@@ -142,7 +142,7 @@ module.exports = function(grunt) {
 
         shell: {
             resizeImages: {
-                command: 'sh resizeImgs.sh',
+                command: './resizeImgs.sh',
                 options: {
                     stdout: true
                 }
