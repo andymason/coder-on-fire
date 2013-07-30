@@ -5,7 +5,14 @@
  * Time: 16:39
  * To change this template use File | Settings | File Templates.
  */
-define('main', ['hljs', 'test'], function(hljs) {
+define('main', ['hljs', 'backgroundGlitch', 'webfont'], function(hljs) {
     'use strict';
     hljs.initHighlighting();
+
+    // Prevent font flash by loading afterwards.
+    WebFont.load({
+        google: {
+            families: ['Bitter', 'Open sans']
+        }
+    });
 });

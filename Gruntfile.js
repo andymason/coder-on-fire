@@ -22,8 +22,8 @@ module.exports = function(grunt) {
                 banner: '/*! <%= pkg.name %>' +
                     ' <%= grunt.template.today("yyyy-mm-dd") %> */\n',
                 report: 'gzip',
-                preserveComments: 'all',
-                compress: false,
+                preserveComments: (isDev) ? 'all' : 'some',
+                compress: (isDev) ? false : true,
                 mangle: false,
                 beautify: true
             },
@@ -39,7 +39,10 @@ module.exports = function(grunt) {
                     {
                         expand: true,
                         cwd: 'src/',
-                        src: ['experiments/**'],
+                        src: [
+                            'experiments/**',
+                            'assets/images/**'
+                        ],
                         dest: 'build'
                     },
                     {
@@ -75,9 +78,13 @@ module.exports = function(grunt) {
                     insertRequire: ['main'],
                     out: 'build/assets/js/<%= pkg.name %>.min.js',
                     paths: {
-                        hljs: 'libs/highlight.pack'
+                        hljs: 'libs/highlight.pack',
+                        webfont: 'libs/webfont'
                     },
-                    optimize: (isDev) ? 'none' : 'uglify2',
+                    shim: {
+                        webfont: { exports: 'webfont' }
+                    },
+                    optimize: (isDev) ? 'none' : 'uglify',
                     preserveLicenseComments: (isDev) ? true : false
                 }
             }
@@ -163,4 +170,6 @@ module.exports = function(grunt) {
             'jshint', 'clean', 'requirejs', 'sass', 'copy', 'shell', 'assemble'
         ]
     );
+
+    grunt.registerTask('buildImages', ['shell']);
 };
