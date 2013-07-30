@@ -63,7 +63,6 @@ module.exports = function(grunt) {
                         expand: true,
                         cwd: 'src/',
                         src: [
-                            'articles/images/**',
                             'articles/misc/**'
                         ],
                         dest: 'build/'
@@ -138,8 +137,28 @@ module.exports = function(grunt) {
                     src: ['index.hbs']
                 }]
             }
-        }
+        },
 
+        imagemin: {
+            jpg: {
+                options: {
+                    progressive: true
+                },
+                files: {
+                    src: ['src/articles/images/*.jpg'],
+                    dest: 'build/articles/images/'
+                }
+            },
+            png: {
+                options: {
+                    optimizationLevel: 5
+                },
+                files: {
+                    src: ['src/articles/images/*.png'],
+                    dest: 'build/articles/images/'
+                }
+            }
+        }
     });
 
     // Load the plugins
@@ -151,6 +170,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('assemble');
 
     // Tasks
