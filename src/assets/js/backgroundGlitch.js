@@ -7,6 +7,7 @@
  */
 define('backgroundGlitch', function() {
     'use strict';
+    /*
     var canvas = document.createElement('canvas');
     canvas.setAttribute('width', '300');
     canvas.setAttribute('height', '300');
@@ -45,4 +46,5 @@ define('backgroundGlitch', function() {
 
         document.querySelector('body').style.backgroundImage = 'url(' + tmpUrl + ')';
     }
+    */
 });
