@@ -33,23 +33,6 @@ module.exports = function(grunt) {
             }
         },
 
-        cssmin: {
-            combine: {
-                options: {
-                    banner: '/* My minified css file */',
-                    report: 'gzip'
-
-                },
-                files: {
-                    'build/assets/css/<%= pkg.name %>.min.css': [
-                        'src/assets/css/highlight-github.css',
-                        'src/assets/css/normalize.css',
-                        'src/assets/css/site.css'
-                    ]
-                }
-            }
-        },
-
         copy: {
             main: {
                 files: [
@@ -147,6 +130,18 @@ module.exports = function(grunt) {
                     stdout: true
                 }
             }
+        },
+
+        sass: {
+            main: {
+                options: {
+                    outputStyle: 'compressed'
+                },
+                files: {
+                    'build/assets/css/<%= pkg.name %>.min.css':
+                        'src/assets/css/main.scss'
+                }
+            }
         }
     });
 
@@ -155,18 +150,17 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('assemble');
 
     // Tasks
     grunt.registerTask(
         'default', [
-            'jshint', 'clean', 'requirejs', 'cssmin', 'copy', 'shell',
-            'assemble'
+            'jshint', 'clean', 'requirejs', 'sass', 'copy', 'shell', 'assemble'
         ]
     );
 };
