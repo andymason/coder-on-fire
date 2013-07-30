@@ -170,6 +170,4 @@ module.exports = function(grunt) {
             'jshint', 'clean', 'requirejs', 'sass', 'copy', 'shell', 'assemble'
         ]
     );
-
-    grunt.registerTask('buildImages', ['shell']);
 };
