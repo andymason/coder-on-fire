@@ -14,8 +14,8 @@ $break-large: 700px;
 }
 
 @mixin heading-font {
-  font-family: 'PT Sans', helvetica, arial, sans-serif;
-  font-weight: 700;
+  font-family: 'Merriweather', serif;
+  font-weight: 900;
   font-style: bold;
   line-height: 2rem;
 }
@@ -36,14 +36,15 @@ $break-large: 700px;
 /* HEADING */
 .cof-header {
   overflow: hidden;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
 }
 
 .cof-header-title {
+  float: left;
 }
 .cof-header-title-heading {
   @include heading-font;
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-decoration: none;
 }
 .cof-header-title-sub_heading {
@@ -51,12 +52,21 @@ $break-large: 700px;
 }
 
 .cof-header-nav {
+  float: right;
+  max-width: 300px;
+
+  .cof-header-nav-list {
+    margin: 0;
+  }
 }
 
 
 /* POSTS */
 .cof-post {
   line-height: 1.6rem;
+  clear: both;
+  margin-bottom: 6rem;
+
   img {
     width: 100%;
   }
