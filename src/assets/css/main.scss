@@ -10,7 +10,7 @@ $break-large: 700px;
 
 .cof {
     margin: 2rem auto;
-    font-family: 'Open Sans', helvetica, arial, sans-serif;
+    font-family: 'PT Sans', helvetica, arial, sans-serif;
     font-weight: 400;
     font-style: normal;
     max-width: 960px;
@@ -27,14 +27,14 @@ $break-large: 700px;
 .cof-header-title {
 }
 .cof-header-title-heading {
-  font-family: 'Bitter', serif;
+  font-family: 'PT Serif', serif;
   font-weight: 700;
   font-size: 2.5rem;
   text-decoration: none;
 }
 .cof-header-title-sub_heading {
   display: block;
-  font-family: 'Open Sans', helvetica, arial, sans-serif;
+  font-family: 'PT Serif', helvetica, arial, sans-serif;
 }
 
 .cof-header-nav {
@@ -46,24 +46,24 @@ $break-large: 700px;
     img {
 	width: 100%;
     }
-    
+
     @media screen and (min-width: $break-large) {
-	line-height: 1.4rem;
+	line-height: 1.6rem;
 	margin: 1rem auto;
-	max-width: 700px;
+	max-width: 550px;
 
 	img {
 	    width: auto;
 	}
     }
-    
+
 }
 
 
 .cof-post-heading {
-  font-family: 'Bitter', serif;
-  font-weight: 400;
-  font-style: normal;
+  font-family: 'PT Serif', serif;
+  font-weight: 700;
+  font-style: bold;
 }
 
 .cof-post-meta {
