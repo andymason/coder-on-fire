@@ -1,11 +1,13 @@
 ---
-title: Post, in markdown format
+title: B Post, in markdown format
 description: Multiple ways to include content
-posted: May 10th, 2013
+date: 31 Jul 2010
 author: <%= base_data.author.name %>
 ---
 
 # {{ title }}
+
+{{ datetime }}
 
 **{{ description }}**
 

@@ -1,6 +1,6 @@
 ---
 title: Inspiration
-date: 28th Jan 2013
+date: 28 Jul 2013
 description: Inspiration, what is it and where do you find it?
 ---
 

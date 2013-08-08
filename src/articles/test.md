@@ -1,5 +1,6 @@
 ---
-title: This is so fucking cool
+title: A this is so fucking cool
+date: 12 Jul 2012
 ---
 
 # just a new post
