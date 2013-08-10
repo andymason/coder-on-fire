@@ -12,6 +12,7 @@
     "grunt-contrib-requirejs": "~0.4.1",
     "grunt-contrib-watch": "~0.5.1",
     "grunt-shell": "~0.3.1",
-    "grunt-sass": "~0.6.0"
+    "grunt-sass": "~0.6.0",
+    "grunt-resize-images": "~0.1"
   }
 }
