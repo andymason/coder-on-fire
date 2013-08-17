@@ -7,6 +7,8 @@
 
 $break-small: 320px;
 $break-large: 700px;
+$shocking_pink: rgb(255, 0, 215);
+
 @mixin sans-font {
   font-family: 'PT Sans', helvetica, arial, sans-serif;
   font-weight: 400;
@@ -14,24 +16,39 @@ $break-large: 700px;
 }
 
 @mixin heading-font {
-  font-family: 'Merriweather', serif;
+  font-family: 'Roboto Slab', serif;
   font-weight: 900;
   font-style: bold;
   line-height: 2rem;
+  color: $shocking_pink;
 }
 
 .cof {
-    @include sans-font;
-    margin: 2rem 1rem;
-    max-width: 700px;
-    color: rgb(30, 30, 30);
+  @include sans-font;
+  margin: 2rem 1rem;
+  max-width: 700px;
+  color: rgb(249, 249, 249);
+  background: hsl(0, 0, 0) url(../images/background_01.jpg) no-repeat -20rem center fixed;
+  background-size: cover;
+  &.article {
+    background-position-x: -50rem;
+  }
+
 
   @media screen and (min-width: $break-large) {
     margin: 2rem auto;
   }
-
 }
 
+.container {
+  padding: 0 3rem;
+  background: rgba(0,0,0,0.7);
+}
+
+/* Base styles */
+a {
+  color: $shocking_pink;
+}
 
 /* HEADING */
 .cof-header {

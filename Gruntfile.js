@@ -51,7 +51,8 @@ module.exports = function(grunt) {
                         expand: true,
                         cwd: 'src/',
                         src: [
-                            'articles/misc/**'
+                            'articles/misc/**',
+                            'assets/images/**'
                         ],
                         dest: 'build/'
                     }
