@@ -1,8 +1,9 @@
 ---
 title: Articles
-date: 11 08 2012
 ---
 
-{{#each pages}}
+{{#withSort pages "data.date"}}
+    {{#if data.date}}
 * [{{data.title}}]({{pagename}}) {{data.date}}
-{{/each}}
+    {{/if}}
+{{/withSort}}

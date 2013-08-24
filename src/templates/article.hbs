@@ -34,8 +34,9 @@
         {{#markdown}}
         {{> body }}
         {{/markdown}}
-
-        <time datetime="{{ formatDate date "%Y-%m-%d" }}" class="cof-post-meta">Posted on: {{ formatDate date "%a, %d %b %Y" }} </time>
+        {{#if date}}
+        <time datetime="{{ formatDate date "%Y-%m-%d" }}" class="cof-post-meta">Posted on: {{formatDate date "%A %e %B %Y"}} </time>
+        {{/if}}
     </div>
 
 </div>

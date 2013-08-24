@@ -1,6 +1,6 @@
 ---
 title: Tablet sketching
-date: 21st August 2013
+date: 2013 08 21
 ---
 Experimenting with sketching on a tablet.
 

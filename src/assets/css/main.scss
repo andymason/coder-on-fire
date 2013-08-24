@@ -27,8 +27,8 @@ $shocking_pink: rgb(255, 0, 215);
   @include sans-font;
   margin: 2rem 1rem;
   max-width: 700px;
-  color: rgb(249, 249, 249);
-  background: hsl(0, 0, 0) url(../images/background_01.jpg) no-repeat -20rem center fixed;
+  color: hsl(0, 0, 20);
+  background: hsl(0, 0, 100) url(../images/background_01.jpg) no-repeat -20rem center fixed;
   background-size: cover;
   &.article {
     background-position-x: -50rem;
@@ -41,8 +41,10 @@ $shocking_pink: rgb(255, 0, 215);
 }
 
 .container {
-  padding: 0 3rem;
-  background: rgba(0,0,0,0.7);
+  background: hsla(0, 0, 100, 0.7);
+  @media screen and (min-width: $break-large) {
+    padding: 0 3rem;
+  }
 }
 
 /* Base styles */
@@ -92,7 +94,9 @@ a {
     max-width: 550px;
 
     img {
-        width: auto;
+      width: auto;
+      display: block;
+      margin: 0 auto;
     }
   }
 

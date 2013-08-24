@@ -1,6 +1,6 @@
 ---
 title: TP-W8968 UK ISP ADSL Router Firmware
-date: 24 Jul 2013
+date: 2013 07 21
 ---
 
 After my old ASDL router bite the dust I picked up a TP-W8968 ADSL Wifi router.

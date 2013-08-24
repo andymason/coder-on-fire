@@ -113,8 +113,9 @@ module.exports = function(grunt) {
             },
             articles: {
                 options: {
-                    layout: 'src/templates/article.hbs'
+                    layout: 'src/templates/article.hbs',
                 },
+
                 files: [{
                     expand: true,
                     cwd: 'src',
@@ -122,6 +123,7 @@ module.exports = function(grunt) {
                     src: ['articles/*.md']
                 }]
             },
+
             homepage: {
                 files: [{
                     expand: true,

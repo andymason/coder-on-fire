@@ -1,6 +1,6 @@
 ---
 title: Experiment with CRT
-date: 11th Aug 2013
+date: 2013 08 11
 ---
 Current creative research time is being spent looking at old CRT monitors.
 
