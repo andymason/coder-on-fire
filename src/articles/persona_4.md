@@ -1,6 +1,6 @@
 ---
 title: I love Persona 4 Golden
-date: 30th July 2013
+date: 30 Jul 2013
 ---
 Over one hundred hours played and I still want to start a new game+.
 

@@ -9,7 +9,10 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         clean: {
-            clean: ['build']
+            clean: [
+                'build/index.html', 'build/assets', 'build/experiments',
+                'build/articles/*.html', 'build/articles/misc'
+            ]
         },
 
         jshint: {
@@ -41,7 +44,6 @@ module.exports = function(grunt) {
                         cwd: 'src/',
                         src: [
                             'experiments/**',
-                            'assets/images/**'
                         ],
                         dest: 'build'
                     },
@@ -49,8 +51,8 @@ module.exports = function(grunt) {
                         expand: true,
                         cwd: 'src/',
                         src: [
-                            'articles/images/**',
-                            'articles/misc/**'
+                            'articles/misc/**',
+                            'assets/images/**'
                         ],
                         dest: 'build/'
                     }
@@ -149,6 +151,13 @@ module.exports = function(grunt) {
                         'src/assets/css/main.scss'
                 }
             }
+        },
+
+        resizeImages: {
+            articleImages: {
+                src: ['src/articles/images/*.*'],
+                dest: 'build/articles/images/'
+            }
         }
     });
 
@@ -162,12 +171,14 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-shell');
+    grunt.loadNpmTasks('grunt-resize-images');
     grunt.loadNpmTasks('assemble');
 
     // Tasks
     grunt.registerTask(
         'default', [
-            'jshint', 'clean', 'requirejs', 'sass', 'copy', 'shell', 'assemble'
+            'jshint', 'clean', 'requirejs', 'sass', 'copy', 'resizeImages',
+            'assemble'
         ]
     );
 };

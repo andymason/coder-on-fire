@@ -1,6 +1,6 @@
 ---
 title: Troublesome Android 4.3 update
-date: 29th January 2013
+date: 29 Jan 2013
 ---
 Seeing as Android 4.3 is official out I thought I'd freshen up my Nexus 7 by flashing the official image. This wasn't a problem as I had already unlocked the device. However, after several failed attempts it finally booted into the setup screen and I was greeted with beautifully glitches fonts.
 
