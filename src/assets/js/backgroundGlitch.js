@@ -11,7 +11,6 @@ define('backgroundGlitch', function() {
     var canvas = document.createElement('canvas');
     canvas.setAttribute('width', '300');
     canvas.setAttribute('height', '300');
-
     var tmpUrl = null;
     var timeoutID = null;
 

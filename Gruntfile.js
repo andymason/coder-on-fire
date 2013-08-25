@@ -1,4 +1,5 @@
 /*global module,process */
+/*jshint camelcase:false */
 module.exports = function(grunt) {
     'use strict';
     var isDev = (grunt.option('dev')) || process.env.GRUNT_ISDEV === '1';
@@ -9,31 +10,17 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         clean: {
-            clean: [
+            all: [
                 'build/index.html', 'build/assets', 'build/experiments',
                 'build/articles/*.html', 'build/articles/misc'
-            ]
+            ],
+            homepage: ['build/index.html'],
+            articles: ['build/articles/*.html']
         },
 
         jshint: {
             options: { jshintrc: '.jshintrc'},
             all: ['Gruntfile.js', 'src/assets/*.js']
-        },
-
-        uglify: {
-            options: {
-                banner: '/*! <%= pkg.name %>' +
-                    ' <%= grunt.template.today("yyyy-mm-dd") %> */\n',
-                report: 'gzip',
-                preserveComments: (isDev) ? 'all' : 'some',
-                compress: (isDev) ? false : true,
-                mangle: false,
-                beautify: true
-            },
-            build: {
-                src: 'src/assets/js/*.js',
-                dest: 'build/assets/js/<%= pkg.name %>.min.js'
-            }
         },
 
         copy: {
@@ -42,21 +29,21 @@ module.exports = function(grunt) {
                     {
                         expand: true,
                         cwd: 'src/',
-                        src: [
-                            'experiments/**',
-                        ],
+                        src: ['experiments/**'],
                         dest: 'build'
-                    },
-                    {
-                        expand: true,
-                        cwd: 'src/',
-                        src: [
-                            'articles/misc/**',
-                            'assets/images/**'
-                        ],
-                        dest: 'build/'
                     }
                 ]
+            },
+            assets: {
+                files: [{
+                    expand: true,
+                    cwd: 'src/',
+                    src: [
+                        'articles/misc/**',
+                        'assets/images/**'
+                    ],
+                    dest: 'build/'
+                }]
             }
         },
 
@@ -71,7 +58,7 @@ module.exports = function(grunt) {
         },
 
         requirejs: {
-            common: {
+            assets: {
                 options: {
                     almond: true,
                     baseUrl : 'src/assets/js',
@@ -83,24 +70,31 @@ module.exports = function(grunt) {
                         hljs: 'libs/highlight.pack',
                         webfont: 'libs/webfont'
                     },
-                    shim: {
-                        webfont: { exports: 'webfont' }
-                    },
+                    shim: { webfont: { exports: 'webfont' } },
+                    preserveLicenseComments: (isDev) ? true : false,
                     optimize: (isDev) ? 'none' : 'uglify',
-                    preserveLicenseComments: (isDev) ? true : false
+                    uglify: { max_line_length: 1000 }
                 }
             }
         },
 
         watch: {
-            src: {
-                files: 'src/**/*.*',
-                tasks: ['default'],
-                options: {
-                    interrupt: true,
-                    spawn: false,
-                    debounceDelay: 400
-                }
+            options: {
+                spawn: false,
+                debounceDelay: 400
+            },
+            src: {files: 'src/articles/*.*', tasks: ['default']},
+            css: {files: 'src/assets/css/*.*', tasks: ['sass']},
+            js: {files: 'src/assets/js/*.*', tasks: ['jshint', 'requirejs']},
+            images: {files: 'src/articles/images/*.*', tasks: ['resizeImages']},
+            html: {
+                files: ['src/*.*', 'src/articles/*.*', 'src/templates/*.*'],
+                tasks: ['clean:articles', 'assemble']
+            },
+
+            assets: {
+                files: ['src/assets/images/*.*', 'src/articles/misc/*.*'],
+                tasks: ['copy:assets']
             }
         },
 
@@ -112,10 +106,7 @@ module.exports = function(grunt) {
                 assets: 'build/assets'
             },
             articles: {
-                options: {
-                    layout: 'src/templates/article.hbs',
-                },
-
+                options: { layout: 'src/templates/article.hbs' },
                 files: [{
                     expand: true,
                     cwd: 'src',
@@ -123,7 +114,6 @@ module.exports = function(grunt) {
                     src: ['articles/*.md']
                 }]
             },
-
             homepage: {
                 files: [{
                     expand: true,
@@ -134,20 +124,9 @@ module.exports = function(grunt) {
             }
         },
 
-        shell: {
-            resizeImages: {
-                command: './resizeImgs.sh',
-                options: {
-                    stdout: true
-                }
-            }
-        },
-
         sass: {
             main: {
-                options: {
-                    outputStyle: 'compressed'
-                },
+                options: { outputStyle: 'compressed' },
                 files: {
                     'build/assets/css/<%= pkg.name %>.min.css':
                         'src/assets/css/main.scss'
@@ -172,13 +151,16 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-sass');
-    grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-resize-images');
     grunt.loadNpmTasks('assemble');
 
     // Tasks
     grunt.registerTask(
-        'default', [
+        'default', ['clean:articles', 'resizeImages', 'assemble:articles']
+    );
+
+    grunt.registerTask(
+        'build', [
             'jshint', 'clean', 'requirejs', 'sass', 'copy', 'resizeImages',
             'assemble'
         ]

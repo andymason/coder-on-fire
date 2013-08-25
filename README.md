@@ -13,10 +13,8 @@ site.
 
 == Todo
 * Only resize images when needed
-* Add real styles
 * Add small screen styles
 * Write an article explaining how it all works
-* Replace bash script with grunt task (imagemagick)
 * Create glitch based homepage
 * Use log data and London weather to customise homepage
 
