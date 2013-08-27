@@ -12,7 +12,7 @@ define('main', ['hljs', 'backgroundGlitch', 'webfont'], function(hljs) {
     // Prevent font flash by loading afterwards.
     WebFont.load({
         google: {
-            families: ['PT Sans', 'Roboto Slab']
+            families: ['Quattrocento Sans']
         }
     });
 });

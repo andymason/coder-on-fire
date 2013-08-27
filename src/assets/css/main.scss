@@ -9,33 +9,43 @@ $break-large: 700px;
 $shocking_pink: rgb(255, 0, 215);
 
 @mixin sans-font {
-  font-family: 'PT Sans', helvetica, arial, sans-serif;
+  font-family: 'Quattrocento Sans', helvetica, arial, sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
 @mixin heading-font {
-  font-family: 'Roboto Slab', serif;
-  font-weight: 900;
+  font-family: 'Quattrocento Sans', helvetica, arial, sans-serif;
+  font-weight: 700;
   font-style: bold;
   line-height: 2rem;
-  color: $shocking_pink;
+  color: #000000;
 }
 
 .cof {
   @include sans-font;
   margin: 2rem 1rem;
   max-width: 700px;
-  color: hsl(0, 0, 20);
+  color: hsl(0, 0, 35);
   background: hsl(0, 0, 100) url(../images/background_01.jpg) no-repeat -20rem center fixed;
   background-size: cover;
   &.article {
     background-position-x: -50rem;
   }
 
-
   @media screen and (min-width: $break-large) {
     margin: 2rem auto;
+  }
+
+  /* Base styles */
+  a {
+    color: $shocking_pink;
+    text-decoration: none;
+  }
+
+  figure {
+    margin: 0;
+    padding: 0;
   }
 }
 
@@ -46,10 +56,6 @@ $shocking_pink: rgb(255, 0, 215);
   }
 }
 
-/* Base styles */
-a {
-  color: $shocking_pink;
-}
 
 /* HEADING */
 .cof-header {
@@ -63,6 +69,7 @@ a {
 .cof-header-title-heading {
   @include heading-font;
   font-size: 2rem;
+  font-weight: 700;
   text-decoration: none;
 }
 .cof-header-title-sub_heading {
@@ -82,6 +89,7 @@ a {
 /* POSTS */
 .cof-post {
   line-height: 1.6rem;
+  font-size: 0.92rem;
   clear: both;
   margin-bottom: 6rem;
 
@@ -91,12 +99,24 @@ a {
 
   @media screen and (min-width: $break-large) {
     max-width: 550px;
+    font-size: 1.05rem;
+
+    p {
+      line-height: 1.8rem;
+      margin: 1.5rem 0;
+    }
 
     img {
       width: auto;
       display: block;
       margin: 0 auto;
     }
+  }
+
+  figcaption {
+    border-bottom: 1px dashed #C0C0C0;
+    font-size: 0.85rem;
+    margin: 0.5rem 0 1rem;
   }
 
 }
@@ -108,7 +128,7 @@ a {
 }
 
 .cof-post-meta {
-  color: rgb(120, 120, 120);
+  color: rgb(161, 161, 161);
 }
 
 
