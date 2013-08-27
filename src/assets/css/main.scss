@@ -27,10 +27,9 @@ $shocking_pink: rgb(255, 0, 215);
   margin: 2rem 1rem;
   max-width: 700px;
   color: hsl(0, 0, 35);
-  background: hsl(0, 0, 100) url(../images/background_01.jpg) no-repeat -20rem center fixed;
-  background-size: cover;
+  background: hsl(0, 0, 100%) url(../images/background_01.jpg) no-repeat -5rem top;
   &.article {
-    background-position-x: -50rem;
+    background-position-x: -30rem;
   }
 
   @media screen and (min-width: $break-large) {
@@ -50,7 +49,7 @@ $shocking_pink: rgb(255, 0, 215);
 }
 
 .container {
-  background: hsla(0, 0, 100, 0.7);
+  background: hsl(0, 0, 100%);
   @media screen and (min-width: $break-large) {
     padding: 0 3rem;
   }
