@@ -126,7 +126,10 @@ module.exports = function(grunt) {
 
         sass: {
             main: {
-                options: { outputStyle: 'compressed' },
+                options: {
+                    outputStyle: 'compressed',
+                    importPaths: ['build/assets/css/']
+                },
                 files: {
                     'build/assets/css/<%= pkg.name %>.min.css':
                         'src/assets/css/main.scss'
