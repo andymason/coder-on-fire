@@ -1,5 +1,8 @@
+import path from "node:path";
 import { IdAttributePlugin, InputPathToUrlTransformPlugin } from "@11ty/eleventy";
-import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import Image, { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+
+const DEFAULT_SOCIAL_IMAGE = "/images/blocks_no_webgl.jpg";
 
 export default async function (eleventyConfig) {
   // Copy the *contents* of `static/` into the output root so the
@@ -26,6 +29,24 @@ export default async function (eleventyConfig) {
 
       return urlPath;
     }
+  });
+
+  // Optimise the front-matter image used for og:image and emit it into the
+  // build. The image transform plugin only rewrites <img>/<picture> tags in
+  // rendered HTML, so meta-tag images need processing explicitly here.
+  eleventyConfig.addAsyncFilter("socialImage", async (frontMatterPath) => {
+    const urlPath = frontMatterPath || DEFAULT_SOCIAL_IMAGE;
+    // Front-matter values look like "/images/x.jpg"; the file is in pages/images.
+    const inputPath = path.join("pages", urlPath);
+
+    const metadata = await Image(inputPath, {
+      widths: [1200],
+      formats: ["jpeg"],
+      outputDir: "_site/img/",
+      urlPath: "/img/",
+    });
+
+    return metadata.jpeg[0].url;
   });
 
   eleventyConfig.addPlugin(IdAttributePlugin);
