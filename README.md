@@ -1,11 +1,3 @@
-# fresh project
+# Coderonfire.com Andrew Mason's Personal Website
 
-### Usage
-
-Start the project:
-
-```
-deno task start
-```
-
-This will watch the project directory and restart as necessary.
+My little website.
