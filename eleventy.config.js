@@ -9,10 +9,20 @@ export default async function (eleventyConfig) {
   // `static` segment is dropped (e.g. static/images/x.jpg -> /images/x.jpg)
   eleventyConfig.addPassthroughCopy({ static: "/" });
 
-  // 1. Determine the Base URL once
+  // 1. Determine the Base URL once.
+  // Cloudflare Pages does not set process.env.URL (a Netlify convention); it
+  // sets CF_PAGES_BRANCH and CF_PAGES_URL (the per-deploy *.pages.dev URL).
+  // Production (main) uses the canonical domain; preview/branch deploys must
+  // use their own deploy URL so absolute URLs (og:image, og:url) resolve there.
   const isDev =
     process.env.ELEVENTY_RUN_MODE === "serve" || process.env.ELEVENTY_RUN_MODE === "watch";
-  const siteUrl = isDev ? "http://localhost:8080" : process.env.URL || "https://coderonfire.com";
+  const isPreviewDeploy =
+    process.env.CF_PAGES_BRANCH && process.env.CF_PAGES_BRANCH !== "main";
+  const siteUrl = isDev
+    ? "http://localhost:8080"
+    : process.env.URL ||
+      (isPreviewDeploy ? process.env.CF_PAGES_URL : null) ||
+      "https://coderonfire.com";
 
   // 2. Add it as Global Data (so you can still use {{ site.url }} in templates)
   eleventyConfig.addGlobalData("site", {
