@@ -12,7 +12,7 @@ weight: 1
 
 <div class="video video--paused">
   <video poster="/video/milton-demo.png" width="1280" height="720" playsinline disableremoteplayback x-webkit-airplay="deny" preload="none" >
-    <source src="/video/milton-demo.mp4"" type="video/mp4">
+    <source src="/video/milton-demo.mp4" type="video/mp4">
   </video>
 </div>
 
