@@ -20,7 +20,7 @@ export default async function (eleventyConfig) {
   // It now uses the siteUrl variable defined above automatically
   eleventyConfig.addFilter("absoluteUrl", (urlPath) => {
     try {
-      return new URL(urlPath.trim(), siteUrl).href;
+      return new URL(urlPath, siteUrl).href;
     } catch (error) {
       console.warn(error);
 
