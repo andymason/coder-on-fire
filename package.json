@@ -1,0 +1,26 @@
+{
+  "name": "coder-on-fire",
+  "version": "1.0.0",
+  "description": "coderonfire.com — static site built with Eleventy, hosted on Cloudflare Pages",
+  "license": "ISC",
+  "author": "Andrew Mason",
+  "type": "module",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "lint": "oxlint .",
+    "format": "oxfmt --write ."
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.5",
+    "@11ty/eleventy-img": "^6.0.4"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.50.0",
+    "oxlint": "^1.65.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "pnpm@11.1.2"
+}

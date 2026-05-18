@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }} - Coder on Fire</title>
+
+      <link rel="shortcut icon" type="image/png" href="/icons/fav_icon_180x.png" />
+
+      <meta name="title" content="{{ title }} - Coder on Fire" />
+      <meta name="description" content="{{ description }}" />
+
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="{{ page.url | absoluteUrl }}" />
+      <meta property="og:title" content="{{ title }} - Coder on Fire"/>
+      <meta property="og:description" content="{{ description }}" />
+      <meta property="og:image" content="{{socialImage | absoluteUrl }}" />
+
+      <link type="text/css" rel="stylesheet" href="/css/reset.css" />
+      <link type="text/css" rel="stylesheet" href="/css/main.css" />
+      <link type="text/css" rel="stylesheet" href="/css/fonts.css" />
+  </head>
+  <body id="{{ id }}">
+
+    <nav id="navigation">
+      <ul id="navigation__list">
+            <li class="navigation__item navigation__item--active">
+              <a href="./index.md" class="navigation__link">Home</a>
+            </li>
+
+            <li class="navigation__item navigation__item--active">
+              <a href="./index.md#work" class="navigation__link">Work</a>
+            </li>
+
+            <li class="navigation__item navigation__item--active">
+              <a href="./cv.md" class="navigation__link">CV</a>
+            </li>
+
+            <li class="navigation__item navigation__item--active">
+              <a href="#contact" class="navigation__link">Contact</a>
+            </li>
+      </ul>
+    </nav>
+
+    {{ content | safe }}
+
+    <footer>
+      <h2 id="contact">Contact</h2>
+      <ul class="contact_list">
+        <li class="contact__item contact__item--email">
+          <a href="mailto:andrew@coderonfire.com">andrew@coderonfire.com</a>
+        </li>
+
+        <li class="contact__item contact__item--linkedin">
+          <a href="https://linkedin.com/in/andrewwmason">LinkedIn</a>
+        </li>
+
+        <li class="contact__item contact__item--github">
+          <a href="https://github.com/andymason">GitHub</a>
+        </li>
+
+        <li class="contact__item contact__item--bluesky">
+          <a href="https://bsky.app/profile/coderonfire.com">Bluesky</a>
+        </li>
+
+        <li class="contact__item contact__item--mastodon">
+          <a href="https://mastodon.social/@amason">Mastodon</a>
+        </li>
+      </ul>
+    </footer>
+
+    <script src="/js/three.js" defer></script>
+    <script src="/js/alea.js" defer></script>
+    <script src="/js/main.js" defer></script>
+  </body>
+</html>
