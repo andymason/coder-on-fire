@@ -1,15 +1,28 @@
+import path from "node:path";
 import { IdAttributePlugin, InputPathToUrlTransformPlugin } from "@11ty/eleventy";
-import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import Image, { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+
+const DEFAULT_SOCIAL_IMAGE = "/images/blocks_no_webgl.jpg";
 
 export default async function (eleventyConfig) {
   // Copy the *contents* of `static/` into the output root so the
   // `static` segment is dropped (e.g. static/images/x.jpg -> /images/x.jpg)
   eleventyConfig.addPassthroughCopy({ static: "/" });
 
-  // 1. Determine the Base URL once
+  // 1. Determine the Base URL once.
+  // Cloudflare Pages does not set process.env.URL (a Netlify convention); it
+  // sets CF_PAGES_BRANCH and CF_PAGES_URL (the per-deploy *.pages.dev URL).
+  // Production (main) uses the canonical domain; preview/branch deploys must
+  // use their own deploy URL so absolute URLs (og:image, og:url) resolve there.
   const isDev =
     process.env.ELEVENTY_RUN_MODE === "serve" || process.env.ELEVENTY_RUN_MODE === "watch";
-  const siteUrl = isDev ? "http://localhost:8080" : process.env.URL || "https://coderonfire.com";
+  const isPreviewDeploy =
+    process.env.CF_PAGES_BRANCH && process.env.CF_PAGES_BRANCH !== "main";
+  const siteUrl = isDev
+    ? "http://localhost:8080"
+    : process.env.URL ||
+      (isPreviewDeploy ? process.env.CF_PAGES_URL : null) ||
+      "https://coderonfire.com";
 
   // 2. Add it as Global Data (so you can still use {{ site.url }} in templates)
   eleventyConfig.addGlobalData("site", {
@@ -26,6 +39,24 @@ export default async function (eleventyConfig) {
 
       return urlPath;
     }
+  });
+
+  // Optimise the front-matter image used for og:image and emit it into the
+  // build. The image transform plugin only rewrites <img>/<picture> tags in
+  // rendered HTML, so meta-tag images need processing explicitly here.
+  eleventyConfig.addAsyncFilter("socialImage", async (frontMatterPath) => {
+    const urlPath = frontMatterPath || DEFAULT_SOCIAL_IMAGE;
+    // Front-matter values look like "/images/x.jpg"; the file is in pages/images.
+    const inputPath = path.join("pages", urlPath);
+
+    const metadata = await Image(inputPath, {
+      widths: [1200],
+      formats: ["jpeg"],
+      outputDir: "_site/img/",
+      urlPath: "/img/",
+    });
+
+    return metadata.jpeg[0].url;
   });
 
   eleventyConfig.addPlugin(IdAttributePlugin);
