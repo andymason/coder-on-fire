@@ -1,8 +1,7 @@
 ---
 title: 6x9 - The Guardian's Virtual Reality WebGL website
 tags: [WebGL, Three.js, Shaders, 3D Graphics, Blender, JavaScript, CSS, Work]
-socialImage: /images/6x9-webgl-editor-social.jpg
-thumbImage: /images/6x9-webgl-editor-social-thumb.jpg
+thumbImage: /images/6x9-webgl-editor-social.jpg
 description: In-browser 3D animation editor built for the WebGL version of the Guardian's
   6x9 virtual reality experience.
 weight: 5

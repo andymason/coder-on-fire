@@ -1,7 +1,6 @@
 ---
 title: Glitchor - Image Glitching Using JavaScript
 tags: [JavaScript, HTML, CSS, Art, Work]
-socialImage: /images/glitchor/glitchor_screenshot_02_1920x.jpg
 thumbImage: /images/glitchor/glitchor_screenshot_02_1920x.jpg
 description: An image glitching tool that explores databending. Glitchor uses JavaScript
   and the Canvas API to manipulate images for artistic effects

@@ -1,8 +1,7 @@
 ---
 title: Rare - Sea of Thieve UI engineering
 tags: [TypeScript, Node.js, JavaScript, CSS, UI, GameDev, Work]
-socialImage: /images/rare/sea-of-thieves-guild-logo-intro-1920x.jpg
-thumbImage: /images/rare/sea-of-thieves-guild-logo-intro-640x.jpg
+thumbImage: /images/rare/sea-of-thieves-guild-logo-intro-1920x.jpg
 description: Delivered UI features for Sea of Thieves optimised UI workflows, and
   prototyped innovative designs for their next title.
 weight: 4

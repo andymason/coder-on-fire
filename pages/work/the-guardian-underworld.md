@@ -1,8 +1,7 @@
 ---
 title: Underworld VR - Subterranean London
 tags: [JavaScript, HTML, CSS, VR, 360-video, Unity, Work]
-socialImage: /images/underworld/underworld_360_1920x.jpg
-thumbImage: /images/underworld/guardian-underworld.jpg
+thumbImage: /images/underworld/underworld_360_1920x.jpg
 description:
   An immersive virtual reality and interactive journey by The Guardian, revealing the secrets
   of London's historic sewers.

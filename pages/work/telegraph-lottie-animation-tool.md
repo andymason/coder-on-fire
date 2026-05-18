@@ -1,8 +1,7 @@
 ---
 title: Lottie animation integration tool
 tags: [Lottie, SVG, React, After-effects, TypeScript, JavaScript, CSS, JSON, Work]
-socialImage: /images/lottie-social.jpg
-thumbImage: /images/lottie-social-thumb.jpg
+thumbImage: /images/lottie-social.jpg
 description: A web based Lottie preview and embedding tool
 weight: 104
 ---

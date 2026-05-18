@@ -1,8 +1,7 @@
 ---
 title: Milton Figma HTML Export Plugin
 tags: [Figma, React, TypeScript, JavaScript, HTML, CSS, Accessibility, Work]
-socialImage: /images/milton-social.png
-thumbImage: /images/milton-social-thumb.jpg
+thumbImage: /images/milton-social.png
 description: This open-source Figma plugin, Milton, gives designers the power to
   craft and export responsive HTML embeds for effortless integration into
   any CMS.

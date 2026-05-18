@@ -1,7 +1,6 @@
 ---
 title: Storytelling with Scroll-Triggered Techniques
 tags: [React, JavaScript, HTML, CSS, Animation, Work]
-socialImage: /images/telegraph-scrollytelling/scrollytelling-demo.jpg
 thumbImage: /images/telegraph-scrollytelling/scrollytelling-demo.jpg
 description: Creation of a visual storytelling tool using scrolling to trigger image
   transitions and stacking text

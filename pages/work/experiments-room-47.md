@@ -1,8 +1,7 @@
 ---
 title: Room 47 – A Unique IoT and Surveillance Experiment
 tags: [JavaScript, HTML, CSS, Art, Work]
-socialImage: /images/room_47/room_47_cameras_screenshot_1920x.jpg
-thumbImage: /images/room_47/room_47_cameras_screenshot_640x.jpg
+thumbImage: /images/room_47/room_47_cameras_screenshot_1920x.jpg
 description: Innovative project that look into the complexities of privacy in the
   internet age. Combining IoT technologies with a philosophical exploration
   of surveillance.

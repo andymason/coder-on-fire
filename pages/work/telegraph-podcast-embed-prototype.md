@@ -1,8 +1,7 @@
 ---
 title: The Telegraph's podcast embed prototype
 tags: [React, TypeScript, JavaScript, CSS, Figma, JSON, Web-API, Work]
-socialImage: /images/podcast-tool-social.jpg
-thumbImage: /images/podcast-tool-social-thumb.jpg
+thumbImage: /images/podcast-tool-social.jpg
 description: A custom built modern podcast audio player and embedding dashboard tool.
 weight: 3
 ---

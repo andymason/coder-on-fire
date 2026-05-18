@@ -1,8 +1,7 @@
 ---
 title: Enhancing The Telegraph with Variable Fonts
 tags: [Typography, Node.js, React, JavaScript, CSS, Work]
-socialImage: /images/variable-font-social.jpg
-thumbImage: /images/variable-font-social-thumb.jpg
+thumbImage: /images/variable-font-social.jpg
 description: Custom built browser tool to visually explore variable font settings on a
   live web page.
 weight: 10

@@ -1,7 +1,7 @@
 ---
 title: Andrew Mason - Senior Frontend Developer
 description: Senior Frontend Developer with extensive experience in creating interactive UIs, visualizations, and rapid prototyping. Previously worked for Rare, BBC, Guardian and Telegraph
-socialImage: /images/locks_no_webgl.jpg
+thumbImage: /images/blocks_no_webgl.jpg
 id: homepage
 ---
 

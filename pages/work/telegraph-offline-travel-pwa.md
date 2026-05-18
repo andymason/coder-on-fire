@@ -1,8 +1,7 @@
 ---
 title: Offline Travel PWA Prototype
 tags: [React, JavaScript, Node.js, JSON, PWA, HTML, CSS, Work]
-socialImage: /images/travel-pwa-social.jpg
-thumbImage: /images/travel-pwa-social-thumb.jpg
+thumbImage: /images/travel-pwa-social.jpg
 description: Offline PWA prototype of the Telegraph's travel guides
 weight: 203
 ---

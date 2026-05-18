@@ -1,8 +1,7 @@
 ---
 title: Redesigning BBC Homepage - UI Engineering Insights
 tags: [JavaScript, HTML, CSS, WAI, Accessibility, Work]
-socialImage: /images/bbc_homepage/bbc_homepage_front_1080x.jpg
-thumbImage: /images/bbc_homepage/bbc_homepage_front_640x.jpg
+thumbImage: /images/bbc_homepage/bbc_homepage_front_1080x.jpg
 description: My role in the BBC homepage redesign, emphasizing accessible UI development, collaboration with UX designers, and adherence to W3C/WAI guidelines.
 weight: 201
 ---
