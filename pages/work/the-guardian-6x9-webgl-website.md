@@ -9,11 +9,11 @@ weight: 5
 
 # 6x9 Virtual Reality WebGL website
 
-<div class="video video--paused">
-  <video poster="/video/6x9-webgl-editor.jpg" width="1280" height="720" playsinline x-webkit-airplay="deny" preload="none" >
-      <source src="/video/6x9-webgl-editor.mp4" type="video/mp4">
-  </video>
-</div>
+{%
+  include "video",
+  poster: "/video/6x9-webgl-editor.jpg",
+  src: "/video/6x9-webgl-editor.mp4"
+%}
 
 ## The Challenge
 

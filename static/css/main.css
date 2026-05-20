@@ -76,18 +76,32 @@ body {
   margin: 0 auto;
 }
 
-body>* {
+#navigation,
+#footer {
   grid-column: 2/3;
 }
 
-body>nav,
-body>.video,
-body>video,
-body>figure,
-body>.projects,
-body p:has(picture) {
+#main {
   grid-column: 1/4;
 }
+
+#main {
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+#main>* {
+  grid-column: 2/3;
+}
+
+#main>.video,
+#main>video,
+#main>figure,
+#main>p:has(picture) {
+  grid-column: 1/4;
+}
+
+
 
 a {
   color: var(--colour-primary);
@@ -412,8 +426,8 @@ body:not(#homepage):not(#cv)>blockquote>p {
 
 
 
-#cv ul,
-#cv ol {
+#cv #main ul,
+#cv #main ol {
   padding-left: var(--gap-medium);
 }
 
@@ -544,12 +558,18 @@ footer ul.contact_list {
   cursor: pointer;
 }
 
-.video--paused::after {
-  content: "";
-  display: block;
-
+.video__play-button {
+  opacity: 0;
+  pointer-events: none;
+  inset: 0;
   position: absolute;
+  border: none;
+}
+
+.video--paused .video__play-button {
   z-index: 1;
+  opacity: 1;
+  pointer-events: auto;
 
   top: 50%;
   left: 50%;
@@ -561,8 +581,14 @@ footer ul.contact_list {
   background-size: 70%;
   background-repeat: no-repeat;
   background-position: center;
-  pointer-events: none;
 
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 100%;
+}
+
+.video--paused .video__play-button:focus-visible,
+.video--paused .video__play-button:hover {
+  opacity: 1;
+  outline: 4px solid var(--colour-primary);
+  cursor: pointer;
 }

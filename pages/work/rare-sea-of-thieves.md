@@ -9,11 +9,11 @@ weight: 4
 
 # Rare - Sea of Thieve UI engineering
 
-<div class="video video--paused">
-  <video poster="/video/sea-of-thieves-ui-web.jpg" width="1280" height="720" playsinline disableremoteplayback x-webkit-airplay="deny" preload="none">
-      <source src="/video/sea-of-thieves-ui-web.mp4" type="video/mp4">
-  </video>
-</div>
+{%
+  include "video",
+  poster: "/video/sea-of-thieves-ui-web.jpg",
+  src: "/video/sea-of-thieves-ui-web.mp4"
+%}
 
 ## The Challenge
 
@@ -30,14 +30,7 @@ involved working closely with designers to translate Figma mockups into data
 models, defined using TypeScript. These models formed the data contract,
 ensuring seamless communication between the UI, engine, and remote services.
 
-<figure>
-  <picture>
-    <source media="(min-width: 1080px)" srcset="/images/rare/sea-of-thieves-chronicles-1920x.jpg" />
-    <source media="(min-width: 640px)" srcset="/images/rare/sea-of-thieves-chronicles-1280x.jpg" />
-    <source media="(min-width: 420px)" srcset="/images/rare/sea-of-thieves-chronicles-640x.jpg" />
-    <img src="/images/rare/sea-of-thieves-chronicles-1280x.jpg" alt="UI showing Guild Chronicles" />
-  </picture>
-</figure>
+![UI showing Guild Chronicles](/images/rare/sea-of-thieves-chronicles-1280x.jpg)
 
 Secondly, the project required navigating and contributing to a large,
 established codebase. Adaptability and efficient problem-solving were crucial to

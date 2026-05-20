@@ -11,11 +11,11 @@ weight: 7
 
 # 6x9 - The Guardian's first Virtual Reality experience
 
-<div class="video video--paused">
-  <video poster="/video/6x9-virtual-reality-demo.jpg" width="1280" height="720" playsinline disableremoteplayback x-webkit-airplay="deny" preload="none" >
-    <source src="/video/6x9-virtual-reality-demo.mp4" type="video/mp4">
-  </video>
-</div>
+{%
+  include "video",
+  poster: "/video/6x9-virtual-reality-demo.jpg",
+  src: "/video/6x9-virtual-reality-demo.mp4"
+%}
 
 ## The challenge
 

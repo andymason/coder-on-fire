@@ -1,6 +1,6 @@
 ---
 title: The Telegraph's Matt comic email tool
-tags: [React TypeScript JavaScript CSS HTML 5 WebAPI JSON Work]
+tags: [React, TypeScript, JavaScript, CSS, HTML, WebAPI, JSON, Work]
 thumbImage: /images/matt-comics-social.jpg
 description: Web tool for creating email newsletter images of Matt comics
 weight: 204
@@ -8,11 +8,11 @@ weight: 204
 
 # The Telegraph's Matt comic email tool
 
-<div class="video video--paused">
-  <video poster="../video/matt-comics-demo.jpg" width="1280" height="720" playsinline disableremoteplayback x-webkit-airplay="deny" preload="none" >
-     <source src="../video/matt-comics-demo.mp4" type="video/mp4" />
-  </video>
-</div>
+{%
+  include "video",
+  poster: "/video/matt-comics-demo.jpg",
+  src: "/video/matt-comics-demo.mp4"
+%}
 
 ## Challenge
 

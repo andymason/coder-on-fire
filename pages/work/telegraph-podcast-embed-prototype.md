@@ -8,11 +8,11 @@ weight: 3
 
 # The Telegraph's podcast embed prototype
 
-<div class="video video--paused">
-  <video poster="/video/podcast-tool-demo.jpg" width="1280" height="720" playsinline disableremoteplayback x-webkit-airplay="deny" preload="none" >
-      <source src="/video/podcast-tool-demo.mp4" type="video/mp4" />
-  </video>
-</div>
+{%
+  include "video",
+  poster: "/video/podcast-tool-demo.jpg",
+  src: "/video/podcast-tool-demo.mp4"
+%}
 
 ## Challenge
 

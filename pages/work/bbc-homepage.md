@@ -8,11 +8,11 @@ weight: 201
 
 # Redesigning BBC Homepage: UI Engineering Insights
 
-<div class="video video--paused">
-  <video poster="/video/bbc-homepage.jpg" width="1280" height="720" playsinline disableremoteplayback x-webkit-airplay="deny" preload="none" disablePictureInPicture>
-      <source src="/video/bbc-homepage.mp4" type="video/mp4">
-  </video>
-</div>
+{%
+  include "video",
+  poster: "/video/bbc-homepage.jpg",
+  src: "/video/bbc-homepage.mp4"
+%}
 
 ## The Challenge
 

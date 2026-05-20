@@ -9,11 +9,11 @@ weight: 2
 
 # Engaging Storytelling with Scroll-Triggered Techniques
 
-<div class="video video--paused">
-  <video poster="/video/scrollytelling-demo.jpg" width="1280" height="720" playsinline disableremoteplayback x-webkit-airplay="deny" preload="none">
-      <source src="/video/scrollytelling-demo.mp4" type="video/mp4" />
-  </video>
-</div>
+{%
+  include "video",
+  poster: "/video/scrollytelling-demo.jpg",
+  src: "/video/scrollytelling-demo.mp4"
+%}
 
 ## The Challenge
 

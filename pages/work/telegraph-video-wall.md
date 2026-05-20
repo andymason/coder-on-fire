@@ -9,11 +9,11 @@ weight: 103
 
 # Dynamic video wall showcase
 
-<div class="video video--paused">
-  <video poster="/video/videowall.jpg" width="1280" height="720" playsinline disableremoteplayback x-webkit-airplay="deny" preload="none" >
-      <source src="/video/videowall.mp4" type="video/mp4">
-  </video>
-</div>
+{%
+  include "video",
+  poster: "/video/videowall.jpg",
+  src: "/video/videowall.mp4"
+%}
 
 ## The Challenge
 

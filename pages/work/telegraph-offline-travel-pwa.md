@@ -8,11 +8,11 @@ weight: 203
 
 # Offline Travel PWA Prototype
 
-<div class="video video--paused">
-  <video poster="/video/travel-pwa-demo.jpg" width="1280" height="720" playsinline disableremoteplayback x-webkit-airplay="deny" preload="none" >
-     <source src="/video/travel-pwa-demo.mp4" type="video/mp4" />
-  </video>
-</div>
+{%
+  include "video",
+  poster: "/video/travel-pwa-demo.jpg",
+  src: "/video/travel-pwa-demo.mp4""
+%}
 
 ## Challenge
 

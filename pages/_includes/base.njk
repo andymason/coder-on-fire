@@ -20,31 +20,33 @@
       <link type="text/css" rel="stylesheet" href="/css/main.css" />
       <link type="text/css" rel="stylesheet" href="/css/fonts.css" />
   </head>
-  <body id="{{ id }}">
+  <body {% if pageId %} id="{{ pageId }}" {% endif %}>
 
     <nav id="navigation">
       <ul id="navigation__list">
-            <li class="navigation__item navigation__item--active">
+            <li class="navigation__item">
               <a href="./index.md" class="navigation__link">Home</a>
             </li>
 
-            <li class="navigation__item navigation__item--active">
+            <li class="navigation__item">
               <a href="./index.md#work" class="navigation__link">Work</a>
             </li>
 
-            <li class="navigation__item navigation__item--active">
+            <li class="navigation__item">
               <a href="./cv.md" class="navigation__link">CV</a>
             </li>
 
-            <li class="navigation__item navigation__item--active">
+            <li class="navigation__item">
               <a href="#contact" class="navigation__link">Contact</a>
             </li>
       </ul>
     </nav>
 
-    {{ content | safe }}
+    <main id="main">
+      {{ content | safe }}
+    </main>
 
-    <footer>
+    <footer id="footer">
       <h2 id="contact">Contact</h2>
       <ul class="contact_list">
         <li class="contact__item contact__item--email">

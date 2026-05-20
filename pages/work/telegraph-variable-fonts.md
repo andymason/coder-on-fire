@@ -4,16 +4,16 @@ tags: [Typography, Node.js, React, JavaScript, CSS, Work]
 thumbImage: /images/variable-font-social.jpg
 description: Custom built browser tool to visually explore variable font settings on a
   live web page.
-weight: 10
+weight: 106
 ---
 
 # Enhancing The Telegraph's Typography with Variable Fonts
 
-<div class="video video--paused">
-  <video poster="/video/variable-font-demo.jpg" width="1280" height="720" playsinline disableremoteplayback x-webkit-airplay="deny" preload="none">
-      <source src="/video/variable-font-demo.mp4" type="video/mp4">
-  </video>
-</div>
+{%
+  include "video",
+  poster: "/video/variable-font-demo.jpg",
+  src: "/video/variable-font-demo.mp4"
+%}
 
 ## The Challenge
 

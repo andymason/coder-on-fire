@@ -8,11 +8,11 @@ weight: 104
 
 # Lottie animation integration tool
 
-<div class="video video--paused">
-  <video poster="/video/lottie.png" width="1280" height="720" playsinline disableremoteplayback x-webkit-airplay="deny" preload="none" >
-    <source src="/video/lottie.mp4" type="video/mp4">
-  </video>
-</div>
+{%
+  include "video",
+  poster: "/video/lottie.png",
+  src: "/video/lottie.mp4"
+%}
 
 ## Challenge
 

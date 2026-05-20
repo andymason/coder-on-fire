@@ -181,19 +181,34 @@ function addVideoControls() {
 
   for (const container of videoContainers) {
     const videoEl = container.querySelector("video");
+
     if (!videoEl) {
       continue;
     }
 
-    videoEl.addEventListener("click", () => {
+    const toggle = () => {
       if (videoEl.paused) {
         videoEl.play();
         container.classList.remove("video--paused");
+
+        if (buttonEl) {
+          buttonEl.setAttribute("aria-label", "Pause video");
+        }
       } else {
         videoEl.pause();
         container.classList.add("video--paused");
+
+        if (buttonEl) {
+          buttonEl.setAttribute("aria-label", "Play video");
+        }
       }
-    });
+    };
+
+    videoEl.addEventListener("click", toggle);
+
+    const buttonEl = container.querySelector(".video__play-button");
+
+    if (buttonEl) buttonEl.addEventListener("click", toggle);
   }
 }
 

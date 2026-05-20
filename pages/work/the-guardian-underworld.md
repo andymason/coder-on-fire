@@ -10,11 +10,11 @@ weight: 200
 
 # Underworld VR: Subterranean London
 
-<div class="video video--paused">
-  <video poster="/video/guardian-underworld.jpg" width="1280" height="720" playsinline disableremoteplayback x-webkit-airplay="deny" preload="none" disablePictureInPicture>
-      <source src="/video/guardian-underworld.mp4" type="video/mp4">
-  </video>
-</div>
+{%
+  include "video",
+  poster: "/video/guardian-underworld.jpg",
+  src: "/video/guardian-underworld.mp4"
+%}
 
 ## The Challenge
 

@@ -10,11 +10,11 @@ weight: 1
 
 # Building Milton: Bridging the Gap Between Design and Development
 
-<div class="video video--paused">
-  <video poster="/video/milton-demo.png" width="1280" height="720" playsinline disableremoteplayback x-webkit-airplay="deny" preload="none" >
-    <source src="/video/milton-demo.mp4" type="video/mp4">
-  </video>
-</div>
+{%
+  include "video",
+  poster: "/video/milton-demo.png",
+  src: "/video/milton-demo.mp4"
+%}
 
 ## The Challenge
 
