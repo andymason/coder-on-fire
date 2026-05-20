@@ -246,9 +246,20 @@ h1 {
 
 /* [ Homepage - Intro ]
 ----------------------------------------------------------------------- */
-#homepage>p {
+#homepage h1,
+#homepage h1+h2,
+#homepage h2+p {
   text-align: center;
   margin: var(--gap-large) 0;
+}
+
+#homepage h1 {
+  margin-top: 20vh;
+  margin-bottom: var(--gap-small);
+}
+
+#homepage h1+h2 {
+  margin: 0 0 var(--gap-large) 0;
 }
 
 /* [ Skills ]
@@ -264,6 +275,7 @@ h1 {
   flex-wrap: wrap;
   align-items: center;
   gap: clamp(var(--gap-small), 4vw, var(--gap-large));
+  text-align: center;
 
   .skill-group__list {
     list-style: none;
