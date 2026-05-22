@@ -3,22 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>{{ title }} - Coder on Fire</title>
 
-      <link rel="shortcut icon" type="image/png" href="/icons/fav_icon_180x.png" />
+    <link rel="icon" type="image/png" href="/icons/fav_icon_180x.png" />
 
-      <meta name="title" content="{{ title }} - Coder on Fire" />
-      <meta name="description" content="{{ description }}" />
+    <meta name="description" content="{{ description }}" />
 
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="{{ page.url | absoluteUrl }}" />
-      <meta property="og:title" content="{{ title }} - Coder on Fire"/>
-      <meta property="og:description" content="{{ description }}" />
-      <meta property="og:image" content="{{ thumbImage | socialImage | absoluteUrl }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ page.url | absoluteUrl }}" />
+    <meta property="og:title" content="{{ title }} - Coder on Fire"/>
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:image" content="{{ thumbImage | socialImage | absoluteUrl }}" />
 
-      <link type="text/css" rel="stylesheet" href="/css/reset.css" />
-      <link type="text/css" rel="stylesheet" href="/css/main.css" />
-      <link type="text/css" rel="stylesheet" href="/css/fonts.css" />
+    <link type="text/css" rel="stylesheet" href="/css/reset.css" />
+    <link type="text/css" rel="stylesheet" href="/css/main.css" />
+    <link type="text/css" rel="stylesheet" href="/css/fonts.css" />
   </head>
   <body {% if pageId %} id="{{ pageId }}" {% endif %}>
 

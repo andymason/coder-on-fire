@@ -230,7 +230,8 @@ h1 {
   text-align: center;
   text-wrap: balance;
   font-size: var(--font-size-x-large);
-  margin-top: var(--gap-large);
+  margin-top: max(10vh, var(--gap-large));
+  margin-bottom: var(--gap-large);
   line-height: var(--line-height-small);
   text-shadow: 0 0 6px rgb(0 0 0 / 40%);
 }
@@ -254,7 +255,7 @@ h1 {
 }
 
 #homepage h1 {
-  margin-top: 20vh;
+  margin-top: max(10vh, var(--gap-large));
   margin-bottom: var(--gap-small);
 }
 
@@ -264,7 +265,6 @@ h1 {
 
 /* [ Skills ]
 ----------------------------------------------------------------------- */
-
 #skills-and-knowledge {
   text-align: center;
 }
@@ -438,7 +438,7 @@ body:not(#homepage):not(#cv)>blockquote>p {
 
 
 
-#cv #main ul,
+#cv #main ul:not(.skill-group__list),
 #cv #main ol {
   padding-left: var(--gap-medium);
 }
