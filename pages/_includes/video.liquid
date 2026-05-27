@@ -1,5 +1,14 @@
 <div class="video video--paused">
-  <video poster="{{ poster }}" width="{{ width | default: 1280 }}" height="{{ height | default: 720 }}" playsinline disableremoteplayback preload="none" tabindex="-1">
+  <video
+    poster="{{ poster }}"
+    width="{{ width | default: 1280 }}"
+    height="{{ height | default: 720 }}"
+    playsinline
+    disableremoteplayback
+    preload="metadata"
+    loading="lazy"
+    tabindex="-1"
+  >
     <source src="{{ src }}" type="video/mp4">
   </video>
   <button class="video__play-button" type="button" aria-label="Play video"></button>

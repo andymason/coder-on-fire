@@ -1,0 +1,25 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "unicorn", "oxc"],
+  "categories": {
+    "correctness": "error",
+    "perf": "warn",
+    "restriction": "warn",
+    "suspicious": "warn",
+    "pedantic": "warn"
+  },
+  "rules": {
+    "max-lines-per-function": "off",
+    "oxc/no-async-await": "off",
+    "no-underscore-dangle": [
+      "warn",
+      {
+        "allow": ["__DEV__"]
+      }
+    ],
+    "no-plusplus": ["warn", { "allowForLoopAfterthoughts": true }]
+  },
+  "env": {
+    "builtin": true
+  }
+}

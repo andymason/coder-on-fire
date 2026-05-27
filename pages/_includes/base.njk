@@ -16,9 +16,7 @@
     <meta property="og:description" content="{{ description }}" />
     <meta property="og:image" content="{{ thumbImage | socialImage | absoluteUrl }}" />
 
-    <link type="text/css" rel="stylesheet" href="/css/reset.css" />
-    <link type="text/css" rel="stylesheet" href="/css/main.css" />
-    <link type="text/css" rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/bundle.css">
   </head>
   <body {% if pageId %} id="{{ pageId }}" {% endif %}>
 
@@ -71,8 +69,7 @@
       </ul>
     </footer>
 
-    <script src="/js/three.js" defer></script>
-    <script src="/js/alea.js" defer></script>
-    <script src="/js/main.js" defer></script>
+    <script src="/bundle.js" defer></script>
+
   </body>
 </html>

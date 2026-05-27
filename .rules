@@ -1,0 +1,77 @@
+You are an advanced AI coding assistant.
+
+## Project
+
+This is a personal website (coderonfire.com) built with **Eleventy (11ty) v3**, a static site generator.
+The package manager is **pnpm**. Strict TypeScript is used.
+
+## Folder Structure
+
+```
+pages/               → Eleventy input directory (`.md` files → HTML output)
+  _includes/         → Nunjucks (.njk) and Liquid (.liquid) layout templates
+    base.njk         → Main page layout
+    video.liquid     → Video embed partial
+  work/              → Work/project pages, tagged "Work", sorted by `weight` front matter
+  pages.json         → Global front-matter defaults (layout: base.njk)
+static/              → Passthrough-copied to site root (fonts, images, video, PDFs, etc.)
+  css/main.css       → CSS entry point, bundled by esbuild into _site/css/bundle.css
+  ts/                → TypeScript entry point, bundled by esbuild into _site/bundle.js
+    main.ts          → App entry, imports all modules
+    boxes.ts         → WebGL 3D box animation (ogl library, GLSL shaders)
+    boxes-debug.ts   → Debug GUI (lil-gui), dynamically imported only in dev
+    slide-images.ts  → IntersectionObserver-based scroll animations
+    video-controls.ts→ Custom video player controls
+```
+
+## Build Pipeline
+
+- **Templates**: Nunjucks (`.njk`) and Liquid (`.liquid`) in `pages/_includes/`
+- **TypeScript**: Entry `static/ts/main.ts` → esbuild bundles to `_site/bundle.js`
+  - Format: IIFE, target: ES2020, minified, sourcemaps enabled
+- **CSS**: Entry `static/css/main.css` → esbuild bundles to `_site/css/bundle.css`
+  - Font/image/icon URLs are external (not inlined)
+- **Images**: `@11ty/eleventy-img` plugin auto-optimizes `<img>` tags (AVIF/JPEG, responsive widths)
+- **Global define**: `__DEV__` is `true` in dev/watch mode, `false` in production builds
+- **Static assets**: Everything in `static/` is copied to site root via `addPassthroughCopy`
+
+## Tools
+
+| Command         | Purpose                          |
+|-----------------|----------------------------------|
+| `pnpm dev`      | Start dev server with hot reload |
+| `pnpm build`    | Production build                 |
+| `pnpm lint`     | Lint with oxlint                 |
+| `pnpm format`   | Format with oxfmt                |
+
+## Key Patterns
+
+### WebGL / Shaders
+- Uses the `ogl` library for WebGL rendering
+- GLSL shader code is inline in template literals within `boxes.ts`
+- Debug UI (`lil-gui`) is **dynamically imported** only when `__DEV__ && ?dev` URL param is present
+- Never ship debug code to production bundles
+
+### Front Matter & Collections
+- Page metadata (title, description, image, weight, tags) lives in YAML front matter
+- `pages.json` sets global defaults (e.g., `layout: base.njk`)
+- Work pages are tagged `"Work"` and sorted by a numeric `weight` field
+- Social/OG images use a custom `socialImage` async filter for processing
+
+### CSS
+- Use `eleventyConfig.addBundle("css")` for page-specific CSS in templates
+- Global styles go in `static/css/main.css`
+
+### DOM / Browser APIs
+- Use `AbortController` with `signal` option for clean event listener cleanup
+- Use `IntersectionObserver` for scroll-triggered animations
+- Use `AbortController` to tear down WebGL canvases and debug GUIs
+
+## Code Style
+
+- Comments go on their own line (not inline after code)
+- Prefer multi-line arrow functions with brackets `() => { ... }` over single-expression form
+- Prefer modern JavaScript and Browser DOM APIs (`AbortController`, `IntersectionObserver`, etc.)
+- Follow industry best practices and clean code principles but do not over-engineer
+- TypeScript: avoid `any`, use strict types, avoid `as` casts when possible
+- Linting rules are defined in `.oxlintrc.json` — follow them
