@@ -435,6 +435,14 @@ export function runBoxes(): () => void {
   }
 
   function onWindowResize(): void {
+    const newWidth = window.innerWidth;
+
+    // Mobile address bar show/hide causes resize events and jitter.
+    // So, ignore if width is the same.
+    if (newWidth === width) {
+      return;
+    }
+
     width = window.innerWidth;
     height = window.innerHeight / 1.1;
     aspect = width / height;
