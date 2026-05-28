@@ -132,7 +132,9 @@ export function runBoxes(): () => void {
     boxRotationSeed: 4960,
   };
 
-  const renderer = new Renderer();
+  const renderer = new Renderer({
+    powerPreference: "low-power",
+  });
   const gl = renderer.gl;
   renderer.setSize(width, height);
   gl.canvas.setAttribute("class", "box_animation");

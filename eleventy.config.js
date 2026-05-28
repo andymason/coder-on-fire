@@ -29,11 +29,14 @@ function jsBuildConfig(isDev) {
   return {
     entryPoints: JS_ENTRY,
     bundle: true,
+    splitting: true,
     minify: !isDev,
-    outfile: "_site/bundle.js",
+    treeShaking: true,
+    // outfile: "_site/bundle.js",
+    outdir: "_site/js",
     sourcemap: true,
     target: ["es2020"],
-    format: "iife",
+    format: "esm",
     define: {
       __DEV__: String(isDev),
     },
@@ -120,12 +123,11 @@ export default (eleventyConfig) => {
   eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["avif", "jpeg"],
-    widths: [320, 640, "auto"],
+    widths: [320, 480, 640, 1280],
     htmlOptions: {
       imgAttributes: {
         loading: "lazy",
         decoding: "async",
-        sizes: "auto",
       },
       pictureAttributes: {},
     },

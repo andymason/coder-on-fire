@@ -1,11 +1,17 @@
-import type { Camera, Program, Mesh, Transform } from "ogl";
+import type {
+  Camera,
+  Program,
+  Mesh,
+  Transform,
+  OGLRenderingContext,
+} from "ogl";
 import { hexToRgb, toneMappedRgb } from "./boxes";
 import type { BoxesParams } from "./boxes";
 
 export async function setupDebugGui(
   params: BoxesParams,
   program: Program,
-  gl: WebGL2RenderingContext,
+  gl: OGLRenderingContext,
   meshes: InstanceType<typeof Mesh>[],
   group: Transform,
   camera: Camera,
