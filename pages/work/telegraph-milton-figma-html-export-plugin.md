@@ -1,5 +1,5 @@
 ---
-title: Milton Figma HTML Export Plugin
+title: The Telegraph's Milton Figma HTML Export Plugin
 tags: [Figma, React, TypeScript, JavaScript, HTML, CSS, Accessibility, Work]
 thumbImage: /images/milton-social.png
 description: This open-source Figma plugin, Milton, gives designers the power to
@@ -8,7 +8,7 @@ description: This open-source Figma plugin, Milton, gives designers the power to
 weight: 1
 ---
 
-# Building Milton: Bridging the Gap Between Design and Development
+# Building Milton: Bridging the Gap Between Design and Development at The Telegraph
 
 {%
   include "video",

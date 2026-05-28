@@ -1,5 +1,5 @@
 ---
-title: Beat the Hustler - 360 VR Street Con
+title: The Guardian's Beat the Hustler 360 VR Street Con
 tags: [JavaScript, HTML, CSS, VR, 360-video, Unity, Work]
 thumbImage: /images/hustle/hustle_promo_1080x.jpg
 description: Beat the Hustler', a 360 VR experience that immerses you in

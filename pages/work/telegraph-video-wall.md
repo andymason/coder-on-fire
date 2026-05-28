@@ -1,13 +1,13 @@
 ---
-title: Dynamic video wall showcase
+title: The Telegraph's Dynamic video wall showcase
 tags: [Animation, PixiJS, Node.js, JavaScript, CSS, Work]
 thumbImage: /images/videowall-social.jpg
 description: A dynamic animating video wall displaying the latest content from the
   Telegraph's print and digital publications.
-weight: 103
+weight: 5
 ---
 
-# Dynamic video wall showcase
+# {{ title }}
 
 {%
   include "video",

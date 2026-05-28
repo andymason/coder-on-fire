@@ -1,5 +1,5 @@
 ---
-title: Glitchor - Image Glitching Using JavaScript
+title: Image Glitching Using JavaScript
 tags: [JavaScript, HTML, CSS, Art, Work]
 thumbImage: /images/glitchor/glitchor_screenshot_02_1920x.jpg
 description: An image glitching tool that explores databending. Glitchor uses JavaScript
@@ -7,7 +7,7 @@ description: An image glitching tool that explores databending. Glitchor uses Ja
 weight: 105
 ---
 
-# Glitchor: Image Glitching Using JavaScript and Canvas
+# {{ title }}
 
 ![Three screenshots of the 3D tour de france mobile site](/images/glitchor/glitchor_screenshot_02_1920x.jpg)
 

@@ -1,13 +1,13 @@
 ---
-title: Storytelling with Scroll-Triggered Techniques
+title: The Telegraphs' Scroll Triggered Storytelling
 tags: [React, JavaScript, HTML, CSS, Animation, Work]
 thumbImage: /images/telegraph-scrollytelling/scrollytelling-demo.jpg
 description: Creation of a visual storytelling tool using scrolling to trigger image
   transitions and stacking text
-weight: 2
+weight: 7
 ---
 
-# Engaging Storytelling with Scroll-Triggered Techniques
+# {{ title }}
 
 {%
   include "video",

@@ -1,5 +1,5 @@
 ---
-title: Real-Time Scottish Referendum worldDashboard
+title: The Guardian's Real-Time Scottish Referendum Dashboard
 tags: [JavaScript, HTML, CSS, S3, AWS, Node, Work]
 thumbImage: /images/scottish_independence/scottish_independence_desktop_1920x.png
 description: Development of a Node.js-based live dashboard for the Scottish referendum,
@@ -8,7 +8,7 @@ description: Development of a Node.js-based live dashboard for the Scottish refe
 weight: 200
 ---
 
-# Real-Time Scottish Referendum Dashboard
+# {{ title }}
 
 ![Map and chart showing referendum results](/images/scottish_independence/scottish_independence_desktop_1080x.png)
 

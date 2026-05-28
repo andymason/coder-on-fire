@@ -1,12 +1,12 @@
 ---
-title: Lottie animation integration tool
+title: The Telepgrah's Lottie animation integration tool
 tags: [Lottie, SVG, React, After-effects, TypeScript, JavaScript, CSS, JSON, Work]
 thumbImage: /images/lottie-social.jpg
 description: A web based Lottie preview and embedding tool
-weight: 104
+weight: 8
 ---
 
-# Lottie animation integration tool
+# {{ title }}
 
 {%
   include "video",

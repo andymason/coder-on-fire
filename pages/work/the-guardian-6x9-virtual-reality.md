@@ -1,15 +1,15 @@
 ---
-title: 6x9 - The Guardian's first Virtual Reality experience
+title: The Guardian's first Virtual Reality experience
 tags: [Unity, VR, Hardware, 3D Graphics, Audio, Work]
 thumbImage: /images/6x9-virtual-reality-social.jpg
 description: 6x9 is the Guardian's first virtual reality experience, which places you
   inside a US solitary confinement prison cell and tells the story of the
   psychological damage that can ensue from isolation.
 
-weight: 7
+weight: 4
 ---
 
-# 6x9 - The Guardian's first Virtual Reality experience
+# {{ title }}
 
 {%
   include "video",

@@ -1,14 +1,14 @@
 ---
-title: 3D Tour de France Visualization
+title: The Guardian's 3D Tour de France Visualization
 tags: [JavaScript, HTML, CSS, WebGL, Work]
 thumbImage: /images/tour_de_france/tour_de_france_mobile_screenshots_1920x.jpg
 description: An innovative 3D WebGL project showcasing the Tour de France's
   Alpe D'Huez climb, merges satellite imagery with elevation data
   for an immersive experience
-weight: 104
+weight: 10
 ---
 
-# 3D Tour de France Visualization
+# {{ title }}
 
 ![Three screenshots of the 3D tour de france mobile site](/images/tour_de_france/tour_de_france_mobile_screenshots_1080x.jpg)
 

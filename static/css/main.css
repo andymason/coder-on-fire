@@ -351,6 +351,7 @@ h2#work {
     font-family: var(--font-headline, sans-serif);
     font-weight: 700;
     font-size: var(--font-size-big);
+    text-wrap: balance;
 }
 
 @media screen and (min-width: 600px) {

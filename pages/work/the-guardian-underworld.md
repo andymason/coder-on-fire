@@ -1,5 +1,5 @@
 ---
-title: Underworld VR - Subterranean London
+title: The Guardian's Underworld VR Subterranean London
 tags: [JavaScript, HTML, CSS, VR, 360-video, Unity, Work]
 thumbImage: /images/underworld/underworld_360_1920x.jpg
 description:
@@ -8,7 +8,7 @@ description:
 weight: 200
 ---
 
-# Underworld VR: Subterranean London
+#  The Guardian's Underworld VR Subterranean London
 
 {%
   include "video",
