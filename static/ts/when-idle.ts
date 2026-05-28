@@ -5,5 +5,6 @@ export const whenIdle = (callback: () => void, timeoutDelay = 200): void => {
     return;
   }
 
+  // Fallback for unsupported browsers
   setTimeout(callback, timeoutDelay);
 };
