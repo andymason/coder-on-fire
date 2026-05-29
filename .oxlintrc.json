@@ -11,13 +11,10 @@
   "rules": {
     "max-lines-per-function": "off",
     "oxc/no-async-await": "off",
-    "no-underscore-dangle": [
-      "warn",
-      {
-        "allow": ["__DEV__"]
-      }
-    ],
-    "no-plusplus": ["warn", { "allowForLoopAfterthoughts": true }]
+    "max-lines": ["warn", { "max": 600 }],
+    "no-underscore-dangle": ["warn", { "allow": ["__DEV__"] }],
+    "no-plusplus": ["warn", { "allowForLoopAfterthoughts": true }],
+    "no-console": "off"
   },
   "env": {
     "builtin": true
