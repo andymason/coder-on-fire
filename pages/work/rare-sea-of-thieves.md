@@ -26,7 +26,7 @@ codebase, and implementing solutions to optimize performance across platforms.
 
 Guilds presented a multifaceted challenge. Firstly, it demanded tight
 integration between the Unreal C++ game engine and remote service APIs. This
-involved working closely with designers to translate Figma mockups into data
+involved working closely with designers to translate Figma mock-ups into data
 models, defined using TypeScript. These models formed the data contract,
 ensuring seamless communication between the UI, engine, and remote services.
 
@@ -52,7 +52,7 @@ My technical contributions included:
   smooth communication between the UI, game engine, and remote services.
 - Unit Testing: Developed comprehensive unit tests for UI functionality,
   ensuring stability and quality.
-- Performance Optimization: Identified and implemented optimizations to reduce
+- Performance Optimisation: Identified and implemented optimisations to reduce
   unit test run-time and continuous integration UI test build times,
   streamlining the development workflow.
 - Visual Styling: Using CSS, Sass and PostCSS to implement designs
