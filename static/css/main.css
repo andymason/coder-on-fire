@@ -194,6 +194,11 @@ body > figure {
     border: none;
     background: transparent;
     margin: 0;
+
+    /* Fix WebKitGTK flicker bug by forcing canvas on to it's own GPU layer */
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
 }
 
 /* [ Navigation ]
