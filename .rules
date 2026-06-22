@@ -31,7 +31,7 @@ static/              → Passthrough-copied to site root (fonts, images, video, 
   - Format: IIFE, target: ES2020, minified, sourcemaps enabled
 - **CSS**: Entry `static/css/main.css` → esbuild bundles to `_site/css/bundle.css`
   - Font/image/icon URLs are external (not inlined)
-- **Images**: `@11ty/eleventy-img` plugin auto-optimizes `<img>` tags (AVIF/JPEG, responsive widths)
+- **Images**: `@11ty/eleventy-img` plugin auto-optimises `<img>` tags (AVIF/JPEG, responsive widths)
 - **Global define**: `__DEV__` is `true` in dev/watch mode, `false` in production builds
 - **Static assets**: Everything in `static/` is copied to site root via `addPassthroughCopy`
 
@@ -62,16 +62,11 @@ static/              → Passthrough-copied to site root (fonts, images, video, 
 - Use `eleventyConfig.addBundle("css")` for page-specific CSS in templates
 - Global styles go in `static/css/main.css`
 
-### DOM / Browser APIs
-- Use `AbortController` with `signal` option for clean event listener cleanup
-- Use `IntersectionObserver` for scroll-triggered animations
-- Use `AbortController` to tear down WebGL canvases and debug GUIs
-
 ## Code Style
 
 - Comments go on their own line (not inline after code)
 - Prefer multi-line arrow functions with brackets `() => { ... }` over single-expression form
-- Prefer modern JavaScript and Browser DOM APIs (`AbortController`, `IntersectionObserver`, etc.)
+- Prefer modern JavaScript and Browser DOM APIs
 - Follow industry best practices and clean code principles but do not over-engineer
-- TypeScript: avoid `any`, use strict types, avoid `as` casts when possible
+- TypeScript: avoid `any` and `as` casts when possible
 - Linting rules are defined in `.oxlintrc.json` — follow them
