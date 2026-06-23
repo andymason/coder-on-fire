@@ -130,6 +130,13 @@ export default (eleventyConfig) => {
         decoding: "async",
       },
       pictureAttributes: {},
+      sharpAvifOptions: {
+        quality: 75,
+      },
+      sharpJpegOptions: {
+        quality: 75,
+        mozjpeg: true,
+      },
     },
   });
 
