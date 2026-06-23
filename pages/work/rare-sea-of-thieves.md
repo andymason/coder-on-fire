@@ -42,8 +42,7 @@ consoles, and conducted performance analysis to identify and address any
 bottlenecks.
 
 Finally, streamlining workflows was crucial. I identified opportunities to
-improve UI development efficiency, notably by reducing unit test run-time by 90%
-and continuous integration UI test build times by 16 minutes.
+improve UI development efficiency, notably by reducing unit test runtime by 30%.
 
 My technical contributions included:
 
