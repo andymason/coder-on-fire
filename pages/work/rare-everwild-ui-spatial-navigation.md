@@ -86,14 +86,6 @@ This gave designers the freedom to build expressive, non-grid layouts while keep
 
 ### Making navigation visible with a debugging visualiser
 
-<figure>
-  <img src="/images/everwild/spatial-navigation-debugger.png" alt="Visualisation of the spatial navigation debugging visualiser" width="1518" height="1048">
-  <figcaption>
-      The spatial navigation debugging visualiser (shown here as a rough representation) displayed the selectable elements, groupings, and the player's navigation journey.
-  </figcaption>
-</figure>
-
-
 As the nearest-element selection logic grew more complex, reasoning about it through code alone became increasingly difficult. The next item to select could depend on element position, which group it was in, focus history, and more.
 
 To make the navigation behaviour visible, I built a debugging visualiser positioned over the live game UI and marked as non-interactive, so gamepad, keyboard, and pointer input passed straight through.
@@ -117,4 +109,4 @@ It was especially useful for non-grid layouts, where the 'correct' next element 
 - **Data contract:** Defined TypeScript models for communication between the UI and the Unreal Engine
 - **Visual styling:** Implemented UI designs using CSS and Sass
 
-Everwild was cancelled before release, but the work is an example of the UI engineering I enjoy: building polished interfaces, solving complex interaction problems, and creating tools that help multidisciplinary teams.
+The work is an example of the UI engineering I enjoy: building polished interfaces, solving complex interaction problems, and creating tools that help multidisciplinary teams.
