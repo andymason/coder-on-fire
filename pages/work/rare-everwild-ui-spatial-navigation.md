@@ -1,15 +1,16 @@
 ---
 title: Rare — Everwild inventory UI and spatial navigation
-tags: [ TypeScript, SolidJS, JavaScript, CSS, UI, GameDev, Work ]
+tags: [TypeScript, SolidJS, JavaScript, CSS, UI, GameDev, Work]
 thumbImage: /images/everwild/everwild-hero-logo.jpg
-description: Built the inventory HUD for Rare's Everwild in TypeScript and SolidJS, including a bespoke spatial navigation system for gamepad, mouse and keyboard.
+description: Built the inventory HUD for Rare's Everwild in TypeScript and SolidJS, including a bespoke spatial navigation system for gamepad, mouse, and keyboard.
 weight: 0
 ---
+
 # {{ title }}
 
 ![Everwild](/images/everwild/everwild-hero-logo.jpg)
 
-For Rare's Everwild, I worked as a UI software engineer building out the inventory HUD using TypeScript, SolidJS, CSS, and Coherent Gameface inside Unreal Engine 5.
+For Rare's Everwild, I worked as a UI software engineer building out the inventory HUD. I built a bespoke spatial navigation system for gamepad, keyboard, and mouse, backed by a debug visualiser.
 
 ## The Challenge
 
@@ -57,24 +58,15 @@ The focus stack maintained a history of focused UI elements, allowing navigation
 
 It also had to handle priority interruptions: if a modal confirmation appeared, focus moved to it immediately, then returned to the previously focused element once the modal was dismissed.
 
-I modelled the inventory screen's natural hierarchy of sections as nested focus groups:
-
-- Inventory
-  - Sections
-    - Category A
-    - Category B
-  - Filters
-    - Filter A
-    - Filter B
-  - Actions
-
-Groups supported two behaviours:
+On top of basic movement, groups and elements supported several behaviours:
 
 - **Looping**: reaching the edge of a group wraps focus back to the start of that row or column
-- **Capturing**: focus can be restricted to a specific group, regardless of other focusable elements visible on screen
+- **Capturing**: focus can be restricted to a single group, ignoring other focusable elements on screen. This is what a modal needs — focus stays inside it until it's dismissed
+- **Restricted directions**: an element can accept movement from only chosen directions, so focus never escapes a control in a way that would feel wrong to the player
+- **Scrollable regions**: moving focus through a scrolling container drives its scroll position, bringing off-screen items into view as the player reaches them
+- **Focus callbacks**: elements emit `onFocus` and `onBlur` events carrying their id and data, giving game logic a clean hook into whatever the player currently has selected
 
 This gave predictable controller navigation while still supporting mouse interactions.
-
 
 **Non-grid navigation**
 
@@ -88,23 +80,39 @@ This gave designers the freedom to build expressive, non-grid layouts while keep
 
 As the nearest-element selection logic grew more complex, reasoning about it through code alone became increasingly difficult. The next item to select could depend on element position, which group it was in, focus history, and more.
 
-To make the navigation behaviour visible, I built a debugging visualiser positioned over the live game UI and marked as non-interactive, so gamepad, keyboard, and pointer input passed straight through.
+To make the navigation behaviour visible, I built a debugging visualiser that drew over the live game UI. It was marked as non-interactive, so gamepad, keyboard, and pointer input passed straight through to the UI underneath.
 
-The visualiser drew:
+<figure>
+  <img src="/images/everwild/spatial-navigstion-debug-visualizer.png" alt="Screenshot of spatial navigation visualiser" width="3300" height="1700">
+  <figcaption>
+      The debug visualiser tracing the player navigation journey, focus state and the history stack. <br/> Note: The screenshot is of a development demo and contains no project UI
 
-- bounding boxes around selectable elements
-- element parent groups
-- focus state and history stack
-- a sequence of arrows tracing the player's journey through the interface
+  </figcaption>
+</figure>
 
-This turned an invisible, abstract system into something we could see and point at. Designers could understand why focus landed on a particular element, engineers could verify edge cases quickly, and the whole team could discuss unexpected behaviour against the same visualisation.
+The overlay rendered a live view of the navigation system's internal state, drawing:
+
+- bounding boxes around selectable elements and their parent focus groups
+- the current focus state and a visual history stack showing the exact path taken
+- real-time metrics in a side panel, including active nodes, container counts, and history size
+
+To ensure the system was robust, I built a test suite of complex layouts that the visualiser could render and navigate through:
+
+- **Multi-dimensional grids:** Testing complex nested layouts and wrapping behaviour.
+- **Sphere grids:** Proving the nearest-element selection logic worked flawlessly on non-linear, circular layouts.
+- **Exclusive focus:** Verifying that modals could trap focus and prevent navigation to background elements.
+- **Scrolling:** Ensuring focus movement correctly drove the scroll position of both vertical and horizontal containers.
+- **Restricted directions:** Testing elements that only accept focus from specific directions.
+- **Focus change callbacks:** Displaying real-time JSON payloads for `onFocus` and `onBlur` events to verify data contracts with the game engine.
+
+This turned an invisible, abstract system into something we could see and point at. Designers could understand why focus landed on a particular element, engineers could verify edge cases quickly, and the whole team could discuss unexpected behaviour against the same picture.
 
 It was especially useful for non-grid layouts, where the 'correct' next element was often a design decision rather than a purely logical one.
 
 ## Technical Contributions
 
-- **Spatial navigation:** Designed and implemented a bespoke directional navigation system supporting focus stacks, element groups, and non-grid layouts
-- **Debugging tooling:** Built a visualisation overlay for real-time inspection of focus state and navigation paths
+- **Spatial navigation:** Designed and implemented a bespoke directional navigation system with focus stacks, element groups, looping and capture, scrollable regions, focus callbacks, and support for non-grid layouts
+- **Debugging tooling:** Built a visualisation overlay for inspecting focus state, history, and navigation paths in real time
 - **UI development:** Built inventory HUD screens and components in TypeScript and SolidJS
 - **Data contract:** Defined TypeScript models for communication between the UI and the Unreal Engine
 - **Visual styling:** Implemented UI designs using CSS and Sass

@@ -11,7 +11,7 @@ weight: 203
 {%
   include "video",
   poster: "/video/travel-pwa-demo.jpg",
-  src: "/video/travel-pwa-demo.mp4""
+  src: "/video/travel-pwa-demo.mp4"
 %}
 
 ## Challenge
