@@ -3,7 +3,7 @@ title: Rare — Everwild inventory UI and spatial navigation
 tags: [TypeScript, SolidJS, JavaScript, CSS, UI, GameDev, Work]
 thumbImage: /images/everwild/everwild-hero-logo.jpg
 description: Built the inventory HUD for Rare's Everwild in TypeScript and SolidJS, including a bespoke spatial navigation system for gamepad, mouse, and keyboard.
-weight: 0
+weight: -2
 ---
 
 # {{ title }}
@@ -36,7 +36,7 @@ The UI was built with web technologies running inside Unreal Engine via Coherent
 
 I worked closely with designers to turn Figma concepts into interactive UI, using designer feedback and playtesting sessions to refine layout, interaction states, and navigation behaviour. This was especially important because controller navigation often exposes edge cases that aren't obvious in static design files.
 
-I also collaborated with engine engineers to define data contracts between the UI and Unreal Engine. This involved working with Unreal Blueprints and matching the frontend data model to engine-side expectations.
+I also collaborated with engine team to define data contracts between the UI and Unreal Engine. This involved working with Unreal Blueprints and matching the frontend data model to engine-side expectations.
 
 ### Spatial Navigation
 
@@ -83,10 +83,9 @@ As the nearest-element selection logic grew more complex, reasoning about it thr
 To make the navigation behaviour visible, I built a debugging visualiser that drew over the live game UI. It was marked as non-interactive, so gamepad, keyboard, and pointer input passed straight through to the UI underneath.
 
 <figure>
-  <img src="/images/everwild/spatial-navigstion-debug-visualizer.png" alt="Screenshot of spatial navigation visualiser" width="3300" height="1700">
+  <img src="/images/everwild/spatial-navigstion-debug-visualizer.png" alt="Screenshot of spatial navigation visualiser">
   <figcaption>
       The debug visualiser tracing the player navigation journey, focus state and the history stack. <br/> Note: The screenshot is of a development demo and contains no project UI
-
   </figcaption>
 </figure>
 
