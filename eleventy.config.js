@@ -122,21 +122,28 @@ export default (eleventyConfig) => {
   eleventyConfig.addPlugin(IdAttributePlugin);
   eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    formats: ["avif", "jpeg"],
+    // "auto" preserves the source format (PNG stays an optimised PNG); "jpeg"
+    // adds a mozjpeg fallback for every image. JPEG sources dedupe to a single
+    // JPEG, PNG sources emit both an optimised PNG and a mozjpeg JPEG.
+    formats: ["auto", "jpeg"],
     widths: [320, 480, 640, 1280],
+    // Lossless PNG optimisation: maximum zlib compression with adaptive row
+    // filtering. No palette quantisation, so pixels are preserved exactly.
+    sharpPngOptions: {
+      compressionLevel: 9,
+      adaptiveFiltering: true,
+    },
+    // mozjpeg encoder for smaller, higher-quality JPEGs.
+    sharpJpegOptions: {
+      quality: 75,
+      mozjpeg: true,
+    },
     htmlOptions: {
       imgAttributes: {
         loading: "lazy",
         decoding: "async",
       },
       pictureAttributes: {},
-      sharpAvifOptions: {
-        quality: 75,
-      },
-      sharpJpegOptions: {
-        quality: 75,
-        mozjpeg: true,
-      },
     },
   });
 
