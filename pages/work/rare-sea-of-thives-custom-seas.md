@@ -2,7 +2,7 @@
 title: Rare - Sea of Thieves Custom Seas UI
 tags: [TypeScript, JavaScript, CSS, UI, GameDev, Work]
 thumbImage: /images/rare/sea-of-thieves-custom-seas.jpg
-description: Built the in-game command tools and spawn UI for Sea of Thieves' Custom Seas the Free Camera, Quick Commands radial, and Command Menu spawn screens.
+description: Built UI for Sea of Thieves' Custom Seas including the Free Camera, Quick Commands radial, and Command Menu spawn screens.
 weight: -2
 ---
 
