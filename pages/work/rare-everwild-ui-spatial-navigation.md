@@ -3,7 +3,7 @@ title: Rare — Everwild inventory UI and spatial navigation
 tags: [TypeScript, SolidJS, JavaScript, CSS, UI, GameDev, Work]
 thumbImage: /images/everwild/everwild-hero-logo.jpg
 description: Built the inventory HUD for Rare's Everwild in TypeScript and SolidJS, including a bespoke spatial navigation system for gamepad, mouse, and keyboard.
-weight: -2
+weight: -3
 ---
 
 # {{ title }}

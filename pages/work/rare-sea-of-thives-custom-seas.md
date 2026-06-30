@@ -1,17 +1,18 @@
 ---
 title: Rare - Sea of Thieves Custom Seas UI
-tags: [TypeScript, JavaScript, CSS, UI, GameDev]
-thumbImage: /images/rare/sea-of-thieves-custom-seas-free-camera.jpg
-description:
-    Built the in-game command tools and spawn UI for Sea of Thieves' Custom
-    Seas: the Free Camera, Quick Commands radial, and Command Menu spawn
-    screens.
-weight: -1
+tags: [TypeScript, JavaScript, CSS, UI, GameDev, Work]
+thumbImage: /images/rare/sea-of-thieves-custom-seas.jpg
+description: Built the in-game command tools and spawn UI for Sea of Thieves' Custom Seas the Free Camera, Quick Commands radial, and Command Menu spawn screens.
+weight: -2
 ---
 
 # Rare - Sea of Thieves Custom Seas UI
 
-![The Quick Commands radial open over the game in Sea of Thieves](/images/rare/sea-of-thieves-custom-seas-quick-commands-radial.jpg)
+{%
+  include "video",
+  poster: "/video/sea-of-thieves-custom-seas.jpg",
+  src: "/video/sea-of-thieves-custom-seas.mp4"
+%}
 
 For Sea of Thieves, I worked as a UI engineer on Custom Seas, a new mode that lets players create their own games. It launched in Season 20 and is part of the live game today. I built the UI for the in-game command toolbar, the Free Camera (photo mode), and the full-screen spawn Command Menu.
 
@@ -26,7 +27,7 @@ My focus was the full-screen spawn Command Menu and the in-game tools. The in-ga
 I built all of this in the Sea of Thieves UI framework, which runs on Coherent Gameface, using TypeScript, CSS, and Sass. I worked with the engine team on the TypeScript data contracts between the UI and the engine, using and adjusting them as the feature needed. Like the rest of the UI, this was covered by Jasmine unit tests.
 
 <figure>
-  <img src="/images/rare/sea-of-thieves-custom-seas-free-camera.jpg" alt="The in-game Free Camera with its movement settings panel">
+  <img src="/images/rare/custom-seas-photo-mode.jpg" alt="The in-game Free Camera with its movement settings panel">
   <figcaption>
     The Free Camera, built to work across standard, ultra-wide, and mixed aspect ratios
   </figcaption>
@@ -38,10 +39,10 @@ I built the UI to work across standard, ultra-wide, and mixed aspect ratios, and
 
 ### Quick Spawn Radial
 
-The Quick Spawn radial was the most complex interaction piece. It extends the game's radial menu to handle selecting, spawning, and assigning items and enemies, paged so a long list stays easy to use on a controller.
+The Quick Spawn radial was a complex interaction piece. It extends the game's existing radial menu, adding support for selecting, spawning, and assigning items and enemies.
 
 <figure>
-  <img src="/images/rare/sea-of-thieves-custom-seas-spawn-radial-assign.jpg" alt="Assigning a spawned item to the Quick Spawn radial">
+  <img src="/images/rare/custom-seas-command-menu.jpg" alt="Assigning a spawned item to the Quick Spawn radial">
   <figcaption>
     Assigning a spawned item to the Quick Spawn radial
   </figcaption>
@@ -52,7 +53,7 @@ The Quick Spawn radial was the most complex interaction piece. It extends the ga
 The command menu is the full-screen interface that lets players browse game items, and pick and spawn them for chosen players. Any item can also be assigned from here to the Quick Spawn radial for quick access during play.
 
 <figure>
-  <img src="/images/rare/sea-of-thieves-custom-seas-spawn-command-menu.jpg" alt="The full-screen Command Menu showing crate and commodity categories and item variants">
+  <img src="/images/rare/custom-seas-spawn-menu.jpg" alt="The full-screen Command Menu showing crate and commodity categories and item variants">
   <figcaption>
     The Spawn Command Menu, where players browse and spawn items
   </figcaption>
@@ -61,10 +62,8 @@ The command menu is the full-screen interface that lets players browse game item
 ## Technical contributions
 
 - **In-game UI:** Built the in-game command bar, Free Camera, and Quick Commands radial
-- **Spawn tooling:** Built the Command Menu spawn screens and the end-to-end flow for spawning items/enemies and assigning them to the radial.
-- **Code quality:** Championed the adoption of TypeScript strict null checking
+- **Spawn tooling:** Built the Command Menu spawn screens, radial assignment and in-game spawning
 - **Data contracts:** Used and adjusted TypeScript data contracts with the engine team
-- **Testing:** Covered all UI logic and controller interactions with Jasmine unit tests
+- **Testing:** Covered all UI logic and interactions with Jasmine unit tests
+- **Code quality:** Championed the adoption of TypeScript strict null checking
 - **Visual styling:** Implemented the Figma designs in CSS and Sass
-
-Custom Seas was one of the largest UI features I've shipped on a live-service game. The mix of performance constraints, cross-discipline collaboration made it a highlight of my time at Rare.
