@@ -17,13 +17,13 @@ For Sea of Thieves, I worked as a UI engineer on Custom Seas, a new mode that le
 
 ## The challenge
 
-I had already shipped [Guilds](/work/rare-sea-of-thieves/) on the Sea of Thieves UI codebase, so I knew the framework and how to work with the engine team. Custom Seas was a step up from that both is scope and team size.
+I had already shipped [Guilds](/work/rare-sea-of-thieves/) on the Sea of Thieves UI codebase, so I knew the framework and how to work with the engine team. Custom Seas was a step up from that both in scope and team size.
 
 My focus was the full-screen spawn Command Menu and the in-game tools. The in-game tools included the command toolbar, Free Camera, and Quick Commands radial, all of which had to render over a live game world, so DOM updates and CSS had to stay performant.
 
 ## The solution
 
-I built all of this in the Sea of Thieves UI framework, which runs on Coherent Gameface, using TypeScript, CSS, and Sass. I worked with the engine team on the TypeScript data contracts between the UI and the engine, using and adjusting them as the feature needed. Like the rest of the UI, this was covered by Jasmine unit tests
+I built all of this in the Sea of Thieves UI framework, which runs on Coherent Gameface, using TypeScript, CSS, and Sass. I worked with the engine team on the TypeScript data contracts between the UI and the engine, using and adjusting them as the feature needed. Like the rest of the UI, this was covered by Jasmine unit tests.
 
 <figure>
   <img src="/images/rare/sea-of-thieves-custom-seas-free-camera.jpg" alt="The in-game Free Camera with its movement settings panel">
@@ -34,7 +34,7 @@ I built all of this in the Sea of Thieves UI framework, which runs on Coherent G
 
 ### The Free Camera
 
-I built the UI to work across standard, ultra-wide, and mixed aspect ratios, and used CSS animations for the panel transitions. I also collaborated with the Unreal Engine team to extend the TypeScript data contracts as camera controls were evolved.
+I built the UI to work across standard, ultra-wide, and mixed aspect ratios, and used CSS animations for the panel transitions. I also collaborated with the Unreal Engine team to extend the TypeScript data contracts as camera controls evolved.
 
 ### Quick Spawn Radial
 
@@ -63,7 +63,7 @@ The command menu is the full-screen interface that lets players browse game item
 - **In-game UI:** Built the in-game command bar, Free Camera, and Quick Commands radial
 - **Spawn tooling:** Built the Command Menu spawn screens and the end-to-end flow for spawning items/enemies and assigning them to the radial.
 - **Code quality:** Championed the adoption of TypeScript strict null checking
-- **Data contracts:** Defined and iterated on TypeScript data contracts with the Unreal Engine team
+- **Data contracts:** Used and adjusted TypeScript data contracts with the engine team
 - **Testing:** Covered all UI logic and controller interactions with Jasmine unit tests
 - **Visual styling:** Implemented the Figma designs in CSS and Sass
 
