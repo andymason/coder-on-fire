@@ -453,6 +453,9 @@ body:not(#homepage):not(#cv) > blockquote > p {
         align-items: center;
         margin: 0;
 
+        backdrop-filter: blur(10px) brightness(120%);
+        text-shadow: 0 0 3px #0000005c;
+
         a {
             color: var(--colour-foreground);
             text-decoration: none;
