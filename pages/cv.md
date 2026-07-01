@@ -13,7 +13,7 @@ pageId: cv
 </header>
 
 I'm a senior front-end developer who builds interactive interfaces, data
-visualisations, and tooling across games, media, and news. I've shipped game UI
+visualisations, and tooling across games, media, and news. I've built game UI
 at Rare (Xbox Game Studio) for [Sea of Thieves][custom-seas] and [Everwild][everwild-inventory], created interactive
 stories and an open-source [Figma plugin][milton] at The Telegraph, and led [VR projects][6x9]
 and [live data dashboards][election] at The Guardian.
@@ -179,12 +179,11 @@ _2001 – 2005_
 
 ## Personal
 
-I actively follow web standards and browser engine development, and I'm
-fascinated by the fast-moving world of LLMs. I'm interested in graphics and
+I closely follow web standards and browser engine development, and I've been
+experimenting with LLMs and AI tooling. I'm interested in graphics and
 rendering technology across games and the web, particularly how techniques from
-one medium can benefit the other. I enjoy the Demoscene community's approach to
-working within tight constraints, and spend my spare time on personal 
-projects and experiments.
+one medium can benefit the other. Outside of work I tinker with personal
+projects and enjoy creative coding.
 
 [sea-of-thieves]: /work/rare-sea-of-thieves
 [custom-seas]: /work/rare-sea-of-thieves-custom-seas

@@ -10,7 +10,7 @@ pageId: homepage
 ## Senior Frontend Developer
 
 I'm a senior front-end developer who builds interactive interfaces, data
-visualisations, and tooling across games, media, and news. I've shipped game UI
+visualisations, and tooling across games, media, and news. I've built game UI
 at Rare (Xbox Game Studio) for [Sea of Thieves][custom-seas] and [Everwild][everwild-inventory], created interactive
 stories and an open-source [Figma plugin][milton] at The Telegraph, and led [VR projects][6x9]
 and [live data dashboards][election] at The Guardian.
