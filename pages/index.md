@@ -68,7 +68,7 @@ and [live data dashboards][election] at The Guardian.
 {%- endfor %}
 </ul>
 
-[custom-seas]: /work/rare-sea-of-thives-custom-seas
+[custom-seas]: /work/rare-sea-of-thieves-custom-seas
 [everwild-inventory]: /work/rare-everwild-ui-spatial-navigation
 [milton]: /work/telegraph-milton-figma-html-export-plugin
 [6x9]: /work/the-guardian-6x9-virtual-reality

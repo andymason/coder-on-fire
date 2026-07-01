@@ -187,7 +187,7 @@ working within tight constraints, and spend my spare time on personal
 projects and experiments.
 
 [sea-of-thieves]: /work/rare-sea-of-thieves
-[custom-seas]: /work/rare-sea-of-thives-custom-seas
+[custom-seas]: /work/rare-sea-of-thieves-custom-seas
 [headphone-mode]: /work/rare-sea-of-thieves-spatial-audio
 [everwild-inventory]: /work/rare-everwild-ui-spatial-navigation
 [milton]: /work/telegraph-milton-figma-html-export-plugin
