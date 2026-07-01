@@ -1,0 +1,25 @@
+from: markdown
+pdf-engine: weasyprint
+css: paper.css
+pdf-engine-opts:
+  - --pdf-variant=pdf/ua-1
+variables:
+  # Sets <meta name="author"> (→ PDF Author) without rendering a visible
+  # author line in the title block. See pandoc's *-meta variables.
+  author-meta: "Andrew Mason"
+metadata:
+  description: "CV — Senior Front-end Developer"
+  keywords:
+    - Front-end Developer
+    - Senior Front-end Developer
+    - TypeScript
+    - JavaScript
+    - React
+    - SolidJS
+    - Preact
+    - Three.js
+    - WebGL
+    - Node.js
+    - Game UI
+    - Data Visualisation
+    - Prototyping

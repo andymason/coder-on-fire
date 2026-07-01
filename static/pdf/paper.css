@@ -1,0 +1,210 @@
+@page {
+    size: a4 portrait;
+    margin: 1.3cm 1.6cm;
+
+    @bottom-center {
+        content: "Andrew Mason · " counter(page) " of " counter(pages);
+        font-family: "Source Sans 3", helvetica, arial, sans-serif;
+        font-size: 8pt;
+        color: #777;
+    }
+}
+
+body {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.4;
+    font-family: "Source Sans 3", helvetica, arial, sans-serif;
+    color: #000;
+    font-size: 11pt;
+}
+
+a {
+    font-weight: normal;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #888;
+}
+
+h3,
+h3 + p {
+    display: inline-block;
+}
+
+h3 + p {
+    color: #777;
+    margin: 0 0 0 6pt;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Source Sans 3", helvetica, arial, sans-serif;
+    page-break-after: avoid;
+}
+
+h1 {
+    font-size: 25pt;
+    font-weight: bolder;
+    margin: 0;
+    text-align: center;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: 16pt;
+    font-weight: 300;
+    border-bottom: 1px solid #333;
+    margin: 6pt 0 3pt 0;
+}
+
+h3 {
+    font-size: 12.5pt;
+    margin: 6pt 0 0 0;
+    font-weight: 600;
+}
+
+h4,
+h5,
+h6 {
+    font-size: 12.5pt;
+}
+
+p {
+    margin: 4pt 0;
+}
+
+/* Job Title 1 */
+
+#senior-design-engineer {
+    font-size: 20pt;
+    text-align: center;
+    border: none;
+    margin: 0;
+}
+
+#senior-design-engineer + p {
+    margin: 16pt 0 16pt 0;
+}
+
+#senior-design-engineer + p a {
+    margin: 0 6pt;
+}
+
+#senior-design-engineer + p,
+#senior-design-engineer + p + p {
+    text-align: center;
+}
+
+/* Job Title 2 */
+#senior-creative-developer + p,
+#senior-creative-developer + p + p,
+#senior-creative-developer + p + p + p {
+    text-align: center;
+}
+
+/* Job Title 3 */
+#senior-front-end-developer {
+    font-size: 20pt;
+    text-align: center;
+    border: none;
+    margin: 0;
+}
+
+#senior-front-end-developer + p {
+    margin: 10pt 0 16pt 0;
+}
+
+#senior-front-end-developer + p a {
+    margin: 0 6pt;
+}
+
+#senior-front-end-developer + p + p {
+    margin-bottom: 14pt;
+}
+
+#senior-front-end-developer + p,
+#senior-front-end-developer + p + p,
+#senior-front-end-developer + p + p + p {
+    text-align: center;
+}
+
+p:last-of-type {
+    margin-top: 10pt;
+}
+
+code {
+    font:
+        12pt Courier,
+        monospace;
+}
+
+blockquote {
+    margin: 1.2em;
+    padding: 1em;
+    font-size: 12pt;
+}
+
+hr {
+    background-color: #ccc;
+}
+
+/* Table */
+table {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 12pt;
+    font-size: 11pt;
+}
+
+th {
+    font-weight: 600;
+    line-height: 1.8;
+}
+
+th,
+td {
+    padding: 0;
+    white-space: nowrap;
+}
+
+td {
+    line-height: 1.4;
+}
+
+tfoot {
+    font-style: italic;
+}
+
+colgroup col:first-of-type {
+    width: 24% !important;
+}
+
+thead {
+    display: table-header-group;
+}
+
+img,
+tr {
+    page-break-inside: avoid;
+}
+
+ul {
+    padding-left: 11pt;
+}
+
+li {
+    list-style: none;
+    position: relative;
+}
+
+li::before {
+    content: "•";
+    position: absolute;
+    left: -10pt;
+}
