@@ -298,7 +298,7 @@ h1 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     gap: clamp(var(--gap-small), 4vw, var(--gap-large));
     text-align: center;
 

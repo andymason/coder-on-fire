@@ -9,55 +9,48 @@ pageId: homepage
 
 ## Senior Frontend Developer
 
-With over 15 years of experience as a senior front-end developer,
-I specialise in creating accessible web interfaces using the
-latest technologies, including TypeScript and best design
-practices. My career highlights include leading [award-winning projects](./work/the-guardian-6x9-virtual-reality.md)
-at The Guardian, developing [Figma plugins](./work/telegraph-milton-figma-html-export-plugin.md)
-at The Telegraph, and building [game UI](./work/rare-sea-of-thieves.md) at Microsoft
-Studios . I thrive in fast-paced, collaborative environments and
-am passionate about pushing the boundaries of web development.
+I'm a senior front-end developer who builds interactive interfaces, data
+visualisations, and tooling across games, media, and news. I've shipped game UI
+at Rare (Xbox Game Studio) for [Sea of Thieves][custom-seas] and [Everwild][everwild-inventory], created interactive
+stories and an open-source [Figma plugin][milton] at The Telegraph, and led [VR projects][6x9]
+and [live data dashboards][election] at The Guardian.
 
 ## Skills and knowledge
 
 <div id="skills">
   <div class="skill-group">
-    <h3 class="skill-group__title">Programming</h3>
+    <h3 class="skill-group__title">Languages</h3>
     <ul class="skill-group__list">
-      <li class="skill-group__item">TypeScript</li>
-      <li class="skill-group__item">JavaScript</li>
-      <li class="skill-group__item">HTML, CSS</li>
-      <li class="skill-group__item">HTTP APIs</li>
+      <li class="skill-group__item">TypeScript / JavaScript</li>
+      <li class="skill-group__item">CSS / Sass</li>
+      <li class="skill-group__item">HTML</li>
     </ul>
   </div>
 
   <div class="skill-group">
-    <h3 class="skill-group__title">Software</h3>
+    <h3 class="skill-group__title">Frameworks &amp; Libraries</h3>
     <ul class="skill-group__list">
-      <li class="skill-group__item">React, Preact</li>
-      <li class="skill-group__item">Webpack, Esbuild</li>
-      <li class="skill-group__item">Unit Tests, Jasmine</li>
+      <li class="skill-group__item">React, SolidJS, Preact</li>
+      <li class="skill-group__item">Three.js, Pixi.js, D3</li>
+      <li class="skill-group__item">Node.js, Puppeteer</li>
+    </ul>
+  </div>
+
+  <div class="skill-group">
+    <h3 class="skill-group__title">Tooling &amp; Testing</h3>
+    <ul class="skill-group__list">
+      <li class="skill-group__item">Vite, Webpack, esbuild</li>
+      <li class="skill-group__item">Jasmine, Vitest</li>
       <li class="skill-group__item">Git, Perforce</li>
     </ul>
   </div>
 
   <div class="skill-group">
-    <h3 class="skill-group__title">UI development</h3>
+    <h3 class="skill-group__title">Specialisms</h3>
     <ul class="skill-group__list">
-      <li class="skill-group__item">Responsive design</li>
-      <li class="skill-group__item">Accessibility, WAI</li>
-      <li class="skill-group__item">Browser Testing</li>
-      <li class="skill-group__item">Mobile optimization</li>
-    </ul>
-  </div>
-
-  <div class="skill-group">
-    <h3 class="skill-group__title">Cloud &amp; OS</h3>
-    <ul class="skill-group__list">
-      <li class="skill-group__item">AWS, Azure, GCP</li>
-      <li class="skill-group__item">Serverless functions</li>
-      <li class="skill-group__item">CDNs, REST APIs</li>
-      <li class="skill-group__item">Linux, Mac, Windows</li>
+      <li class="skill-group__item">Prototyping &amp; R&amp;D</li>
+      <li class="skill-group__item">Interactive multimedia</li>
+      <li class="skill-group__item">Data visualisation</li>
     </ul>
   </div>
 </div>
@@ -74,3 +67,9 @@ am passionate about pushing the boundaries of web development.
   </li>
 {%- endfor %}
 </ul>
+
+[custom-seas]: /work/rare-sea-of-thives-custom-seas
+[everwild-inventory]: /work/rare-everwild-ui-spatial-navigation
+[milton]: /work/telegraph-milton-figma-html-export-plugin
+[6x9]: /work/the-guardian-6x9-virtual-reality
+[election]: /work/the-guardian-scottish-independence-dashboard

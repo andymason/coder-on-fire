@@ -12,54 +12,48 @@ pageId: cv
   </p>
 </header>
 
-With over 15 years of experience as a senior front-end developer, I specialise
-in creating accessible web interfaces using the latest technologies, including
-TypeScript and best design practices. My career highlights include leading
-award-winning projects at The Guardian, developing Figma plugins at The
-Telegraph, and building game UIs at Microsoft Studios. I thrive in fast-paced,
-collaborative environments and am passionate about pushing the boundaries of web
-development.
+I'm a senior front-end developer who builds interactive interfaces, data
+visualisations, and tooling across games, media, and news. I've shipped game UI
+at Rare (Xbox Game Studio) for [Sea of Thieves][custom-seas] and [Everwild][everwild-inventory], created interactive
+stories and an open-source [Figma plugin][milton] at The Telegraph, and led [VR projects][6x9]
+and [live data dashboards][election] at The Guardian.
 
 ## Skills
 
 <div id="skills">
   <div class="skill-group">
-    <h3 class="skill-group__title">Programming</h3>
+    <h3 class="skill-group__title">Languages</h3>
     <ul class="skill-group__list">
-      <li class="skill-group__item">TypeScript</li>
-      <li class="skill-group__item">JavaScript</li>
-      <li class="skill-group__item">HTML, CSS</li>
-      <li class="skill-group__item">HTTP APIs</li>
+      <li class="skill-group__item">TypeScript / JavaScript</li>
+      <li class="skill-group__item">CSS / Sass</li>
+      <li class="skill-group__item">HTML</li>
     </ul>
   </div>
 
   <div class="skill-group">
-    <h3 class="skill-group__title">Software</h3>
+    <h3 class="skill-group__title">Frameworks &amp; Libraries</h3>
     <ul class="skill-group__list">
-      <li class="skill-group__item">React, Preact</li>
-      <li class="skill-group__item">Webpack, Esbuild</li>
-      <li class="skill-group__item">Unit Tests, Jasmine</li>
+      <li class="skill-group__item">React, SolidJS, Preact</li>
+      <li class="skill-group__item">Three.js, Pixi.js, D3</li>
+      <li class="skill-group__item">Node.js, Puppeteer</li>
+    </ul>
+  </div>
+
+  <div class="skill-group">
+    <h3 class="skill-group__title">Tooling &amp; Testing</h3>
+    <ul class="skill-group__list">
+      <li class="skill-group__item">Vite, Webpack, esbuild</li>
+      <li class="skill-group__item">Jasmine, Vitest</li>
       <li class="skill-group__item">Git, Perforce</li>
     </ul>
   </div>
 
   <div class="skill-group">
-    <h3 class="skill-group__title">UI development</h3>
+    <h3 class="skill-group__title">Specialisms</h3>
     <ul class="skill-group__list">
-      <li class="skill-group__item">Responsive design</li>
-      <li class="skill-group__item">Accessibility, WAI</li>
-      <li class="skill-group__item">Browser Testing</li>
-      <li class="skill-group__item">Mobile optimization</li>
-    </ul>
-  </div>
-
-  <div class="skill-group">
-    <h3 class="skill-group__title">Cloud &amp; OS</h3>
-    <ul class="skill-group__list">
-      <li class="skill-group__item">AWS, Azure, GCP</li>
-      <li class="skill-group__item">Serverless functions</li>
-      <li class="skill-group__item">CDNs, REST APIs</li>
-      <li class="skill-group__item">Linux, Mac, Windows</li>
+      <li class="skill-group__item">Prototyping &amp; R&amp;D</li>
+      <li class="skill-group__item">Interactive multimedia</li>
+      <li class="skill-group__item">Data visualisation</li>
     </ul>
   </div>
 </div>
@@ -68,44 +62,47 @@ development.
 
 ### UI Engineer (contract) | Rare (Xbox Game Studio)
 
-_Nov 2024 – Current_
+_Nov 2024 – May 2026_
 
-Rejoined the UI engineer team at Rare to work on their upcoming game EverWild.
+Built game UI for Sea of Thieves and Everwild in TypeScript, SolidJS, CSS, and
+Sass, running on Coherent Gameface inside Unreal Engine.
 
-- Developing game UI using TypeScript and modern CSS.
-- Creating prototypes working directly with the UI team, engine programmers and
-  game developers.
-- Adapting C++ code to work with Ui requirements
-- Worked on Sea of Thieves' Custom Seas.
+- Built [Custom Seas UI][custom-seas] for Sea of Thieves Season 20: Free Camera,
+  Quick Commands radial, and Command Menu spawn screens.
+- Built Sea of Thieves' [Enhanced Headphone Mode UI][headphone-mode]: a
+  state-machine-driven flow for Embody's spatial audio, mapping plugin, setup,
+  and menu states into the game.
+- Designed and implemented a [bespoke spatial navigation
+  system][everwild-inventory] for Everwild's inventory HUD with gamepad,
+  keyboard, and mouse support across non-grid layouts.
+- Built a real-time debug visualiser for inspecting focus state and navigation
+  behaviour.
+- Defined TypeScript data contracts with the Unreal Engine team, covered by
+  Jasmine unit tests.
 
 ### UI Engineer (contract) | Rare (Xbox Game Studio)
 
 _Aug 2022 – March 2024_
 
-My role at Rare was to deliver [UI features for Sea of Thieves][sea-of-thieves]
-and prototype UI for their next-gen title, EverWild:
+Built Sea of Thieves UI features and prototyped UI for Everwild in TypeScript,
+Sass, and Coherent Gameface.
 
-- Coded UI components and services for Sea of Thieves using TypeScript, SASS and
-  Coherent Gameface.
-- Developed prototypes demonstrating advanced UI features in Rare's next-gen
-  game, Everwild.
-- Provided technical expertise during creative sessions, collaborating directly
-  with designers using Figma to turn designs into interactive UI components.
-- Conducted research on the latest industry technologies, ensuring cutting-edge
-  solutions for in-game UI.
-- Optimise in-game UI performance and memory usage using Chrome DevTools and
-  Xbox PIX captures.
-- Authored, unit-tests, JSON data contracts and TypeScript definitions for
+- Shipped [Guilds][sea-of-thieves] for Sea of Thieves Season Ten: built UI
+  screens and components in TypeScript, defining data contracts between the UI,
+  Unreal Engine, and remote services.
+- Developed interactive Everwild prototypes, working directly with designers and
+  engine programmers.
+- Authored unit tests, JSON data contracts, and TypeScript definitions for
   Unreal event models.
-- Improved workflow efficiency by analysing UI deployments, reducing unit test
-  runtime by 30%.
+- Optimised in-game UI performance using Chrome DevTools and Xbox PIX captures,
+  testing across PC and Xbox One development consoles.
 
 ### Senior Prototyper | The Telegraph
 
 _Jul 2018 – Apr 2022_
 
 Worked within the Product team, collaborating with designers and journalists to
-create prototypes, interactive web experiences, and visual stories:
+create prototypes, interactive web experiences, and visual stories.
 
 - Created [Milton], an award-winning open-source Figma plugin using TypeScript
   and React that allows designers to convert Figma designs into responsive HTML
@@ -119,15 +116,19 @@ create prototypes, interactive web experiences, and visual stories:
   Node.js, Puppeteer, Google Cloud Functions, and Firebase.
 - Developed a React app, enabling video editors to create
   [embeddable animations using Lottie JSON][lottie], complete with a GUI for
-  customization and a self-contained HTML output.
+  customisation and a self-contained HTML output.
 
 ### UI Engineer | Simpplr
 
 _Feb 2018 – May 2018_
 
-- Developed UI components in React, Redux, and Immutable.js for a large-scale
-  single-page application.
-- Authored RESTful JSON API specifications for Salesforce Database engineers.
+Built UI for an intranet application in React, Redux, and Immutable.js, backed
+by a Salesforce API.
+
+- Built an interactive graph-based employee hierarchy component for navigating
+  the organisation.
+- Collaborated with the Salesforce backend team to define API schemas and
+  testing.
 
 ### Creative Technologist | The Guardian
 
@@ -144,25 +145,24 @@ interactive experiences.
   custom animation tools.
 - Created [live election data-dashboards][election] using D3 and powered by
   Node.js and S3.
-- Built in-house tools allowing designers to embed illustrations directly onto
-  the Guardian website.
 
 ### Front-End Developer | BBC
 
 _Apr 2010 – Nov 2011_
 
-- Developed UI for the [BBC homepage redesign][bbc-homepage].
-- Produced WCAG AAA compliant code, supporting a broad range of web browsers.
+- Developed UI components for the [BBC homepage redesign][bbc-homepage],
+  producing WCAG AAA compliant code supporting a broad range of browsers.
 - Collaborated with UX designers to prototype and validate UI interactions.
 
 ### Senior Developer | Digitas (AKQA)
 
 _Mar 2008 – Apr 2010_
 
-- Managed UI development of a multilingual booking system in Dubai.
-- Established an internal innovation lab to foster collaboration between design
-  and development teams.
-- Created and presented proof-of-concept prototypes for client pitches.
+- Led front-end development of a multilingual property ticketing system for Palm
+  Jumeirah, Dubai, working alongside the project manager and Oracle CRM teams to
+  evaluate and integrate competing ticketing backends.
+- Built the CRM and promotional site for the Levi's flagship London store
+  launch.
 
 ## Education
 
@@ -170,28 +170,26 @@ _Mar 2008 – Apr 2010_
 
 _2001 – 2005_
 
-- Developed a point-and-click adventure game with an audio-only interface for
-  the visually impaired.
-- Studied Human-Computer Interaction and multimedia creation, including video
-  and audio production, 3D modelling, and web development.
+- Final-year dissertation: a solo point-and-click adventure game with an
+  audio-only interface for visually impaired players, exploring accessible
+  interaction design.
+- Studied Human-Computer Interaction and multimedia creation, which continue to
+  inform my interest in how people interact with visual storytelling and
+  immersive media.
 
 ## Personal
 
-- Experimenting with machine learning and AI, especially how they can be used as
-  assistive tools.
-- Interested in retro and modern video games, as well as 8-bit computing and 3D
-  rendering technology.
-- I enjoy creating art projects exploring themes such as
-  [privacy and surveillance of webcams][webcams], drawing inspiration from
-  Philip K. Dick's work.
-- Developed a [glitch generation tool][glitch] to experiment with databending of
-  images and learn about the technical details of JPEG compression artefacts.
-- I'm fascinated by the Demoscene, a community of artists and programmers who
-  create demos within strict technical constraints, as well as 64K demos and ROM
-  hacking.
-- Keen on reverse engineering, performance analysis, and internet security.
+I actively follow web standards and browser engine development, and I'm
+fascinated by the fast-moving world of LLMs. I'm interested in graphics and
+rendering technology across games and the web, particularly how techniques from
+one medium can benefit the other. I enjoy the Demoscene community's approach to
+working within tight constraints, and spend my spare time on personal 
+projects and experiments.
 
 [sea-of-thieves]: /work/rare-sea-of-thieves
+[custom-seas]: /work/rare-sea-of-thives-custom-seas
+[headphone-mode]: /work/rare-sea-of-thieves-spatial-audio
+[everwild-inventory]: /work/rare-everwild-ui-spatial-navigation
 [milton]: /work/telegraph-milton-figma-html-export-plugin
 [lockdown]: /work/telegraph-scrolling-story-telling
 [video-wall]: /work/telegraph-video-wall
@@ -200,5 +198,3 @@ _2001 – 2005_
 [webgl]: /work/the-guardian-6x9-webgl-website
 [election]: /work/the-guardian-scottish-independence-dashboard
 [bbc-homepage]: /work/bbc-homepage
-[webcams]: /work/experiments-room-47
-[glitch]: /work/experiments-glitchor

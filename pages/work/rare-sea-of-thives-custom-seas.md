@@ -26,6 +26,10 @@ My focus was the full-screen spawn Command Menu and the in-game tools. The in-ga
 
 I built all of this in the Sea of Thieves UI framework, which runs on Coherent Gameface, using TypeScript, CSS, and Sass. I worked with the engine team on the TypeScript data contracts between the UI and the engine, using and adjusting them as the feature needed. Like the rest of the UI, this was covered by Jasmine unit tests.
 
+### The Free Camera
+
+I built the UI to work across standard, ultra-wide, and mixed aspect ratios, and used CSS animations for the panel transitions. I also collaborated with the Unreal Engine team to extend the TypeScript data contracts as camera controls evolved.
+
 <figure>
   <img src="/images/rare/custom-seas-photo-mode.jpg" alt="The in-game Free Camera with its movement settings panel">
   <figcaption>
@@ -33,9 +37,6 @@ I built all of this in the Sea of Thieves UI framework, which runs on Coherent G
   </figcaption>
 </figure>
 
-### The Free Camera
-
-I built the UI to work across standard, ultra-wide, and mixed aspect ratios, and used CSS animations for the panel transitions. I also collaborated with the Unreal Engine team to extend the TypeScript data contracts as camera controls evolved.
 
 ### Quick Spawn Radial
 
