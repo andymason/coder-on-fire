@@ -301,6 +301,8 @@ h1 {
     align-items: flex-start;
     gap: clamp(var(--gap-small), 4vw, var(--gap-large));
     text-align: center;
+    grid-column: 1/4;
+    padding: 0 var(--gap-small);
 
     .skill-group__list {
         list-style: none;
