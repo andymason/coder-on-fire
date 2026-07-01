@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "eleventy --serve",
     "build": "eleventy",
+    "pdf": "cd static/pdf && pandoc cv.md --pdf-engine=weasyprint --css=paper.css -d defaults.yaml --output=andrew-mason-senior-frontend-developer-cv.pdf",
     "lint": "oxlint .",
     "format": "oxfmt --write ."
   },

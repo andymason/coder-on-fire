@@ -138,7 +138,6 @@ ol {
     font-family: var(--font-family-sans, sans-serif);
     line-height: var(--line-height-medium, inherit);
     font-size: var(--font-size-medium);
-    hyphens: auto;
     margin: 0 0 var(--gap-medium, inherit) 0;
 }
 
@@ -277,6 +276,7 @@ h1 {
 #homepage h2 + p {
     text-align: center;
     margin: var(--gap-large) 0;
+    text-wrap: balance;
 }
 
 #homepage h1 {

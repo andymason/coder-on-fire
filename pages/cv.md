@@ -12,11 +12,12 @@ pageId: cv
   </p>
 </header>
 
-I'm a senior front-end developer who builds interactive interfaces, data
-visualisations, and tooling across games, media, and news. I've built game UI
-at Rare (Xbox Game Studio) for [Sea of Thieves][custom-seas] and [Everwild][everwild-inventory], created interactive
-stories and an open-source [Figma plugin][milton] at The Telegraph, and led [VR projects][6x9]
-and [live data dashboards][election] at The Guardian.
+I'm a senior front-end developer who builds interactive web experiences, data
+visualisations, and game UI. I've built game UI at Rare (Xbox Game Studio) for
+[Sea of Thieves][custom-seas] and [Everwild][everwild-inventory], created
+interactive stories and an open-source [Figma plugin][milton] at The
+Telegraph, and led [VR projects][6x9] and [live data dashboards][election] at
+The Guardian.
 
 ## Skills
 
@@ -34,8 +35,8 @@ and [live data dashboards][election] at The Guardian.
     <h3 class="skill-group__title">Frameworks &amp; Libraries</h3>
     <ul class="skill-group__list">
       <li class="skill-group__item">React, SolidJS, Preact</li>
-      <li class="skill-group__item">Three.js, Pixi.js, D3</li>
-      <li class="skill-group__item">Node.js, Puppeteer</li>
+      <li class="skill-group__item">Three.js, 2D Graphics APIs</li>
+      <li class="skill-group__item">Node.js</li>
     </ul>
   </div>
 
