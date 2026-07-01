@@ -39,7 +39,7 @@ static assets within the exported HTML.
 Therefore, I needed a Figma-centric solution.
 
 <figure>
-  <img src="/images/milton-frames.png" alt="Selecting frames in Figma for Milton" width="1280" height="720">
+  <img src="/images/milton-frames.png" alt="Selecting frames in Figma for Milton">
   <figcaption>
     Selecting frames in Figma for Milton
   </figcaption>
@@ -65,7 +65,7 @@ access and a user-facing frontend. While the postMessage API facilitated
 communication between these halves for simple tasks, its limitations became
 evident.
 
-Therefore, I developed a custom helper tool, "[postman][postman]", acting as an
+Therefore, I developed a custom helper tool called "postman", acting as an
 asynchronous message bus. This enabled me to maintain the user interface's
 responsiveness while awaiting completion of longer backend API calls.
 
@@ -82,7 +82,7 @@ applied styles. This map then guided the recreation of styles using HTML and
 CSS.
 
 <figure>
-  <img src="/images/milton-breakpoints.png" alt="Previewing breakpoints in the Milton plugin" width="1175" height="770">
+  <img src="/images/milton-breakpoints.png" alt="Previewing breakpoints in the Milton plugin">
   <figcaption>
     Previewing breakpoints in the Milton plugin
   </figcaption>
@@ -118,10 +118,6 @@ modify, and re-export the HTML.
 ### Open-Source and Accessible
 
 Milton was released under the open-source MIT licence in early 2022 and is
-readily available on both [GitHub][milton-github] and the
-[Figma plugin store][milton-plugin].
+readily available on the [Figma plugin store][milton-plugin].
 
-[postman]: https://github.com/telegraph/milton/blob/master/src/utils/messages.ts#L14=
-[milton-images]: https://github.com/telegraph/milton/blob/master/src/frontend/imageHelper.ts#L110=
-[milton-github]: https://github.com/telegraph/milton
 [milton-plugin]: https://www.figma.com/community/plugin/844954779092514561/milton
