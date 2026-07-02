@@ -88,15 +88,15 @@ _Aug 2022 – March 2024_
 Built Sea of Thieves UI features and prototyped UI for Everwild in TypeScript,
 Sass, and Coherent Gameface.
 
-- Shipped [Guilds][sea-of-thieves] for Sea of Thieves Season Ten: built UI
+- Shipped [Guilds UI][sea-of-thieves] for Sea of Thieves Season Ten: built
   screens and components in TypeScript, defining data contracts between the UI,
   Unreal Engine, and remote services.
 - Developed interactive Everwild prototypes, working directly with designers and
   engine programmers.
-- Authored unit tests, JSON data contracts, and TypeScript definitions for
+- Authored unit tests, data contracts, and TypeScript definitions for
   Unreal event models.
-- Optimised in-game UI performance using Chrome DevTools and Xbox PIX captures,
-  testing across PC and Xbox One development consoles.
+- Optimised in-game UI performance using DevTools and Xbox PIX captures,
+  testing across PC and Xbox development consoles.
 
 ### Senior Prototyper | The Telegraph
 
@@ -162,8 +162,7 @@ _Mar 2008 – Apr 2010_
 - Led front-end development of a multilingual property ticketing system for Palm
   Jumeirah, Dubai, working alongside the project manager and Oracle CRM teams to
   evaluate and integrate competing ticketing backends.
-- Built the CRM and promotional site for the Levi's flagship London store
-  launch.
+- Built the promotional site for the Levi's flagship London store launch using Wordpress.
 
 ## Education
 

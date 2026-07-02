@@ -40,6 +40,8 @@ I also collaborated with engine team to define data contracts between the UI and
 
 ### Spatial Navigation
 
+![Debug visualial UI showing the sphear grid navigation](/images/everwild/everwild-sphear-grid.jpg)
+
 The spatial navigation system was the most technically substantial part of the project.
 
 Unlike a conventional grid-based UI, the system had to support directional movement across layouts that weren't simple grids. Items, filters, categories, and contextual controls could be arranged in creative ways, and those layouts would keep evolving as the design developed.
@@ -94,15 +96,6 @@ The overlay rendered a live view of the navigation system's internal state, draw
 - bounding boxes around selectable elements and their parent focus groups
 - the current focus state and a visual history stack showing the exact path taken
 - real-time metrics in a side panel, including active nodes, container counts, and history size
-
-To ensure the system was robust, I built a test suite of complex layouts that the visualiser could render and navigate through:
-
-- **Multi-dimensional grids:** Testing complex nested layouts and wrapping behaviour.
-- **Sphere grids:** Proving the nearest-element selection logic worked flawlessly on non-linear, circular layouts.
-- **Exclusive focus:** Verifying that modals could trap focus and prevent navigation to background elements.
-- **Scrolling:** Ensuring focus movement correctly drove the scroll position of both vertical and horizontal containers.
-- **Restricted directions:** Testing elements that only accept focus from specific directions.
-- **Focus change callbacks:** Displaying real-time JSON payloads for `onFocus` and `onBlur` events to verify data contracts with the game engine.
 
 This turned an invisible, abstract system into something we could see and point at. Designers could understand why focus landed on a particular element, engineers could verify edge cases quickly, and the whole team could discuss unexpected behaviour against the same picture.
 
