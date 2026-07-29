@@ -185,15 +185,15 @@ rendering technology across games and the web, particularly how techniques from
 one medium can benefit the other. Outside of work I tinker with personal
 projects and enjoy creative coding.
 
-[sea-of-thieves]: /work/rare-sea-of-thieves
-[custom-seas]: /work/rare-sea-of-thieves-custom-seas
-[headphone-mode]: /work/rare-sea-of-thieves-spatial-audio
-[everwild-inventory]: /work/rare-everwild-ui-spatial-navigation
-[milton]: /work/telegraph-milton-figma-html-export-plugin
-[lockdown]: /work/telegraph-scrolling-story-telling
-[video-wall]: /work/telegraph-video-wall
-[lottie]: /work/telegraph-lottie-animation-tool
-[6x9]: /work/the-guardian-6x9-virtual-reality
-[webgl]: /work/the-guardian-6x9-webgl-website
-[election]: /work/the-guardian-scottish-independence-dashboard
-[bbc-homepage]: /work/bbc-homepage
+[sea-of-thieves]: /work/rare-sea-of-thieves/
+[custom-seas]: /work/rare-sea-of-thieves-custom-seas/
+[headphone-mode]: /work/rare-sea-of-thieves-spatial-audio/
+[everwild-inventory]: /work/rare-everwild-ui-spatial-navigation/
+[milton]: /work/telegraph-milton-figma-html-export-plugin/
+[lockdown]: /work/telegraph-scrolling-story-telling/
+[video-wall]: /work/telegraph-video-wall/
+[lottie]: /work/telegraph-lottie-animation-tool/
+[6x9]: /work/the-guardian-6x9-virtual-reality/
+[webgl]: /work/the-guardian-6x9-webgl-website/
+[election]: /work/the-guardian-scottish-independence-dashboard/
+[bbc-homepage]: /work/bbc-homepage/

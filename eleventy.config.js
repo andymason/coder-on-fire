@@ -90,6 +90,10 @@ export default (eleventyConfig) => {
     }
   });
 
+  eleventyConfig.addFilter("dateToIso", (date) => {
+    return new Date(date).toISOString();
+  });
+
   // Optimise the front-matter image used for og:image and emit it into the
   // build. The image transform plugin only rewrites <img>/<picture> tags in
   // rendered HTML, so meta-tag images need processing explicitly here.

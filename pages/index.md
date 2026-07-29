@@ -69,8 +69,8 @@ The Guardian.
 {%- endfor %}
 </ul>
 
-[custom-seas]: /work/rare-sea-of-thieves-custom-seas
-[everwild-inventory]: /work/rare-everwild-ui-spatial-navigation
-[milton]: /work/telegraph-milton-figma-html-export-plugin
-[6x9]: /work/the-guardian-6x9-virtual-reality
-[election]: /work/the-guardian-scottish-independence-dashboard
+[custom-seas]: /work/rare-sea-of-thieves-custom-seas/
+[everwild-inventory]: /work/rare-everwild-ui-spatial-navigation/
+[milton]: /work/telegraph-milton-figma-html-export-plugin/
+[6x9]: /work/the-guardian-6x9-virtual-reality/
+[election]: /work/the-guardian-scottish-independence-dashboard/
