@@ -3,7 +3,7 @@ title: The Telegraph — Scroll-triggered storytelling
 tags: [JavaScript, TypeScript, HTML, CSS, Animation, Work]
 thumbImage: /images/telegraph-scrollytelling/scrollytelling-demo.jpg
 description: Built a scroll-triggered visual storytelling system and in-browser prototyping editor at The Telegraph, winning an SND award for "A Year in Lockdown".
-weight: 7
+weight: 6
 ---
 
 # {{ title }}

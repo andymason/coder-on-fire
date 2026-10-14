@@ -3,7 +3,7 @@ title: The Guardian — 6x9 WebGL website and 3D editor
 tags: [WebGL, Three.js, Shaders, 3D-Graphics, Blender, JavaScript, CSS, Work]
 thumbImage: /images/6x9-webgl-editor-social.jpg
 description: Built the interactive WebGL promotional site and an in-browser 3D camera and shader editor for The Guardian's 6x9 virtual reality project.
-weight: 3
+weight: -1
 ---
 
 # {{ title }}

@@ -3,7 +3,7 @@ title: The Guardian — 6x9 virtual reality experience
 tags: [Unity, VR, 3D-Graphics, Spatial-Audio, Mobile, Work]
 thumbImage: /images/6x9-virtual-reality-social.jpg
 description: Technical lead for 6x9, The Guardian's first virtual reality experience, using real-time 3D in Unity and spatial audio to place viewers inside a solitary confinement cell.
-weight: 4
+weight: 9
 ---
 
 # {{ title }}

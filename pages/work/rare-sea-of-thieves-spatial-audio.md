@@ -5,7 +5,7 @@ thumbImage: /images/rare/enhanced-headphone-mode-upsell.jpg
 description:
   Built the Enhanced Headphone Mode UI for Sea of Thieves, the in-game flow for
   Embody's Immerse spatial audio, driven by a strictly typed UI state machine.
-weight: -1
+weight: 10
 ---
 
 # {{ title }}

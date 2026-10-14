@@ -4,7 +4,7 @@ tags:
   [JavaScript, PixiJS, WebGL, Node.js, Puppeteer, Google-Cloud, Firebase, Work]
 thumbImage: /images/videowall-social.jpg
 description: Built an automated print and digital cover pipeline on Google Cloud and a 60fps PixiJS display for The Telegraph's newsroom and lobby video walls.
-weight: 5
+weight: 3
 ---
 
 # {{ title }}

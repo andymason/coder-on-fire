@@ -3,7 +3,7 @@ title: BBC — Homepage Redesign
 tags: [JavaScript, HTML, CSS, PHP, WAI, Accessibility, Work]
 thumbImage: /images/bbc_homepage/bbc_homepage_front_1080x.jpg
 description: Built WCAG AAA accessible UI components and prototypes for the BBC homepage redesign using JavaScript, BBC Glow, PHP, and CSS.
-weight: 6
+weight: 3
 ---
 
 # {{ title }}

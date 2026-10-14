@@ -3,7 +3,7 @@ title: Rare — Sea of Thieves Custom Seas UI
 tags: [TypeScript, JavaScript, CSS, UI, GameDev, Work]
 thumbImage: /images/rare/sea-of-thieves-custom-seas.jpg
 description: Built UI for Sea of Thieves' Custom Seas in Season 20, including the Free Camera, Quick Spawn radial, and Command Menu spawn screens.
-weight: -2
+weight: 3
 ---
 
 # {{ title }}

@@ -4,7 +4,7 @@ tags:
   [Figma, Preact, React, TypeScript, JavaScript, HTML, CSS, Accessibility, Work]
 thumbImage: /images/milton-social.png
 description: Built Milton, an award-winning open-source Figma plugin in TypeScript and Preact that exports responsive, accessible HTML embeds for newsroom CMS workflows.
-weight: 1
+weight: -1
 ---
 
 # {{ title }}
