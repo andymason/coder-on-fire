@@ -8,18 +8,30 @@ variables:
   # author line in the title block. See pandoc's *-meta variables.
   author-meta: "Andrew Mason"
 metadata:
-  description: "CV — Senior Front-end Developer"
+  description: "CV — Senior Frontend Developer"
   keywords:
-    - Front-end Developer
+    - Senior Frontend Developer
     - Senior Front-end Developer
+    - Frontend Developer
+    - Front-end Developer
+    - UI Engineer
+    - Design Engineer
     - TypeScript
     - JavaScript
+    - CSS
+    - Sass
+    - HTML
     - React
     - SolidJS
     - Preact
     - Three.js
     - WebGL
+    - D3.js
+    - PixiJS
+    - HTML5 Canvas
     - Node.js
+    - Accessibility
+    - WCAG
     - Game UI
     - Data Visualisation
     - Prototyping

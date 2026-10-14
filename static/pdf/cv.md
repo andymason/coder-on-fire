@@ -1,12 +1,12 @@
 ---
 title: "Andrew Mason"
-pagetitle: "Andrew Mason - Senior Front-end Developer"
+pagetitle: "Andrew Mason - Senior Frontend Developer"
 lang: en-GB
 ---
 
-## Senior Front-end Developer
+## Senior Frontend Developer
 
-[coderonfire.com][homepage] | [LinkedIn][LinkedIn] | [GitHub][GitHub] | [andrew@coderonfire.com][email] | [07908 493 094][phone]
+[coderonfire.com][homepage] | [linkedin.com/in/andrewwmason][LinkedIn] | [github.com/andymason][GitHub] | [andrew@coderonfire.com][email] | [07908 493 094][phone]
 
 I'm a senior front-end developer specialising in modern web UI, interactive
 applications, and design engineering. I've built game UI at Rare (Xbox Game
@@ -17,11 +17,22 @@ media][6x9] at The Guardian.
 
 ## Skills
 
-| Languages               | Frameworks & Runtime   | Tooling & Testing      | Specialisms              |
-| ----------------------- | ---------------------- | ---------------------- | ------------------------ |
-| TypeScript / JavaScript | React, SolidJS, Preact | Vite, Webpack, esbuild | Web UI & Design Systems  |
-| CSS / Sass              | Web APIs, DOM, Canvas  | Jasmine, Vitest        | Design & Developer Tools |
-| HTML / SVG              | Node.js                | Git, Perforce          | Prototyping & R&D        |
+- **Languages**
+  - TypeScript / JavaScript
+  - CSS / Sass
+  - HTML / SVG
+- **Frameworks & Runtime**
+  - React, SolidJS, Preact
+  - Web APIs, DOM, Canvas
+  - Node.js, Three.js
+- **Tooling & Testing**
+  - Vite, Webpack, esbuild
+  - Jasmine, Vitest
+  - Git, Perforce
+- **Specialisms**
+  - Web UI & Design Systems
+  - Design & Developer Tools
+  - Prototyping & R&D
 
 ## Experience
 
@@ -38,14 +49,14 @@ Sass, running on Coherent Gameface inside Unreal Engine.
   state-machine-driven flow for Embody's spatial audio, mapping plugin, setup,
   and menu states into the game.
 - Designed and implemented a [bespoke spatial navigation
-  system][everwild-inventory] and real-time `<canvas>` debug visualiser for
+  system][everwild-inventory] and real-time HTML5 Canvas debug visualiser for
   Everwild's inventory HUD across gamepad, keyboard, and mouse.
 - Defined TypeScript data contracts with the Unreal Engine team, covered by
   Jasmine unit tests.
 
 ### UI Engineer (contract) | Rare (Xbox Game Studio)
 
-_Aug 2022 – March 2024_
+_Aug 2022 – Mar 2024_
 
 Built Sea of Thieves UI features and prototyped UI for Everwild in TypeScript,
 Sass, and Coherent Gameface.
@@ -100,8 +111,9 @@ interactive experiences.
 
 - Created [live election data dashboards][election] using D3.js, Node.js, and
   AWS S3.
-- Built interactive web features including the [6x9 WebGL experience][webgl] and
-  audio-synchronised stories using the Web Audio API and CSS animations.
+- Built interactive web features including the [6x9 WebGL experience][webgl]
+  (Three.js) and audio-synchronised stories using the Web Audio API and CSS
+  animations.
 - Led technical delivery of virtual reality projects including [6x9][6x9] and
   [Beat the Hustler][hustler], and oversaw external development of the Guardian
   VR platform.
@@ -140,8 +152,10 @@ _2001 – 2005_
 ## Personal
 
 I closely follow web standards, browser engine development, and modern CSS and
-DOM APIs, and enjoy experimenting with LLMs and AI tooling. Outside of work I
-tinker with personal web projects, electronics, and creative coding.
+DOM APIs, and enjoy experimenting with LLMs and AI tooling. I'm interested in
+graphics and rendering technology across games and the web, particularly how
+techniques from one medium can benefit the other. Outside of work I tinker with
+personal web projects, electronics, and creative coding.
 
 [homepage]: https://coderonfire.com
 [LinkedIn]: https://www.linkedin.com/in/andrewwmason/
