@@ -1,6 +1,6 @@
 ---
 title: Andrew Mason - Senior Frontend Developer
-description: Senior Frontend Developer with extensive experience in creating interactive UIs, visualizations, and rapid prototyping. Previously worked for Rare, BBC, Guardian and Telegraph
+description: Senior Frontend Developer specialising in modern web UI, interactive applications, and design engineering. Previously worked for Rare, The Telegraph, The Guardian, and the BBC.
 thumbImage: /images/blocks_no_webgl.jpg
 pageId: homepage
 ---
@@ -9,12 +9,12 @@ pageId: homepage
 
 ## Senior Frontend Developer
 
-I'm a senior front-end developer who builds interactive web experiences, data
-visualisations, and game UI. I've built game UI at Rare (Xbox Game Studio) for
-[Sea of Thieves][custom-seas] and [Everwild][everwild-inventory], created
-interactive stories and an open-source [Figma plugin][milton] at The
-Telegraph, and led [VR projects][6x9] and [live data dashboards][election] at
-The Guardian.
+I'm a senior front-end developer specialising in modern web UI, interactive
+applications, and design engineering. I've built game UI at Rare (Xbox Game
+Studio) for [Sea of Thieves][custom-seas] and [Everwild][everwild-inventory],
+created interactive stories and an open-source [Figma plugin][milton] at The
+Telegraph, and delivered [live data visualisations][election] and [interactive
+media][6x9] at The Guardian.
 
 ## Skills and knowledge
 
@@ -24,15 +24,15 @@ The Guardian.
     <ul class="skill-group__list">
       <li class="skill-group__item">TypeScript / JavaScript</li>
       <li class="skill-group__item">CSS / Sass</li>
-      <li class="skill-group__item">HTML</li>
+      <li class="skill-group__item">HTML / SVG</li>
     </ul>
   </div>
 
   <div class="skill-group">
-    <h3 class="skill-group__title">Frameworks &amp; Libraries</h3>
+    <h3 class="skill-group__title">Frameworks &amp; Runtime</h3>
     <ul class="skill-group__list">
       <li class="skill-group__item">React, SolidJS, Preact</li>
-      <li class="skill-group__item">Three.js, 2D Graphics APIs</li>
+      <li class="skill-group__item">Web APIs, DOM, Canvas</li>
       <li class="skill-group__item">Node.js</li>
     </ul>
   </div>
@@ -49,9 +49,9 @@ The Guardian.
   <div class="skill-group">
     <h3 class="skill-group__title">Specialisms</h3>
     <ul class="skill-group__list">
+      <li class="skill-group__item">Web UI &amp; Design Systems</li>
+      <li class="skill-group__item">Design &amp; Developer Tools</li>
       <li class="skill-group__item">Prototyping &amp; R&amp;D</li>
-      <li class="skill-group__item">Interactive multimedia</li>
-      <li class="skill-group__item">Data visualisation</li>
     </ul>
   </div>
 </div>
