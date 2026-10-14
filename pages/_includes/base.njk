@@ -8,20 +8,45 @@
 
     <link rel="icon" type="image/png" href="/icons/fav_icon_180x.png" />
     <link rel="canonical" href="{{ page.url | absoluteUrl }}" />
-    <link rel="preload" href="/fonts/catamaran-medium-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/catamaran-bold-latin.woff2" as="font" type="font/woff2" crossorigin>
 
     <meta name="description" content="{{ description }}" />
     {% if noIndex %}<meta name="robots" content="noindex, follow" />{% endif %}
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="{% if tags and "Work" in tags %}article{% else %}website{% endif %}" />
+    <meta property="og:site_name" content="Coder on Fire" />
     <meta property="og:url" content="{{ page.url | absoluteUrl }}" />
     <meta property="og:title" content="{{ title }} - Coder on Fire"/>
     <meta property="og:description" content="{{ description }}" />
     <meta property="og:image" content="{{ thumbImage | socialImage | absoluteUrl }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    {% if pageId == "homepage" or pageId == "cv" %}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Andrew Mason",
+        "jobTitle": "Senior Frontend Developer",
+        "url": "{{ "/" | absoluteUrl }}",
+        "sameAs": [
+          "https://linkedin.com/in/andrewwmason",
+          "https://github.com/andymason",
+          "https://bsky.app/profile/coderonfire.com",
+          "https://mastodon.social/@amason"
+        ]
+      }
+    </script>
+    {% endif %}
 
     <link rel="stylesheet" href="/css/bundle.css">
   </head>
   <body {% if pageId %} id="{{ pageId }}" {% endif %}>
+
+    <!-- Still of the WebGL boxes, shown when the animation can't or shouldn't run -->
+    <div class="boxes-fallback">
+      <img src="/images/blocks_no_webgl.jpg" alt="" eleventy:widths="768,1518">
+    </div>
 
     <nav id="navigation">
       <ul id="navigation__list">

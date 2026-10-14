@@ -171,12 +171,11 @@ figcaption {
     margin: var(--gap-small) var(--gap-x-large);
 }
 
-/* Prevent outline */
-a:focus,
-button:focus,
-input:focus,
-textarea:focus {
-    outline: none;
+/* Focus ring for keyboard users only; mouse clicks don't trigger :focus-visible.
+   currentColor keeps it as readable as the text on any background. */
+:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
 }
 
 code {
@@ -223,6 +222,40 @@ body > figure {
     transform: translateZ(0);
     will-change: transform;
     backface-visibility: hidden;
+}
+
+/* Still of the animation for no WebGL, software rendering, reduced motion
+   (.show-boxes-fallback is set by main.ts) or no JavaScript */
+.boxes-fallback {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    /* Same height as the canvas: window.innerHeight / 1.1 */
+    height: calc(100svh / 1.1);
+    /* Fade out like the fog does, so cropping never leaves a hard edge */
+    mask-image: linear-gradient(to bottom, #000 60%, transparent);
+
+    img {
+        height: 100%;
+        object-fit: cover;
+        object-position: left top;
+        border: none;
+        border-radius: 0;
+        background: transparent;
+    }
+}
+
+.show-boxes-fallback .boxes-fallback {
+    display: block;
+}
+
+@media (scripting: none) {
+    .boxes-fallback {
+        display: block;
+    }
 }
 
 /* [ Navigation ]

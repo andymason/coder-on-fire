@@ -10,7 +10,15 @@ weight: 200
 
 # {{ title }}
 
-![Map and chart showing referendum results](/images/scottish_independence/scottish_independence_desktop_1080x.png)
+<p>
+  <img
+    src="/images/scottish_independence/scottish_independence_desktop_1080x.png"
+    alt="Map and chart showing referendum results"
+    loading="eager"
+    fetchpriority="high"
+    sizes="(min-width: 1080px) 1080px, 100vw"
+  >
+</p>
 
 ## The Challenge
 

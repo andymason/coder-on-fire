@@ -108,7 +108,7 @@ export interface BoxesParams {
   boxRotationSeed: number;
 }
 
-export function runBoxes(): () => void {
+export function runBoxes(canvas: HTMLCanvasElement): () => void {
   const isDev = new URLSearchParams(window.location.search).has("dev");
 
   let width = window.innerWidth;
@@ -140,7 +140,9 @@ export function runBoxes(): () => void {
     boxRotationSeed: 4960,
   };
 
+  // Reuses the context already created on this canvas by webgl-canvas.ts
   const renderer = new Renderer({
+    canvas,
     powerPreference: "low-power",
   });
   const gl = renderer.gl;
@@ -251,16 +253,28 @@ export function runBoxes(): () => void {
   }
   setBlockHeight();
 
+  // tweenSpeed is the fog progress per frame at 60fps
+  const frameDuration60fps = 1000 / 60;
+
   let tweenVal = 0;
   let startTime = 0;
+  let previousTimestamp = 0;
 
   function animate(timestamp: number): void {
     requestAnimationFrame(animate);
 
     if (startTime === 0) startTime = timestamp;
 
+    // Scale by elapsed time so the fog fades at the same speed on any display
+    const frameDelta =
+      previousTimestamp === 0 ? 0 : timestamp - previousTimestamp;
+    previousTimestamp = timestamp;
+
     if (tweenVal < 1) {
-      tweenVal = Math.min(tweenVal + params.tweenSpeed, 1);
+      tweenVal = Math.min(
+        tweenVal + params.tweenSpeed * (frameDelta / frameDuration60fps),
+        1,
+      );
       glslProgram.uniforms.uFogDensity.value =
         params.fogStartDensity -
         (params.fogStartDensity - params.fogDensity) * easeOutCirc(tweenVal);
