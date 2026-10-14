@@ -1,5 +1,5 @@
 ---
-title: Rare's Video Game Sea of Thieve UI engineering
+title: Rare's Video Game Sea of Thieves UI engineering
 tags: [TypeScript, Node.js, JavaScript, CSS, UI, GameDev, Work]
 thumbImage: /images/rare/sea-of-thieves-guild-logo-intro-1920x.jpg
 description:

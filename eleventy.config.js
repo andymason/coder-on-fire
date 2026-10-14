@@ -55,8 +55,25 @@ function cssBuildConfig(isDev) {
   };
 }
 
+// mozjpeg encoder for smaller, higher-quality JPEGs.
+const SHARP_JPEG_OPTIONS = {
+  quality: 75,
+  mozjpeg: true,
+};
+
+// Lossless PNG optimisation: maximum zlib compression with adaptive row
+// filtering. No palette quantisation, so pixels are preserved exactly.
+const SHARP_PNG_OPTIONS = {
+  compressionLevel: 9,
+  adaptiveFiltering: true,
+};
+
 export default (eleventyConfig) => {
-  eleventyConfig.addPassthroughCopy({ static: "/" });
+  // TS and CSS sources are bundled by esbuild, so don't publish the originals
+  eleventyConfig.addPassthroughCopy(
+    { static: "/" },
+    { filter: ["**", "!ts/**", "!css/**"] },
+  );
 
   // 1. Determine the Base URL once.
   // CloudFlare Pages does not set process.env.URL (a Netlify convention); it
@@ -112,6 +129,25 @@ export default (eleventyConfig) => {
     return metadata.jpeg[0].url;
   });
 
+  // Video posters are the largest paint on work pages but live in a poster
+  // attribute, which the image transform plugin doesn't touch. A poster can't
+  // offer format alternatives, so keep the source format (JPEG or PNG).
+  eleventyConfig.addAsyncFilter("videoPoster", async (posterPath) => {
+    // Poster paths look like "/video/x.jpg"; the file is in static/video.
+    const inputPath = path.join("static", posterPath);
+
+    const metadata = await Image(inputPath, {
+      widths: [1280],
+      formats: ["auto"],
+      outputDir: "_site/img/",
+      urlPath: "/img/",
+      sharpJpegOptions: SHARP_JPEG_OPTIONS,
+      sharpPngOptions: SHARP_PNG_OPTIONS,
+    });
+
+    return Object.values(metadata)[0][0].url;
+  });
+
   // Sort Work tagged pages by weight value in data
   eleventyConfig.addCollection("SortedWork", function (collectionsApi) {
     return collectionsApi
@@ -126,22 +162,12 @@ export default (eleventyConfig) => {
   eleventyConfig.addPlugin(IdAttributePlugin);
   eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    // "auto" preserves the source format (PNG stays an optimised PNG); "jpeg"
-    // adds a mozjpeg fallback for every image. JPEG sources dedupe to a single
-    // JPEG, PNG sources emit both an optimised PNG and a mozjpeg JPEG.
-    formats: ["auto", "jpeg"],
+    // AVIF first, then "auto" keeps the source format (JPEG or PNG) as the
+    // fallback for browsers without AVIF support.
+    formats: ["avif", "auto"],
     widths: [320, 480, 640, 1280],
-    // Lossless PNG optimisation: maximum zlib compression with adaptive row
-    // filtering. No palette quantisation, so pixels are preserved exactly.
-    sharpPngOptions: {
-      compressionLevel: 9,
-      adaptiveFiltering: true,
-    },
-    // mozjpeg encoder for smaller, higher-quality JPEGs.
-    sharpJpegOptions: {
-      quality: 75,
-      mozjpeg: true,
-    },
+    sharpPngOptions: SHARP_PNG_OPTIONS,
+    sharpJpegOptions: SHARP_JPEG_OPTIONS,
     htmlOptions: {
       imgAttributes: {
         loading: "lazy",

@@ -1,12 +1,11 @@
 <div class="video video--paused">
   <video
-    poster="{{ poster }}"
+    poster="{{ poster | videoPoster }}"
     width="{{ width | default: 1280 }}"
     height="{{ height | default: 720 }}"
     playsinline
     disableremoteplayback
     preload="metadata"
-    loading="lazy"
     tabindex="-1"
   >
     <source src="{{ src }}" type="video/mp4">
