@@ -1,14 +1,13 @@
 ---
-title: The Telegraph's Milton Figma HTML Export Plugin
-tags: [Figma, React, TypeScript, JavaScript, HTML, CSS, Accessibility, Work]
+title: The Telegraph — Milton Figma to HTML plugin
+tags:
+  [Figma, Preact, React, TypeScript, JavaScript, HTML, CSS, Accessibility, Work]
 thumbImage: /images/milton-social.png
-description: This open-source Figma plugin, Milton, gives designers the power to
-  craft and export responsive HTML embeds for effortless integration into
-  any CMS.
+description: Built Milton, an award-winning open-source Figma plugin in TypeScript and Preact that exports responsive, accessible HTML embeds for newsroom CMS workflows.
 weight: 1
 ---
 
-# Building Milton: Bridging the Gap Between Design and Development at The Telegraph
+# {{ title }}
 
 {%
   include "video",
@@ -16,27 +15,28 @@ weight: 1
   src: "/video/milton-demo.mp4"
 %}
 
+While working as a Senior Prototyper at The Telegraph, I created Milton: an award-winning, open-source Figma plugin built with TypeScript and Preact. I built the tool so designers could export responsive, accessible HTML graphics directly from Figma into the newsroom CMS without needing a developer.
+
 ## The Challenge
 
-In the fast-paced world of newsrooms, agility is key. Quick updates to text,
-maps, and data figures are all handled seamlessly within the Content Management
-System (CMS). However, custom HTML embeds required developer intervention,
-slowing down the process and hindering the creation of unique graphical
-elements.
+In a daily newsroom, graphics need to go from concept to published article quickly—and often need updating as a story develops. Journalists could update text and basic charts in the CMS, but custom graphics, maps, and annotated diagrams required a developer to hand-code and embed them.
 
-The Telegraph's product team sought a solution to empower designers to create
-and manage their own graphical embeds, seamlessly integrated into the existing
-workflow and easily insertable into the CMS.
+We wanted a way for designers to build, preview, and export their own responsive HTML embeds straight from Figma, producing self-contained code that could be pasted directly into the CMS.
+
+## The Stack
+
+- **TypeScript** for plugin logic, Figma AST traversal, and SVG/HTML processing
+- **Preact** for the plugin UI and `preact-render-to-string` for generating the exported HTML markup
+- **Figma Plugin API** for reading document nodes, persisting metadata, and exporting SVGs
+- **Pica & UPNG.js** for in-browser Lanczos image resizing and PNG palette quantisation
+- **esbuild** with a custom build script to bundle the sandbox backend and inline the UI into a single HTML payload
 
 ## The Solution
 
-My initial exploration led me to AI2HTML, a plugin for Adobe Illustrator
-exporting artboards to HTML. However, it didn't fit our needs perfectly.
-Firstly, it targeted Illustrator, while our designers used Figma. Secondly, our
-CMS didn't support embedding external files, necessitating baked-in images and
-static assets within the exported HTML.
+I started by looking at the New York Times' [ai2html](http://ai2html.org/), an open-source script that converts Adobe Illustrator artboards into HTML and CSS. It was a great reference, but didn't fit our workflow for two reasons:
 
-Therefore, I needed a Figma-centric solution.
+1. Our design team worked in Figma, not Illustrator.
+2. Our CMS couldn't host external asset folders for quick embeds—everything, including images, had to be self-contained within a single HTML snippet while staying small enough for the web.
 
 <figure>
   <img src="/images/milton-frames.png" alt="Selecting frames in Figma for Milton">
@@ -45,41 +45,29 @@ Therefore, I needed a Figma-centric solution.
   </figcaption>
 </figure>
 
-### Leveraging Figma's Frames
+### Merging frames into a single responsive SVG
 
-Like Illustrator, Figma utilizes "Frames" as artboards. Designers already
-employed these to represent different browser breakpoints. I envisioned
-harnessing these frames to create responsive embeds that adapt to the browser's
-width.
+Designers already used separate Figma Frames to design for different screen sizes (mobile, tablet, desktop). Milton takes a selection of top-level frames and uses their widths as responsive breakpoints.
 
-The key innovation was merging each frame's exported SVG into a single master
-SVG. This allowed for de-duplication of common assets, like the largest shared
-image. Additionally, CSS media queries could selectively display specific frames
-based on the viewport width.
+Exporting each frame as a separate SVG would have duplicated large background images across every breakpoint. Instead, during export, the plugin creates a temporary container frame in Figma, clones all selected frames into it, flattens any boolean groups, and exports the container as a single SVG before cleaning up the temporary nodes.
 
-### Unleashing the Power of the Figma Plugin API
+Because Figma exports the clones together, shared images are automatically deduplicated in the SVG `<defs>`. On the frontend, Milton rewrites all internal SVG IDs and `url(#...)` references (`clip-path`, `fill`, `stroke`, `mask`, and `xlink:href`) with unique suffixes so multiple embeds on the same article page never clash. Generated CSS media queries then toggle the visibility of each frame's group and adjust the aspect-ratio wrapper as the viewport width changes.
 
-Aware of Figma's Plugin API capabilities, I realised its potential to create the
-desired plugin. Figma plugins consist of two parts: a backend with internal API
-access and a user-facing frontend. While the postMessage API facilitated
-communication between these halves for simple tasks, its limitations became
-evident.
+### Communicating across the Figma sandbox
 
-Therefore, I developed a custom helper tool called "postman", acting as an
-asynchronous message bus. This enabled me to maintain the user interface's
-responsiveness while awaiting completion of longer backend API calls.
+Figma plugins are split into two contexts: a sandboxed main thread with access to the Figma document API, and an `iframe` running the UI. The two can only communicate via `postMessage`.
 
-### Tackling Text Formatting and Image Optimization
+For simple plugins this is fine, but Milton needed to run multi-step asynchronous tasks—traversing nodes, extracting text styles, exporting SVGs, and saving plugin data—while keeping the UI responsive. To handle this cleanly, I wrote a lightweight promise-based RPC helper (`Postman`) over `postMessage`. It pairs requests and responses using generated UIDs with a timeout fallback, allowing the Preact UI to `await` backend tasks like normal async functions.
 
-Reconstructing complex text formatting into HTML posed another challenge. To
-prevent scaling issues and improve accessibility, all SVG text elements needed
-conversion to HTML. Unfortunately, Figma's API lacked a convenient method to
-extract text element styles. While designers could modify individual letter
-colours, fonts, and sizes, the API only supported per-character access.
+### Converting SVG text into accessible HTML overlays
 
-To overcome this, I iteratively looped through each character, building a map of
-applied styles. This map then guided the recreation of styles using HTML and
-CSS.
+Exporting text inside an SVG causes problems for responsive embeds: text scales awkwardly, wraps unpredictably, and isn't easily accessible to screen readers. To keep text sharp and accessible, Milton strips `<text>` elements out of the exported SVG and rebuilds them as positioned HTML elements overlaid on top of the graphic. (Text nodes are removed from the SVG DOM _after_ export rather than in Figma beforehand, so Figma Auto Layout frames don't collapse when their text is removed.)
+
+Reconstructing styled text required solving a few quirks in the Figma API:
+
+- **Relative positioning:** Nested text nodes in Figma have `x` and `y` coordinates relative to their immediate parent group or frame. I used each node's `absoluteTransform` matrix to calculate its position relative to the root frame, then converted those coordinates and dimensions into percentages so the HTML text scales fluidly with the underlying SVG.
+- **Character-level styling:** Designers often bold a single word or change a colour mid-sentence, and Figma's API only exposes mixed styles per character. I wrote a parser that steps through each character, maps Figma's font style names to OpenType numeric weights (`100`–`950`), and merges adjacent characters with matching styles into `<span>` runs.
+- **Automatic font loading:** By scanning all extracted text ranges across the selected frames, Milton collects the exact set of font families, weights, and italics used, and automatically builds a minimal Google Fonts `@import` rule.
 
 <figure>
   <img src="/images/milton-breakpoints.png" alt="Previewing breakpoints in the Milton plugin">
@@ -88,36 +76,31 @@ CSS.
   </figcaption>
 </figure>
 
-High-resolution images, commonly used by designers but visually shrunk down,
-presented another hurdle. Figma's export of embedded SVG images in their
-original size, suitable for print, posed a web performance concern. Resizing and
-optimising images for web delivery was crucial.
+### Optimising embedded images in the browser
 
-I achieved image optimisation through the following steps:
+Designers frequently drop high-resolution photos into Figma and scale them down visually. By default, Figma exports embedded images at their original dimensions, which can bloat a self-contained HTML embed to several megabytes.
 
-1. Image Format: Determining the image format (JPEG, PNG, etc.)
-2. Largest Element Dimension: Finding the largest dimension of any SVG element
-   using the image
-3. Image Size Check: If the image exceeded the largest element size:
-4. Scaling Down: Scaling the image to match the largest element size
-5. Format Optimisation:
-   - JPEGs: Setting quality to 75
-   - GIFs and PNGs: Quantization into 175-colour index versions
+To keep the output small enough to inline into the CMS, I built an image optimisation pipeline across the backend and UI:
 
-These adjustments, along with other optimisations, resulted in final file sizes
-small enough for CMS embedding.
+1. **Dimension tracking:** Before export, the backend checks the `imageHash` of every image fill across all selected frames and records the largest display dimensions for each unique image.
+2. **SVG pattern lookup:** Once exported, the frontend traces each SVG element's `fill="url(#...)"` reference through `<pattern>` and `<use>` tags to locate the underlying base64 `<image>`.
+3. **2x Retina scaling:** If the source image is larger than needed, it's scaled down to 2× the maximum display dimensions in an offscreen `<canvas>` using Pica for high-quality Lanczos resampling.
+4. **Compression & quantisation:** JPEGs are re-encoded at 75% quality, while PNGs and GIFs are quantised down to an indexed palette using UPNG.js before being cached and written back into the SVG.
 
-### Empowering Designers, Streamlining Workflows
+### Interactive preview and newsroom workflow
 
-Milton proved a game-changer for designers, enabling them to focus on their work
-without constant developer involvement for minor changes. It also fostered a
-closer link between embeds and their original Figma designs. Each export
-contained the Figma document URL, allowing future designers to directly access,
-modify, and re-export the HTML.
+To give designers confidence in the output before publishing, I built an interactive preview canvas inside the plugin. It renders the generated HTML inside a live `iframe` with pan and zoom controls, draggable corner handles to test fluid responsiveness between breakpoints, and a live file-size readout in KB.
 
-### Open-Source and Accessible
+Metadata such as headlines, subheads, source links, and target URLs are saved directly into the Figma page via `setPluginData`. When exported via `preact-render-to-string`, the HTML snippet includes a comment block at the top with a direct link back to the exact Figma file and node ID (`figma.com/file/...`), so any designer on shift could jump straight from the CMS back to the source file to make updates during breaking news.
 
-Milton was released under the open-source MIT licence in early 2022 and is
-readily available on the [Figma plugin store][milton-plugin].
+Milton was released under the MIT licence in early 2022 and is available on the [Figma Community store][milton-plugin].
+
+## Technical Contributions
+
+- **Plugin architecture:** Built the Figma plugin in TypeScript and Preact, including a custom promise-based RPC bridge (`Postman`) over `postMessage` and an esbuild single-file bundler
+- **Responsive SVG compiler:** Cloned and merged multi-frame breakpoints into a single deduplicated SVG, rewriting internal IRI references to prevent ID collisions and generating responsive CSS media queries
+- **HTML text & accessibility:** Extracted character-level typography and `absoluteTransform` coordinates to replace SVG text with fluid, accessible HTML/CSS overlays and automated Google Fonts imports
+- **In-browser image pipeline:** Built an asset pipeline using Canvas, Pica, and UPNG.js to resize images to 2× display bounds, compress JPEGs, and quantise PNG palettes
+- **Interactive previewer:** Created a pan-and-zoom preview canvas with custom pointer-capture resize handles and persistent document metadata
 
 [milton-plugin]: https://www.figma.com/community/plugin/844954779092514561/milton
