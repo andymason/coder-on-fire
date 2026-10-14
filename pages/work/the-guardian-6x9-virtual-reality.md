@@ -1,11 +1,8 @@
 ---
-title: The Guardian's first Virtual Reality experience
-tags: [Unity, VR, Hardware, 3D Graphics, Audio, Work]
+title: The Guardian — 6x9 virtual reality experience
+tags: [Unity, VR, 3D-Graphics, Spatial-Audio, Mobile, Work]
 thumbImage: /images/6x9-virtual-reality-social.jpg
-description: 6x9 is the Guardian's first virtual reality experience, which places you
-  inside a US solitary confinement prison cell and tells the story of the
-  psychological damage that can ensue from isolation.
-
+description: Technical lead for 6x9, The Guardian's first virtual reality experience, using real-time 3D in Unity and spatial audio to place viewers inside a solitary confinement cell.
 weight: 4
 ---
 
@@ -17,62 +14,59 @@ weight: 4
   src: "/video/6x9-virtual-reality-demo.mp4"
 %}
 
-## The challenge
+_6x9_ was The Guardian's first virtual reality project, placing the viewer inside a six-by-nine-foot US "supermax" solitary confinement cell to show the psychological toll of long-term isolation. As the sole technical lead on The Guardian's small core team alongside the project editor and audio producers, I built the initial R&D prototypes in Unity, evaluated the Google Cardboard and spatial audio pipelines, and coordinated technical delivery with external production studio The Mill.
 
-The Guardian was approached by Google with the idea of collaborating on a
-virtual reality experience. The challenge was how to create a fully 3D virtual
-experience without compromising the journalistic integrity of the subject.
+## The Challenge
 
-## The solution
+Google approached The Guardian to collaborate on a journalism project for Google Cardboard. Rather than filming a passive 360-degree video in an exotic location, we chose a story where physical presence and scale were central to the reporting: between 80,000 and 100,000 people in the US are held in solitary confinement for 23 hours a day.
 
-The project began with selecting a suitable subject for a VR experience. The
-Guardian had extensively covered the long-term effects of solitary confinement
-on inmates. This subject was chosen for the VR experience, aiming to place
-viewers in the perspective of a prisoner confined in a cell.
+Because we couldn't film inside an active supermax cell—and because we wanted to convey psychological effects of sensory deprivation such as blurred vision, hallucinations, and floating out of the body—the piece had to be built as a real-time 3D experience running on mobile hardware inside a Cardboard headset.
 
-As the creative technologist on the team, my role encompassed interaction
-design, developing an internal prototype, and supervising external production.
-Unity was chosen as the 3D engine for its support of Google Cardboard and
-optimisation for mobile exports. Its popularity in the gaming industry provided
-us with extensive external resources.
+## The Stack
 
-I chose to use Unity as the 3D engine since it supported Google Cardboard and
-was optimized for mobile exports. Unity is also very popular in the game
-industry, which meant we had greater access to external resources.
+- **Unity** for real-time 3D rendering, baked lighting, and mobile app builds (iOS and Android)
+- **Google Cardboard SDK** for stereoscopic mobile VR rendering and head-tracking
+- **3D Spatial Audio** for positioning first-person interview recordings and ambient cell acoustics around the listener
+- **360° Video** for a fallback YouTube edition accessible without a mobile app
+
+## The Solution
+
+### Internal R&D and Unity Prototyping
+
+Virtual reality and game-engine workflows were completely new to The Guardian's newsroom. Before commissioning external production, I built an internal prototype of the cell in Unity to understand the engine's capabilities and constraints on mobile phones.
 
 <figure>
   <img src="/images/6x9-unity-audio.jpg" alt="Unity editor screenshot">
   <figcaption>
-    Unity editor used to place 3D spatial audio
+    Testing 3D spatial audio placement and room scale inside the Unity editor
   </figcaption>
 </figure>
 
-Before reaching out to an external developer, I created an internal prototype
-using Unity. This gave us the opportunity to learn about the asset pipeline and
-explore the possibilities the Unity engine provided.
+I used the prototype to test:
 
-For the final production, we partnered with The Mill, a renowned creative
-agency. Together, we crafted a fully interactive 3D experience that leveraged
-the potential of Google Cardboard while staying true to The Guardian's
-journalistic storytelling. The final VR app launched for iPhones, Android
-devices, and even included a special edition Google Cardboard in the print
-newspaper, inviting readers to literally step into the story.
+- **Scale and pacing:** Blocking out the exact 6×9 foot dimensions to see how it felt to sit inside the space over several minutes
+- **Spatial audio pipelines:** Testing how multi-channel audio and the Google Cardboard SDK handled directional voices, echoes from neighbouring cells, and ambient sound cues as the viewer turned their head
 
-But the impact of "6x9" wasn't confined to the virtual realm. Recognizing the
-limitations of VR accessibility, we also created a 360-degree panorama video of
-the experience, making it accessible to a wider audience on YouTube.
+Building this prototype in-house meant that when we partnered with visual effects studio **The Mill** for final 3D modelling and app production, we could collaborate on equal technical footing.
+
+### Technical Lead and Production Delivery
+
+Throughout production with The Mill, I acted as The Guardian's technical lead—reviewing Unity builds, testing performance across target mobile hardware, and translating 3D graphics concepts like baked lighting, shaders, and draw-call budgets between the external developers and our editorial team.
+
+In the finished piece, viewers sit inside the reconstructed cell while hearing first-hand accounts from formerly incarcerated people and psychologists. Looking around the room—at a letter, the sink, books, or the food slot in the door—triggers environmental audio and visual shifts that reflect how prolonged isolation distorts perception.
+
+Alongside the real-time mobile app, The Mill rendered a 360-degree panorama video of the experience so readers without headsets could watch on YouTube, while I built an interactive [WebGL promotional site](/work/the-guardian-6x9-webgl-website/) to preview the cell in the browser. For launch, The Guardian also distributed thousands of custom Google Cardboard headsets with the print newspaper.
 
 <figure>
   <img src="/images/6x9-360-cell.jpg" alt="Inside the prison cell">
   <figcaption>
-    360 degree render of the prison cell
+    360-degree equirectangular render of the prison cell
   </figcaption>
 </figure>
 
-It premiered at both Sundance and Tribeca film festivals, garnering critical
-acclaim with its immersive storytelling. Even Robert De Niro, an early adopter,
-discussed the experience on "The Tonight Show with Jimmy Fallon," bringing its
-message to millions.
+### Reception and Impact
+
+_6x9_ premiered at the **Sundance** and **Tribeca** film festivals—where Robert De Niro tried the headset and later spoke about the piece on _The Tonight Show with Jimmy Fallon_—and was exhibited at the White House as part of President Obama's _South by South Lawn_ (SXSL) festival. It was also adopted by legal mitigation specialists and campaigners working on solitary confinement reform.
 
 <div class="video video--paused">
   <video poster="/video/6x9-virtual-reality-robert-de-niro.jpg" width="1280" height="720" playsinline disableremoteplayback x-webkit-airplay="deny" preload="none" >
@@ -80,10 +74,11 @@ message to millions.
   </video>
 </div>
 
-"6x9" went on to further acclaim, appearing at SXSL's White House lawn event,
-where policymakers had the opportunity to experience the virtual cell firsthand.
+Following the success of _6x9_, The Guardian established an experimental in-house VR studio, where I continued as technical lead across the platform and built interactive Unity VR episodes such as [Beat the Hustler](/work/the-guardian-beat-the-hustler/).
 
-"6x9" demonstrated the power of VR to go beyond entertainment and truly deliver
-impactful journalism. It stands as a testament to The Guardian's dedication to
-innovative storytelling and my own passion for leveraging technology to amplify
-important narratives.
+## Technical Contributions
+
+- **Unity R&D prototyping:** Built the initial 3D cell prototype in Unity to validate room scale, mobile rendering constraints, and asset ingestion workflows
+- **Spatial audio experimentation:** Tested and configured 3D positional audio and Google Cardboard SDK integration for directional storytelling
+- **Technical leadership:** Served as The Guardian's sole technical lead alongside the editorial team, reviewing builds, testing hardware performance, and coordinating technical delivery with The Mill
+- **Cross-platform delivery:** Supported the launch across iOS, Android, Google Cardboard, 360° YouTube video, and the companion [Three.js/WebGL promotional site](/work/the-guardian-6x9-webgl-website/)
