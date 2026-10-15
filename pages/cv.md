@@ -1,7 +1,7 @@
 ---
-title: Andrew Mason, Senior Frontend Developer
+title: Andrew Mason, Senior Frontend Engineer
 thumbImage: /images/blocks_no_webgl.jpg
-description: Senior Frontend Developer specialising in modern web UI, interactive applications, and design engineering. Previously worked for Rare, The Telegraph, The Guardian, and the BBC.
+description: Senior Frontend Engineer specialising in modern web UI, interactive applications, and design engineering. Previously worked for Rare, The Telegraph, The Guardian, and the BBC.
 pageId: cv
 ---
 
@@ -12,12 +12,7 @@ pageId: cv
   </p>
 </header>
 
-I'm a senior front-end developer specialising in modern web UI, interactive
-applications, and design engineering. I've built game UI at Rare (Xbox Game
-Studio) for [Sea of Thieves][custom-seas] and [Everwild][everwild-inventory],
-created interactive stories and an open-source [Figma plugin][milton] at The
-Telegraph, and delivered [live data visualisations][election] and [interactive
-media][6x9] at The Guardian.
+I’m a senior frontend engineer with over 15 years’ experience, focused on the craft of the web: HTML, CSS, DOM APIs, fluid UI interactions, and animation. I work closely with designers, prototyping in code and building the tools they use. I’ve shipped game UI for [Sea of Thieves][custom-seas] and [Everwild][everwild-inventory] at Rare, built [Milton][milton], an award-winning Figma plugin at The Telegraph, and delivered [live data visualisations][election] and led [VR projects][6x9] at The Guardian.
 
 ## Skills
 
@@ -36,7 +31,7 @@ media][6x9] at The Guardian.
     <ul class="skill-group__list">
       <li class="skill-group__item">React, SolidJS, Preact</li>
       <li class="skill-group__item">Web APIs, DOM, Canvas</li>
-      <li class="skill-group__item">Node.js, Three.js</li>
+      <li class="skill-group__item">Node.js</li>
     </ul>
   </div>
 
@@ -52,9 +47,9 @@ media][6x9] at The Guardian.
   <div class="skill-group">
     <h3 class="skill-group__title">Specialisms</h3>
     <ul class="skill-group__list">
-      <li class="skill-group__item">Web UI &amp; Design Systems</li>
-      <li class="skill-group__item">Design &amp; Developer Tools</li>
-      <li class="skill-group__item">Prototyping &amp; R&amp;D</li>
+      <li class="skill-group__item">UI Interaction, Accessibility</li>
+      <li class="skill-group__item">Design Systems</li>
+      <li class="skill-group__item">Prototyping &amp; Tooling</li>
     </ul>
   </div>
 </div>

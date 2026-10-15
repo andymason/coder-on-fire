@@ -1,5 +1,5 @@
 ---
-title: The Guardian — 6x9 WebGL website and 3D editor
+title: The Guardian - 6x9 WebGL website and 3D editor
 tags: [WebGL, Three.js, Shaders, 3D-Graphics, Blender, JavaScript, CSS, Work]
 thumbImage: /images/6x9-webgl-editor-social.jpg
 description: Built the interactive WebGL promotional site and an in-browser 3D camera and shader editor for The Guardian's 6x9 virtual reality project.
@@ -14,7 +14,7 @@ weight: -1
   src: "/video/6x9-webgl-editor.mp4"
 %}
 
-To accompany [6x9][6x9-vr]—The Guardian's first virtual reality piece on the psychological toll of solitary confinement—I built [an interactive WebGL experience][guardian-6x9-web] in Three.js, along with a custom in-browser 3D camera and shader editor so the creative director and I could choreograph camera movements and tune visual effects together in real time.
+To accompany [6x9][6x9-vr], The Guardian's first virtual reality piece on the psychological toll of solitary confinement, I built [an interactive WebGL experience][guardian-6x9-web] in Three.js, along with a custom in-browser 3D camera and shader editor so the creative director and I could choreograph camera movements and tune visual effects together in real time.
 
 ## The Challenge
 
@@ -56,7 +56,7 @@ Because running multiple full-screen fragment shader passes was too heavy for mo
 
 ### In-Browser 3D Camera and Shader Editor
 
-Choreographing 3D camera paths through a static 2D design process wasn't practical. Instead of guessing coordinates in code, I built an in-browser authoring mode—toggled via URL parameters—so the creative director and I could sit together and direct the shots live.
+Choreographing 3D camera paths through a static 2D design process wasn't practical. Instead of guessing coordinates in code, I built an in-browser authoring mode (toggled via URL parameters) so the creative director and I could sit together and direct the shots live.
 
 <figure>
   <img src="/images/6x9_webgl_editor.jpg" alt="In-browser WebGL animation editor showing wireframe helpers, rStats performance graphs, and dat.gui controls" width="960" height="540">

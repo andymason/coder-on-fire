@@ -1,5 +1,5 @@
 ---
-title: The Guardian — Scottish independence referendum live dashboard
+title: The Guardian - Scottish independence referendum live dashboard
 tags: [JavaScript, D3.js, SVG, Node.js, AWS, S3, HTML, CSS, Work]
 thumbImage: /images/scottish_independence/scottish_independence_mobile_1080x.png
 description: Built the live results data pipeline and interactive D3.js dashboard for The Guardian's coverage of the 2014 Scottish independence referendum.
@@ -21,7 +21,7 @@ weight: 4
   </figcaption>
 </figure>
 
-In September 2014, more than 3.6 million people—an 84.6% turnout—voted on the question: _"Should Scotland be an independent country?"_ Working in The Guardian's Interactive team alongside another frontend developer, I built the [live results dashboard][guardian-scotland-results] in D3.js and SVG, as well as the Node.js and AWS S3 data pipeline that powered our coverage through the night.
+In September 2014, more than 3.6 million people (an 84.6% turnout) voted on the question: _"Should Scotland be an independent country?"_ Working in The Guardian's Interactive team alongside another frontend developer, I built the [live results dashboard][guardian-scotland-results] in D3.js and SVG, as well as the Node.js and AWS S3 data pipeline that powered our coverage through the night.
 
 ## The Challenge
 
@@ -53,7 +53,7 @@ I built a Node.js service on an AWS EC2 instance that ran on a timer to:
 2. **Decompress & transform:** Unzip the archive, parse the CSV rows, and merge them with our newsroom's Google Spreadsheet into a single normalised JSON format.
 3. **Publish to S3:** Upload the JSON to an Amazon S3 bucket behind our CDN with a short cache TTL. The CDN absorbed the massive read traffic from millions of open browsers, while still delivering new council declarations within seconds.
 
-On the client side, the dashboard polled the CDN JSON endpoint every 30 seconds. To avoid unnecessary DOM updates and SVG redraws when no new councils had declared, the data layer deep-compared each incoming payload against the previous state in memory and only triggered a re-render when the numbers changed. It also sanitised messy inputs—stripping formatting, guarding against spreadsheet formula errors, handling recount states, and retrying failed fetches—with a manual JSON fallback ready in case of an emergency.
+On the client side, the dashboard polled the CDN JSON endpoint every 30 seconds. To avoid unnecessary DOM updates and SVG redraws when no new councils had declared, the data layer deep-compared each incoming payload against the previous state in memory and only triggered a re-render when the numbers changed. It also sanitised messy inputs (stripping formatting, guarding against spreadsheet formula errors, handling recount states, and retrying failed fetches) with a manual JSON fallback ready in case of an emergency.
 
 ### Synchronised D3.js and SVG Views
 
@@ -78,9 +78,9 @@ Each visual component subscribed to a central pub/sub event bus, allowing my tea
 
 ### Referendum Night in the Newsroom
 
-In 2014, Guardian interactives still needed to work reliably in Internet Explorer 8 and 9 alongside modern mobile and desktop browsers. During testing, we worked around legacy IE bugs—including writing a custom XML-to-DOM node importer when IE9 failed to import the external SVG map, and adding cross-domain request fallbacks for polling S3.
+In 2014, Guardian interactives still needed to work reliably in Internet Explorer 8 and 9 alongside modern mobile and desktop browsers. During testing, we worked around legacy IE bugs, including writing a custom XML-to-DOM node importer when IE9 failed to import the external SVG map, and adding cross-domain request fallbacks for polling S3.
 
-On the night of the vote, I worked the overnight shift in the newsroom until 5am alongside the journalists and the Head of Interactive, monitoring the EC2 ingestion service and live dashboard. As councils declared through the early hours, watching the real-time traffic graphs climb higher and higher—knowing hundreds of thousands of readers had the page open with the auto-refresh quietly ticking away—was one of the highlights of my time at The Guardian. While the dashboard itself was built specifically for the Scottish vote, the data pipeline and caching approach shaped how we delivered subsequent live election interactives.
+On the night of the vote, I worked the overnight shift in the newsroom until 5am alongside the journalists and the Head of Interactive, monitoring the EC2 ingestion service and live dashboard. As councils declared through the early hours, watching the real-time traffic graphs climb higher and higher while hundreds of thousands of readers had the page open with the auto-refresh quietly ticking away was one of the highlights of my time at The Guardian. While the dashboard itself was built specifically for the Scottish vote, the data pipeline and caching approach shaped how we delivered subsequent live election interactives.
 
 ## Technical Contributions
 

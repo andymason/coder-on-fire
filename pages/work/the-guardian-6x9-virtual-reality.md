@@ -1,5 +1,5 @@
 ---
-title: The Guardian — 6x9 virtual reality experience
+title: The Guardian - 6x9 virtual reality experience
 tags: [Unity, VR, 3D-Graphics, Spatial-Audio, Mobile, Work]
 thumbImage: /images/6x9-virtual-reality-social.jpg
 description: Technical lead for 6x9, The Guardian's first virtual reality experience, using real-time 3D in Unity and spatial audio to place viewers inside a solitary confinement cell.
@@ -20,7 +20,7 @@ _6x9_ was The Guardian's first virtual reality project, placing the viewer insid
 
 Google approached The Guardian to collaborate on a journalism project for Google Cardboard. Rather than filming a passive 360-degree video in an exotic location, we chose a story where physical presence and scale were central to the reporting: between 80,000 and 100,000 people in the US are held in solitary confinement for 23 hours a day.
 
-Because we couldn't film inside an active supermax cell—and because we wanted to convey psychological effects of sensory deprivation such as blurred vision, hallucinations, and floating out of the body—the piece had to be built as a real-time 3D experience running on mobile hardware inside a Cardboard headset.
+Because we couldn't film inside an active supermax cell, and because we wanted to convey psychological effects of sensory deprivation such as blurred vision, hallucinations, and floating out of the body, the piece had to be built as a real-time 3D experience running on mobile hardware inside a Cardboard headset.
 
 ## The Stack
 
@@ -51,9 +51,9 @@ Building this prototype in-house meant that when we partnered with visual effect
 
 ### Technical Lead and Production Delivery
 
-Throughout production with The Mill, I acted as The Guardian's technical lead—reviewing Unity builds, testing performance across target mobile hardware, and translating 3D graphics concepts like baked lighting, shaders, and draw-call budgets between the external developers and our editorial team.
+Throughout production with The Mill, I acted as The Guardian's technical lead: reviewing Unity builds, testing performance across target mobile hardware, and translating 3D graphics concepts like baked lighting, shaders, and draw-call budgets between the external developers and our editorial team.
 
-In the finished piece, viewers sit inside the reconstructed cell while hearing first-hand accounts from formerly incarcerated people and psychologists. Looking around the room—at a letter, the sink, books, or the food slot in the door—triggers environmental audio and visual shifts that reflect how prolonged isolation distorts perception.
+In the finished piece, viewers sit inside the reconstructed cell while hearing first-hand accounts from formerly incarcerated people and psychologists. Looking around the room (at a letter, the sink, books, or the food slot in the door) triggers environmental audio and visual shifts that reflect how prolonged isolation distorts perception.
 
 Alongside the real-time mobile app, The Mill rendered a 360-degree panorama video of the experience so readers without headsets could watch on YouTube, while my [WebGL promotional site][6x9-webgl] let desktop and mobile readers explore the 3D cell directly in their browser. For launch, The Guardian also distributed thousands of custom Google Cardboard headsets with the print newspaper.
 
@@ -66,7 +66,7 @@ Alongside the real-time mobile app, The Mill rendered a 360-degree panorama vide
 
 ### Reception and Impact
 
-_6x9_ premiered at the **Sundance** and **Tribeca** film festivals—where Robert De Niro tried the headset and later spoke about the piece on _The Tonight Show with Jimmy Fallon_—and was exhibited at the White House as part of President Obama's _South by South Lawn_ (SXSL) festival. It was also adopted by legal mitigation specialists and campaigners working on solitary confinement reform.
+_6x9_ premiered at the **Sundance** and **Tribeca** film festivals (where Robert De Niro tried the headset and later spoke about the piece on _The Tonight Show with Jimmy Fallon_) and was exhibited at the White House as part of President Obama's _South by South Lawn_ (SXSL) festival. It was also adopted by legal mitigation specialists and campaigners working on solitary confinement reform.
 
 <figure>
   <div class="video video--paused">

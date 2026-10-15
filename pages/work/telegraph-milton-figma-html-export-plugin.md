@@ -1,5 +1,5 @@
 ---
-title: The Telegraph — Milton Figma to HTML plugin
+title: The Telegraph - Milton Figma to HTML plugin
 tags:
   [Figma, Preact, React, TypeScript, JavaScript, HTML, CSS, Accessibility, Work]
 thumbImage: /images/milton-social.png
@@ -19,7 +19,7 @@ While working as a Senior Prototyper at The Telegraph, I created Milton: an open
 
 ## The Challenge
 
-In a daily newsroom, graphics need to go from concept to published article quickly—and often need updating as a story develops. Journalists could update text and basic charts in the CMS, but custom graphics, maps, and annotated diagrams required a developer to hand-code and embed them.
+In a daily newsroom, graphics need to go from concept to published article quickly, and often need updating as a story develops. Journalists could update text and basic charts in the CMS, but custom graphics, maps, and annotated diagrams required a developer to hand-code and embed them.
 
 We wanted a way for designers to build, preview, and export their own responsive HTML embeds straight from Figma, producing self-contained code that could be pasted directly into the CMS.
 
@@ -36,7 +36,7 @@ We wanted a way for designers to build, preview, and export their own responsive
 I started by looking at the New York Times' [ai2html](http://ai2html.org/), an open-source script that converts Adobe Illustrator artboards into HTML and CSS. It was a great reference, but didn't fit our workflow for two reasons:
 
 1. Our design team worked in Figma, not Illustrator.
-2. Our CMS couldn't host external asset folders for quick embeds—everything, including images, had to be self-contained within a single HTML snippet while staying small enough for the web.
+2. Our CMS couldn't host external asset folders for quick embeds. Everything, including images, had to be self-contained within a single HTML snippet while staying small enough for the web.
 
 <figure>
   <img src="/images/milton-frames.png" alt="Selecting frames in Figma for Milton">

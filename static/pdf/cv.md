@@ -1,19 +1,14 @@
 ---
 title: "Andrew Mason"
-pagetitle: "Andrew Mason - Senior Frontend Developer"
+pagetitle: "Andrew Mason - Senior Frontend Engineer"
 lang: en-GB
 ---
 
-## Senior Frontend Developer
+## Senior Frontend Engineer
 
 [coderonfire.com][homepage] | [linkedin.com/in/andrewwmason][LinkedIn] | [github.com/andymason][GitHub] | [andrew@coderonfire.com][email] | [07908 493 094][phone]
 
-I'm a senior front-end developer specialising in modern web UI, interactive
-applications, and design engineering. I've built game UI at Rare (Xbox Game
-Studio) for [Sea of Thieves][custom-seas] and [Everwild][everwild-inventory],
-created interactive stories and an open-source [Figma plugin][milton] at The
-Telegraph, and delivered [live data visualisations][election] and [interactive
-media][6x9] at The Guardian.
+I’m a senior frontend engineer with over 15 years’ experience, focused on the craft of the web: HTML, CSS, DOM APIs, fluid UI interactions, and animation. I work closely with designers, prototyping in code and building the tools they use. I’ve shipped game UI for [Sea of Thieves][custom-seas] and [Everwild][everwild-inventory] at Rare, built [Milton][milton], an award-winning Figma plugin at The Telegraph, and delivered [live data visualisations][election] and led [VR projects][6x9] at The Guardian.
 
 ## Skills
 
@@ -24,15 +19,15 @@ media][6x9] at The Guardian.
 - **Frameworks & Runtime**
   - React, SolidJS, Preact
   - Web APIs, DOM, Canvas
-  - Node.js, Three.js
+  - Node.js
 - **Tooling & Testing**
   - Vite, Webpack, esbuild
   - Jasmine, Vitest
   - Git, Perforce
 - **Specialisms**
-  - Web UI & Design Systems
-  - Design & Developer Tools
-  - Prototyping & R&D
+  - UI Interaction, Accessibility
+  - Design Systems
+  - Prototyping & Tooling
 
 ## Experience
 

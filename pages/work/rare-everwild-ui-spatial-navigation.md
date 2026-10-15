@@ -1,5 +1,5 @@
 ---
-title: Rare — Everwild inventory UI and spatial navigation
+title: Rare - Everwild inventory UI and spatial navigation
 tags: [TypeScript, SolidJS, JavaScript, CSS, UI, GameDev, Work]
 thumbImage: /images/everwild/everwild-hero-logo.jpg
 description: Built the inventory HUD for Rare's Everwild in TypeScript and SolidJS, including a bespoke spatial navigation system for gamepad, mouse, and keyboard.
@@ -53,7 +53,7 @@ Before building our system, I researched existing approaches to directional focu
 - Spotify's article on [TV Spatial Navigation](https://engineering.atspotify.com/2023/5/tv-spatial-navigation)
 - Ryosuke Hana's article on [spatial navigation in React](https://whoisryosuke.com/blog/2024/focus-and-spatial-navigation-in-react/)
 
-To make the system easy for the rest of the UI team to adopt, I exposed it through a reusable Focus Group component and custom SolidJS hooks, backed by developer documentation. Connecting to the game's input handler, a focus history stack tracked the player's path through the UI hierarchy—for example, moving through `Inventory → Section → Category → Item`—so pressing Back unwound that path step by step.
+To make the system easy for the rest of the UI team to adopt, I exposed it through a reusable Focus Group component and custom SolidJS hooks, backed by developer documentation. Connecting to the game's input handler, a focus history stack tracked the player's path through the UI hierarchy (for example, moving through `Inventory → Section → Category → Item`) so pressing Back unwound that path step by step.
 
 Groups and elements supported configurable behaviours for common game UI patterns:
 
@@ -67,7 +67,7 @@ Standard grid layouts make it easy to infer which element sits above, below, lef
 
 To avoid expensive layout recalculations on every button press, the engine cached element bounds and only updated them when layouts or scroll offsets changed. When the player pressed a direction on the controller, the system measured from the outer edge of the currently focused element and used trigonometry to score candidate targets by angle and distance.
 
-Rather than checking every element on screen at once, the lookup followed the UI's group hierarchy—searching sibling elements within the active focus group first, and only stepping up to neighbouring groups if no match was found in that direction.
+Rather than checking every element on screen at once, the lookup followed the UI's group hierarchy, searching sibling elements within the active focus group first and only stepping up to neighbouring groups if no match was found in that direction.
 
 ### Making Navigation Visible with a Canvas Visualiser
 
