@@ -14,7 +14,7 @@ weight: 9
   src: "/video/6x9-virtual-reality-demo.mp4"
 %}
 
-_6x9_ was The Guardian's first virtual reality project, placing the viewer inside a six-by-nine-foot US "supermax" solitary confinement cell to show the psychological toll of long-term isolation. As the sole technical lead on The Guardian's small core team alongside the project editor and audio producers, I built the initial R&D prototypes in Unity, evaluated the Google Cardboard and spatial audio pipelines, and coordinated technical delivery with external production studio The Mill.
+_6x9_ was The Guardian's first virtual reality project, placing the viewer inside a six-by-nine-foot US "supermax" solitary confinement cell to show the psychological toll of long-term isolation. As the sole technical lead on The Guardian's small core team alongside the project editor and audio producers, I built the initial R&D prototypes in Unity, evaluated the Google Cardboard and spatial audio pipelines, coordinated technical delivery with external production studio The Mill, and built the companion [interactive WebGL website and 3D editor][6x9-webgl] for `theguardian.com`.
 
 ## The Challenge
 
@@ -55,7 +55,7 @@ Throughout production with The Mill, I acted as The Guardian's technical lead—
 
 In the finished piece, viewers sit inside the reconstructed cell while hearing first-hand accounts from formerly incarcerated people and psychologists. Looking around the room—at a letter, the sink, books, or the food slot in the door—triggers environmental audio and visual shifts that reflect how prolonged isolation distorts perception.
 
-Alongside the real-time mobile app, The Mill rendered a 360-degree panorama video of the experience so readers without headsets could watch on YouTube, while I built an interactive [WebGL promotional site](/work/the-guardian-6x9-webgl-website/) to preview the cell in the browser. For launch, The Guardian also distributed thousands of custom Google Cardboard headsets with the print newspaper.
+Alongside the real-time mobile app, The Mill rendered a 360-degree panorama video of the experience so readers without headsets could watch on YouTube, while my [WebGL promotional site][6x9-webgl] let desktop and mobile readers explore the 3D cell directly in their browser. For launch, The Guardian also distributed thousands of custom Google Cardboard headsets with the print newspaper.
 
 <figure>
   <img src="/images/6x9-360-cell.jpg" alt="Inside the prison cell">
@@ -68,17 +68,25 @@ Alongside the real-time mobile app, The Mill rendered a 360-degree panorama vide
 
 _6x9_ premiered at the **Sundance** and **Tribeca** film festivals—where Robert De Niro tried the headset and later spoke about the piece on _The Tonight Show with Jimmy Fallon_—and was exhibited at the White House as part of President Obama's _South by South Lawn_ (SXSL) festival. It was also adopted by legal mitigation specialists and campaigners working on solitary confinement reform.
 
-<div class="video video--paused">
-  <video poster="/video/6x9-virtual-reality-robert-de-niro.jpg" width="1280" height="720" playsinline disableremoteplayback x-webkit-airplay="deny" preload="none" >
-    <source src="/video/6x9-virtual-reality-robert-de-niro.mp4" type="video/mp4">
-  </video>
-</div>
+<figure>
+  <div class="video video--paused">
+    <video poster="/video/6x9-virtual-reality-robert-de-niro.jpg" width="1280" height="720" playsinline disableremoteplayback x-webkit-airplay="deny" preload="none" >
+      <source src="/video/6x9-virtual-reality-robert-de-niro.mp4" type="video/mp4">
+    </video>
+  </div>
+  <figcaption>
+    Robert De Niro discussing The Guardian's 6x9 VR experience on The Tonight Show with Jimmy Fallon
+  </figcaption>
+</figure>
 
-Following the success of _6x9_, The Guardian established an experimental in-house VR studio, where I continued as technical lead across the platform and built interactive Unity VR episodes such as [Beat the Hustler](/work/the-guardian-beat-the-hustler/).
+Following the success of _6x9_, The Guardian established an experimental in-house VR studio, where I continued as technical lead across the platform and built interactive Unity VR episodes such as [Beat the Hustler][beat-the-hustler].
 
 ## Technical Contributions
 
 - **Unity R&D prototyping:** Built the initial 3D cell prototype in Unity to validate room scale, mobile rendering constraints, and asset ingestion workflows
 - **Spatial audio experimentation:** Tested and configured 3D positional audio and Google Cardboard SDK integration for directional storytelling
 - **Technical leadership:** Served as The Guardian's sole technical lead alongside the editorial team, reviewing builds, testing hardware performance, and coordinating technical delivery with The Mill
-- **Cross-platform delivery:** Supported the launch across iOS, Android, Google Cardboard, 360° YouTube video, and the companion [Three.js/WebGL promotional site](/work/the-guardian-6x9-webgl-website/)
+- **Cross-platform delivery:** Supported the launch across iOS, Android, Google Cardboard, 360° YouTube video, and the companion [Three.js/WebGL promotional site][6x9-webgl]
+
+[6x9-webgl]: /work/the-guardian-6x9-webgl-website/
+[beat-the-hustler]: /work/the-guardian-beat-the-hustler/

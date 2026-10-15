@@ -3,7 +3,7 @@ title: The Telegraph — Lottie Animation Embed Tool
 tags: [Lottie, SVG, Preact, After Effects, TypeScript, WebAssembly, CSS, Work]
 thumbImage: /images/lottie-social.jpg
 description: A web application built in TypeScript, Preact, and WebAssembly ImageMagick that lets Telegraph designers validate, optimise, preview, and export After Effects Lottie animations for the CMS.
-weight: 4
+weight: 5
 ---
 
 # {{ title }}

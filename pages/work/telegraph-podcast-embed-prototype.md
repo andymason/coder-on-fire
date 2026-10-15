@@ -3,7 +3,7 @@ title: The Telegraph — Podcast Player and Embed Dashboard
 tags: [Preact, TypeScript, JavaScript, CSS, Audio, Web-API, Work]
 thumbImage: /images/podcast-tool-social.jpg
 description: Built a custom podcast audio player and editorial episode-picker dashboard in TypeScript and Preact, powered by The Telegraph's Art19 podcast API.
-weight: 9
+weight: 10
 ---
 
 # {{ title }}
