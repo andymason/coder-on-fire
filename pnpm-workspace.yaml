@@ -22,3 +22,7 @@ minimumReleaseAgeExclude:
   - '@oxlint/binding-win32-ia32-msvc@1.71.0'
   - '@oxlint/binding-win32-x64-msvc@1.71.0'
   - oxlint@1.71.0
+  - '@11ty/chokidar-with-glob-support@1.1.0'
+  - '@11ty/eleventy-dev-server@2.1.2'
+  - '@11ty/eleventy@3.1.7'
+  - '@11ty/nunjucks@3.3.0'
