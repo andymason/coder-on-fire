@@ -8,9 +8,7 @@ lang: en-GB
 
 [coderonfire.com][homepage] | [linkedin.com/in/andrewwmason][LinkedIn] | [github.com/andymason][GitHub] | [andrew@coderonfire.com][email] | [07908 493 094][phone]
 
-I’ve spent over 15 years focused on the craft of building UI using web standards, with an emphasis on interaction and animation while paying close attention to performance and accessibility. I enjoy working closely with designers, prototyping ideas in code, refining the user experience, and building tools to improve workflows.
-
-At Rare, I built game UI for [Sea of Thieves][custom-seas] and [Everwild][everwild-inventory]. At The Telegraph, I created [Milton][milton], an award-winning Figma plugin. At The Guardian, I delivered [live data visualisations][election] and led [VR projects][6x9].
+I’ve spent over 15 years focused on the craft of building fast, accessible UI using web standards. I work closely with designers on interaction and animation, prototyping in code and building tools to improve workflows. At Rare, I built game UI for [Sea of Thieves][custom-seas] and [Everwild][everwild-inventory]. At The Telegraph, I created [Milton][milton], an award-winning Figma plugin. At The Guardian, I delivered [live data visualisations][election] and led [VR projects][6x9].
 
 ## Skills
 
