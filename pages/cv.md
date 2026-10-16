@@ -12,7 +12,7 @@ pageId: cv
   </p>
 </header>
 
-I’m a senior frontend engineer with over 15 years’ experience, focused on the craft of the web: HTML, CSS, DOM APIs, fluid UI interactions, and animation. I work closely with designers, prototyping in code and building the tools they use. I’ve shipped game UI for [Sea of Thieves][custom-seas] and [Everwild][everwild-inventory] at Rare, built [Milton][milton], an award-winning Figma plugin at The Telegraph, and delivered [live data visualisations][election] and led [VR projects][6x9] at The Guardian.
+I’ve spent over 15 years focused on the craft of building fast, accessible UI using web standards. I work closely with designers on interaction and animation, prototyping in code and building tools to improve workflows. At Rare, I built game UI for [Sea of Thieves][custom-seas] and [Everwild][everwild-inventory]. At The Telegraph, I created [Milton][milton], an award-winning Figma plugin. At The Guardian, I delivered [live data visualisations][election] and led [VR projects][6x9].
 
 ## Skills
 

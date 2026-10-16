@@ -329,7 +329,7 @@ h1 {
 }
 
 #homepage h1 + h2 {
-    margin: 0 0 var(--gap-large) 0;
+    margin: 0 0 var(--gap-small) 0;
 }
 
 /* [ Skills ]
@@ -391,10 +391,8 @@ h2#work {
     margin: 0 auto;
 }
 
-@media screen and (min-width: 1000px) {
-    #main > .projects {
-        grid-column: 1/4;
-    }
+#main > .projects {
+    grid-column: 1/4;
 }
 
 .project-item {
